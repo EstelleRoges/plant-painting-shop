@@ -1,8 +1,8 @@
-import "./SignInUp.scss";
+import React from 'react'
 
 const signInUp = () => {
   return (
-    <div>signInUp</div>
+    <div>signInUp page</div>
   )
 }
 
