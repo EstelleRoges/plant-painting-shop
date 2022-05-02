@@ -1,5 +1,5 @@
 import "./Home.scss";
-import Banner from "../Other/banner";
+import Banner from "../../Other/Banner"
 const Home = () => {
   return <>
   <Banner /> 
