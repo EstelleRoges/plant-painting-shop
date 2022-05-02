@@ -5,10 +5,8 @@ import "./Layout.scss";
 function Layout() {
   return (
     <>
-      
-      <div className="container">
       <Navbar />
-      <Outlet /></div>
+      <div className="container"><Outlet /></div>
     </>
   );
 }
