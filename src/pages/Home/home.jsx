@@ -1,4 +1,4 @@
-import "./home.scss";
+import "./Home.scss";
 import Banner from "../Other/banner";
 const Home = () => {
   return <>
