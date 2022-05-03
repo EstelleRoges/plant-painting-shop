@@ -15,10 +15,10 @@ const Navbar = () => {
       <nav>
         <ul>
           <li>
-            <Link to="/">Paintings</Link>
+            <Link to="/products">Paintings</Link>
           </li>
           <li>
-            <Link to="/">Plants</Link>
+            <Link to="/about">About</Link>
           </li>
         </ul>
       </nav>
@@ -28,12 +28,12 @@ const Navbar = () => {
           {click ? <SearchBar /> : <Search />}
         </li>
         <li>
-          <Link to="/">
+          <Link to="/cart">
             <ShoppingBasket />
           </Link>
         </li>
         <li>
-          <Link to="/">
+          <Link to="/signInUp">
             <Person />
           </Link>
         </li>
