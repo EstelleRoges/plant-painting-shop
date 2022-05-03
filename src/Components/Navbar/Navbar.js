@@ -5,6 +5,7 @@ import { Search, Person, ShoppingBasket } from "@mui/icons-material";
 import SearchBar from "../SearchBar/SearchBar";
 
 const Navbar = () => {
+  
   const [click, setClick] = useState(false);
   function handleClick() {
     setClick(!click);

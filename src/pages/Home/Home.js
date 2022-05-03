@@ -7,6 +7,7 @@ const Home = () => {
   <p>Presentation text</p>
   <p>What is the website offering</p>
   <p>Popular products</p>
+  <p>Other stuff like testimonies or art gallery opening</p>
   </>;
 };
 

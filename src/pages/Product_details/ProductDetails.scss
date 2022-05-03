@@ -1,0 +1,61 @@
+.detailsArea {
+    padding-top: 2em;
+    display: flex;
+    justify-content: center;
+    img {
+        margin-left: 2em;
+        width: 400px;
+        border-radius: 2em;
+    }
+}
+
+.textInfosArea {
+    margin: 1.5em 1.5em 1.5em 3em;
+    padding-left: 2em;
+}
+
+.formatAndPrice {
+    display: flex;
+    align-items: center;
+
+    select, input {
+        margin: 1em;
+        padding: 10px;
+        outline: none;
+        border: 1px solid #ccc;
+        box-shadow: 1px 1px 5px #ccc;
+    }
+
+    input {
+        width: 75px;
+    }
+
+    option {
+        margin: 0.5em;
+
+        &:hover {
+            background: wheat;
+        }
+    }
+}
+
+button {
+    float: right;
+    background-color: green;
+    margin: 1.5em 1em 1em 0;
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 0.5em;
+    outline: none;
+}
+
+p {
+    clear: both;
+    margin-top: 3em;
+    padding: 1em;
+}
+
+.commentsArea {
+    margin-top: 3em;
+    padding: 1em;
+}
