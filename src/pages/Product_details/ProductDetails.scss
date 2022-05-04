@@ -1,4 +1,5 @@
-.detailsArea {
+.productDetailsContent {
+    .detailsArea {
     padding-top: 2em;
     display: flex;
     justify-content: center;
@@ -27,16 +28,9 @@
     }
 
     input {
-        width: 75px;
+        width: 100px;
     }
-
-    option {
-        margin: 0.5em;
-
-        &:hover {
-            background: wheat;
-        }
-    }
+    
 }
 
 button {
@@ -49,7 +43,7 @@ button {
     outline: none;
 }
 
-p {
+.productDescription {
     clear: both;
     margin-top: 3em;
     padding: 1em;
@@ -59,3 +53,5 @@ p {
     margin-top: 3em;
     padding: 1em;
 }
+}
+

@@ -23,7 +23,7 @@ const Navbar = () => {
           </li>
         </ul>
       </nav>
-      <h1>- The Succi Place -</h1>
+      <Link to="/"><h1>- The Succi Place -</h1></Link>
       <ul>
         <li onClick={() => handleClick()}>
           {click ? <SearchBar /> : <Search />}
