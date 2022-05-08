@@ -6,10 +6,9 @@ import ProductCard from "../../Components/ProductCard/ProductCard";
 const Products = () => {
   return (
     <>
-      This is the product list
       <div className="cards">
         {productList.map((product) => {
-          return <ProductCard key={product.id} {...product} />;
+          return <ProductCard key={product.id} {...product}/>;
         })}
       </div>
     </>

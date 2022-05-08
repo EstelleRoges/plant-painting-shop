@@ -1,5 +1,6 @@
 {
     "projectManager.git.baseFolders": [
         "Documents/Dev'"
-    ]
+    ],
+    "git.ignoreLimitWarning": true
 }

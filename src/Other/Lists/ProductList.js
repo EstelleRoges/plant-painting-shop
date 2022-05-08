@@ -9,7 +9,7 @@ const productList = [
         medium: 13.50,
         large: 20.0
     },
-    description: "",
+    description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur doloremque quia laborum est tempore rem eaque temporibus ad, fuga, voluptatem reprehenderit repudiandae minus consequuntur nisi placeat maiores quaerat? Eos exercitationem nostrum quidem amet. Magni impedit eius porro at quisquam eligendi adipisci id laudantium non doloremque!",
     stock: {
         small: 4,
         medium: 3,
@@ -27,7 +27,7 @@ const productList = [
         medium: 13.50,
         large: 20.0
     },
-    description: "",
+    description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus qui quia placeat voluptates error vero odit repellat dignissimos commodi cupiditate earum saepe delectus obcaecati laboriosam, eius alias dolore unde. Voluptatibus.",
     stock: {
         small: 4,
         medium: 3,
@@ -45,7 +45,7 @@ const productList = [
         medium: 13.50,
         large: 20.0
     },
-    description: "",
+    description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. At, blanditiis! Rerum eligendi praesentium odio accusamus excepturi expedita impedit quisquam voluptate autem modi.",
     stock: {
         small: 4,
         medium: 3,
@@ -63,7 +63,7 @@ const productList = [
         medium: 13.50,
         large: 20.0
     },
-    description: "",
+    description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur doloremque quia laborum est tempore rem eaque temporibus ad, fuga, voluptatem reprehenderit repudiandae minus consequuntur nisi placeat maiores quaerat? Eos exercitationem nostrum quidem amet. Magni impedit eius porro at quisquam eligendi adipisci id laudantium non doloremque!",
     stock: {
         small: 4,
         medium: 3,
@@ -81,7 +81,7 @@ const productList = [
         medium: 13.50,
         large: 20.0
     },
-    description: "",
+    description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus qui quia placeat voluptates error vero odit repellat dignissimos commodi cupiditate earum saepe delectus obcaecati laboriosam, eius alias dolore unde. Voluptatibus.",
     stock: {
         small: 4,
         medium: 3,
@@ -99,7 +99,7 @@ const productList = [
         medium: 13.50,
         large: 20.0
     },
-    description: "",
+    description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. At, blanditiis! Rerum eligendi praesentium odio accusamus excepturi expedita impedit quisquam voluptate autem modi.",
     stock: {
         small: 4,
         medium: 3,

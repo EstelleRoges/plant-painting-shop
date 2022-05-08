@@ -14,11 +14,11 @@ function App() {
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
-        <Route path="/products" element={<Products />}></Route>
-        <Route path="/productDetails" element={<ProductDetails />}></Route>
-        <Route path="/about" element={<About />}></Route>
-        <Route path="/cart" element={<Cart />}></Route>
-        <Route path="/signInUp" element={<SignInUp />}></Route>
+        <Route path="/products" element={<Products />}/>
+        <Route path="/productDetails/:id" element={<ProductDetails />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/signInUp" element={<SignInUp />} />
       </Route>
     </Routes>
     </BrowserRouter>
