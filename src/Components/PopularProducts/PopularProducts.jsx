@@ -8,7 +8,7 @@ const PopularProducts = () => {
   productList.sort(function (articleA, articleB) {
     return articleB.sold - articleA.sold;
   });
-
+  
   const topFive = productList.slice(0, 5);
 
   return (
@@ -18,17 +18,17 @@ const PopularProducts = () => {
         options={{
           perPage: 3,
           perMove: 1,
-          arrows: false,
           pagination: false,
           drag: "free",
-          gap: "3em",
+          gap: "5em",
+          padding: {left: "5em", right: "5em"},
           wheel: true,
         }}
       >
         {topFive.map((product) => {
           return (
-            <SplideSlide key={product.id}>
-              <ProductCard img={product.img} name={product.name} />
+            <SplideSlide key={product.id} style={{width: "300px", paddingBottom: "0"}}>
+                <ProductCard img={product.img} name={product.name} price={product.price}/>
             </SplideSlide>
           );
         })}
@@ -38,7 +38,7 @@ const PopularProducts = () => {
 };
 
 const PopsDiv = styled("div")`
-  margin: 3em 1em;
+  margin: 5em 2em;
   box-sizing: border-box;
 
   h1 {

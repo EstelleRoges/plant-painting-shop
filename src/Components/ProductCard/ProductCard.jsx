@@ -1,14 +1,14 @@
 import { Link } from "react-router-dom";
 import { Card, CardContent, CardMedia } from "@mui/material";
-import { AddShoppingCart } from "@mui/icons-material";
+import { AddShoppingCart, ArrowForward } from "@mui/icons-material";
 import { styled } from "@mui/material";
+
 const ProductCard = (product) => {
   return (
     <>
       <Card
         id={product.id}
         sx={{
-          minWidth: "250px",
           margin: "2em 1em",
           border: "2px solid transparent",
           borderRadius: "1em",
@@ -16,15 +16,7 @@ const ProductCard = (product) => {
         }}
       >
         <CardContent>
-          <CardMedia
-            sx={{
-              width: "100%",
-              height: "300px",
-              objectFit: "contain",
-              border: "1px solid transparent",
-              borderRadius: "1em",
-            }}
-          >
+          <CardMedia>
             <ImgContent>
               <Link to={"/productDetails/" + product.id}>
                 <img src={product.img} alt={product.name} />
@@ -32,10 +24,12 @@ const ProductCard = (product) => {
             </ImgContent>
           </CardMedia>
           <CardInfos>
+          <CardText>
             <Link to={"/productDetails/" + product.id} style={linkStyle}>
               {product.name}
             </Link>
-            {/* <span>From {product.price.small}€</span> */}
+            <p><ArrowForward />From {product.price.small}€</p>
+          </CardText>
             <button>
               <AddShoppingCart />
             </button>
@@ -51,15 +45,28 @@ const linkStyle = {
 };
 
 const CardInfos = styled("div")`
-  display: "flex";
-  justify-content: "space-between";
-  align-items: "center";
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+const CardText = styled("div")`
+  p {
+    margin: 0.2em 0;
+
+    svg {
+      margin-right: 0.3em;
+      vertical-align: middle;
+    }
+  }
 `;
 
 const ImgContent = styled("div")`
-  width: 100%;
-  height: 300px;
-  object-fit: contain;
+  img {
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+  }
 `;
 
 export default ProductCard;

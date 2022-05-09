@@ -18,7 +18,7 @@ const WelcomeContent = () => {
 };
 
 const WelcomeDiv = styled("div")`
-  margin: 5em auto;
+  margin: 10em auto;
   width: 90%;
   text-align: center;
 

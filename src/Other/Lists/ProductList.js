@@ -5,9 +5,9 @@ const productList = [
     img: "https://i.pinimg.com/564x/b7/6d/8c/b76d8c0290b6c52e63d06eb814a121e4.jpg",
     name: "Cute Quatuor",
     price: {
-        small: 10.0,
-        medium: 13.50,
-        large: 20.0
+        small: 12.0,
+        medium: 16.50,
+        large: 21.0
     },
     description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur doloremque quia laborum est tempore rem eaque temporibus ad, fuga, voluptatem reprehenderit repudiandae minus consequuntur nisi placeat maiores quaerat? Eos exercitationem nostrum quidem amet. Magni impedit eius porro at quisquam eligendi adipisci id laudantium non doloremque!",
     stock: {
@@ -41,9 +41,9 @@ const productList = [
     img: "https://i.pinimg.com/564x/a9/c8/9d/a9c89da4e1db6768241c642098737bd8.jpg",
     name: "Little Garden",
     price: {
-        small: 10.0,
-        medium: 13.50,
-        large: 20.0
+        small: 14.0,
+        medium: 18.50,
+        large: 25.0
     },
     description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. At, blanditiis! Rerum eligendi praesentium odio accusamus excepturi expedita impedit quisquam voluptate autem modi.",
     stock: {
@@ -95,9 +95,9 @@ const productList = [
     img: "https://i.pinimg.com/564x/7f/92/e0/7f92e0e7a27934a254720ccb5d561f05.jpg",
     name: "Solita",
     price: {
-        small: 10.0,
-        medium: 13.50,
-        large: 20.0
+        small: 8.0,
+        medium: 12.50,
+        large: 17.0
     },
     description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. At, blanditiis! Rerum eligendi praesentium odio accusamus excepturi expedita impedit quisquam voluptate autem modi.",
     stock: {

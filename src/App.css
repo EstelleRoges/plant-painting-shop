@@ -1,19 +1,27 @@
 * {
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 body {
   box-sizing: border-box;
 }
 
-h1, 
-h2, 
-h3, 
-h4, 
-h5, 
+h1,
+h2,
+h3,
+h4,
+h5,
 h6 {
-  font-family: 'Whisper', cursive;
+  font-family: "Whisper", cursive;
   margin: 0.5em;
+}
+
+h1 {
+  margin: 0;
+  margin-bottom: 0.5em;
+  padding-bottom: 0.2em;
+  font-size: 44px;
+  border-bottom: 1px dashed #ccc;
 }
 
 input,
@@ -32,14 +40,13 @@ textarea {
 }
 
 button {
-float: right;
-font-size: 16px;
-background-color: green;
-color: white;
-margin: 1em 0;
-padding: 0.5em 1em;
-border: none;
-border-radius: 0.5em;
-outline: none;
+  float: right;
+  font-size: 16px;
+  background-color: green;
+  color: white;
+  margin: 1em 0;
+  padding: 0.5em 1em;
+  border: none;
+  border-radius: 0.5em;
+  outline: none;
 }
-

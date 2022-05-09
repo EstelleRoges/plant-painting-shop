@@ -1,46 +1,46 @@
 .productDetailsContent {
-    .detailsArea {
+  .detailsArea {
     padding-top: 2em;
     display: flex;
     justify-content: center;
-    
+
     img {
-        margin-left: 2em;
-        margin-right: 3em;
-        width: 400px;
-        border-radius: 2em;
+      margin-left: 2em;
+      margin-right: 3em;
+      width: 400px;
+      border-radius: 2em;
     }
 
     h1 {
-        font-size: 44px;
-        margin: 0.5em 0;
+      font-size: 44px;
+      margin: 0.5em 0;
     }
-}
+  }
 
-.textInfosArea {
+  .textInfosArea {
     margin: 1.5em 1.5em 1.5em 3em;
     padding-left: 3em;
-}
+  }
 
-.formatAndPrice {
+  .formatAndPrice {
     display: flex;
     align-items: center;
 
-    select, input {
-        margin: 1em;
-        padding: 10px;
-        outline: none;
-        border: 1px solid #ccc;
-        box-shadow: 1px 1px 5px #ccc;
+    select,
+    input {
+      margin: 1em;
+      padding: 10px;
+      outline: none;
+      border: 1px solid #ccc;
+      box-shadow: 1px 1px 5px #ccc;
     }
 
     input {
-        width: 100px;
+      width: 100px;
     }
-    
-}
+  }
 
-button {
+  button {
     float: right;
     background-color: green;
     margin: 1.5em 1em 1em 0;
@@ -48,17 +48,16 @@ button {
     border: none;
     border-radius: 0.5em;
     outline: none;
-}
+  }
 
-.productDescription {
+  .productDescription {
     clear: both;
     margin-top: 3em;
     padding: 1em;
-}
+  }
 
-.commentsArea {
+  .commentsArea {
     margin-top: 3em;
     padding: 1em;
+  }
 }
-}
-
