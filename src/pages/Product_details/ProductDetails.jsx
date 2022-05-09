@@ -26,8 +26,8 @@ function ProductDetails() {
   }, [productDetails]);
   
   const handleChange = (event) => {
-    const newFormat = formatPrice.current;
-    formatPrice = event.target.value;
+    // const newFormat = formatPrice.current;
+    // formatPrice = event.target.value;
     console.log(formatPrice);
   }
 

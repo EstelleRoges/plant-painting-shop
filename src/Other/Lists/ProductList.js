@@ -16,7 +16,7 @@ const productList = [
         large: 0
     },
     colors: ["","",""],
-    sold: 0
+    sold: 10
 },
 {
     id: 2,
@@ -34,7 +34,7 @@ const productList = [
         large: 0
     },
     colors: ["","",""],
-    sold: 0
+    sold: 1
 },
 {
     id: 3,
@@ -52,7 +52,7 @@ const productList = [
         large: 0
     },
     colors: ["","",""],
-    sold: 0
+    sold: 8
 },
 {
     id: 4,
@@ -70,7 +70,7 @@ const productList = [
         large: 0
     },
     colors: ["","",""],
-    sold: 0
+    sold: 6
 },
 {
     id: 5,
@@ -88,7 +88,7 @@ const productList = [
         large: 0
     },
     colors: ["","",""],
-    sold: 0
+    sold: 5
 },
 {
     id: 6,
@@ -106,7 +106,7 @@ const productList = [
         large: 0
     },
     colors: ["","",""],
-    sold: 0
+    sold: 3
 },
 
 ]

@@ -4,11 +4,11 @@ const Features = () => {
   const Feature = styled("div")`
     margin: 1em;
     h3 {
-      font-size: 20px;
+      font-size: 24px;
     }
 
     p {
-      font-size: 12px;
+      font-size: 14px;
     }
   `;
 
@@ -17,6 +17,7 @@ const Features = () => {
       container
       direction="row"
       spacing={12}
+      padding= "0.5em"
       columns={{ xs: 2, sm: 2, md: 12 }}
     >
       <Grid item xs={4}>
