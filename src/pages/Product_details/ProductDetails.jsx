@@ -4,12 +4,10 @@ import { Button } from "@mui/material";
 import { ArrowForward } from "@mui/icons-material";
 import { useParams } from "react-router-dom";
 import productList from "../../Other/Lists/ProductList";
-import { getRandomComments } from "../../Other/Lists/commentsList";
 
-function ProductDetails() {
+const ProductDetails = (props) => {
   const [productInfos, setProductInfos] = useState({});
   const [display, setDisplay] = useState(false);
-
   let params = useParams();
 
   //fetch the product from the passed id
@@ -33,6 +31,8 @@ function ProductDetails() {
   //Create a ref to change the price according to the user's choice
   let formatPrice = useRef(small);
 
+  const { product = productInfos, onAdd } = props;
+
   const handleChange = (event) => {
     return (formatPrice.current.value = parseFloat(event.target.value));
   };
@@ -40,11 +40,6 @@ function ProductDetails() {
   const displayCreateCommentArea = () => {
     setDisplay(true);
   };
-
-  let comments = [];
-  if (comments.length === 0) {
-    comments = getRandomComments();
-  }
 
   return (
     <div className="productDetailsContent">
@@ -83,21 +78,23 @@ function ProductDetails() {
             />
             €
           </div>
-          <Button type="submit">Add to Cart</Button>
+          <Button onClick={() => onAdd(product)}>Add to Cart</Button>
         </div>
       </div>
       <p className="productDescription">{productInfos.description}</p>
-
       <div className="commentsArea">
         <h2>Comments</h2>
-        {comments.map((comment) => {
-          return (
-            <div className="commentContainer" key={comment.id}>
-              <h4>{comment.commenter}</h4>
-              <p>{comment.comment}</p>
-            </div>
-          );
-        })}
+        <div className="commentContainer">
+          <h4>Néroli</h4>
+          <p>Such a cute painting!</p>
+        </div>
+        <div className="commentContainer">
+          <h4>Vasco</h4>
+          <p>
+            My GF loves this stuff...your painting made her so happy. Thanks for
+            this.
+          </p>
+        </div>
         <Button onClick={displayCreateCommentArea}>Add a comment</Button>
         {display && (
           <form className="addCommentForm">
@@ -119,6 +116,6 @@ function ProductDetails() {
       </div>
     </div>
   );
-}
+};
 
 export default ProductDetails;

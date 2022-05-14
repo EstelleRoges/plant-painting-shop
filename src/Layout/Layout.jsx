@@ -3,10 +3,9 @@ import Navbar from "../Components/Navbar/Navbar";
 import "./Layout.scss";
 
 function Layout(props) {
-  const itemsCurrentlyInCart = props;
   return (
     <>
-      <Navbar itemsCurrentlyInCart={itemsCurrentlyInCart}/>
+      <Navbar count = {props.count}/>
       <div className="container"><Outlet /></div>
     </>
   );

@@ -3,8 +3,7 @@ import { Link } from "react-router-dom";
 import { Badge } from "@mui/material";
 import { Person, ShoppingBasket, MoreVert } from "@mui/icons-material";
 
-const Navbar = (numberOfItems = 0) => {
-  const count = 0;
+const Navbar = (props) => {
   return (
     <header>
       <nav>
@@ -23,7 +22,7 @@ const Navbar = (numberOfItems = 0) => {
       <ul>
         <li>
           <Link to="/cart">
-            <Badge badgeContent={count} color="success">
+            <Badge badgeContent={props.count} color="success">
               <ShoppingBasket />
             </Badge>
           </Link>

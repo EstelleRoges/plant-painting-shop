@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { Card, CardContent } from "@mui/material";
-import { AddShoppingCart, ArrowForward } from "@mui/icons-material";
 import { styled } from "@mui/material";
 
 const ProductCard = (product) => {
@@ -26,14 +25,8 @@ const ProductCard = (product) => {
               <Link to={"/productDetails/" + product.id} style={linkStyle}>
                 {product.name}
               </Link>
-              <p>
-                <ArrowForward />
-                From {product.price.small}€
-              </p>
+              <p>From {product.price.small}€</p>
             </CardText>
-            <button>
-              <AddShoppingCart />
-            </button>
           </CardInfos>
         </CardContent>
       </Card>
@@ -43,6 +36,8 @@ const ProductCard = (product) => {
 
 const linkStyle = {
   textDecoration: "none",
+  fontSize: "22px",
+  fontStyle: "italic"
 };
 
 const CardInfos = styled("div")`
@@ -52,14 +47,16 @@ const CardInfos = styled("div")`
 `;
 
 const CardText = styled("div")`
-  p {
-    margin: 0.2em 0;
-    text-decoration: none;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-items: baseline;
 
-    svg {
-      margin-right: 0.3em;
-      vertical-align: middle;
-    }
+  p {
+    font-size: 18px;
+    margin-bottom: 0;
+    text-decoration: none;
   }
 `;
 
