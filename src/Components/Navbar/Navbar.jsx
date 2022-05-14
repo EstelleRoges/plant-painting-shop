@@ -1,16 +1,10 @@
-import React, { useState } from "react";
 import "./Navbar.scss";
 import { Link } from "react-router-dom";
 import { Badge } from "@mui/material";
-import { Search, Person, ShoppingBasket } from "@mui/icons-material";
-import SearchBar from "../SearchBar/SearchBar";
+import { Person, ShoppingBasket, MoreVert } from "@mui/icons-material";
 
-const Navbar = () => {
-  const [click, setClick] = useState(false);
-  function handleClick() {
-    setClick(!click);
-  }
-
+const Navbar = (numberOfItems = 0) => {
+  const count = 0;
   return (
     <header>
       <nav>
@@ -27,12 +21,9 @@ const Navbar = () => {
         <h1>- The Succi Place -</h1>
       </Link>
       <ul>
-        <li onClick={() => handleClick()}>
-          {click ? <SearchBar /> : <Search />}
-        </li>
         <li>
           <Link to="/cart">
-            <Badge badgeContent={3} color="success">
+            <Badge badgeContent={count} color="success">
               <ShoppingBasket />
             </Badge>
           </Link>
@@ -42,6 +33,7 @@ const Navbar = () => {
             <Person />
           </Link>
         </li>
+        <li><MoreVert /></li>
       </ul>
     </header>
   );

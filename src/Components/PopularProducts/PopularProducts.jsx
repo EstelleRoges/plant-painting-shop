@@ -1,5 +1,6 @@
 import { styled } from "@mui/material";
 import React from "react";
+import { Link } from "react-router-dom";
 import productList from "../../Other/Lists/ProductList";
 import ProductCard from "../ProductCard/ProductCard";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
@@ -23,12 +24,14 @@ const PopularProducts = () => {
           gap: "5em",
           padding: {left: "5em", right: "5em"},
           wheel: true,
+          releaseWheel: false
         }}
       >
         {topFive.map((product) => {
           return (
             <SplideSlide key={product.id} style={{width: "300px", paddingBottom: "0"}}>
-                <ProductCard img={product.img} name={product.name} price={product.price}/>
+            <ProductCard id = {product.id} img={product.img} name={product.name} price={product.price}/>
+                
             </SplideSlide>
           );
         })}

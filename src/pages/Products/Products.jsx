@@ -33,4 +33,5 @@ const Card = styled("div")`
   margin: 0%;
   width: 350px;
 `;
+
 export default Products;

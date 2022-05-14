@@ -1,44 +1,65 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./ProductDetails.scss";
+import { Button } from "@mui/material";
 import { ArrowForward } from "@mui/icons-material";
 import { useParams } from "react-router-dom";
 import productList from "../../Other/Lists/ProductList";
+import { getRandomComments } from "../../Other/Lists/commentsList";
 
 function ProductDetails() {
   const [productInfos, setProductInfos] = useState({});
+  const [display, setDisplay] = useState(false);
+
   let params = useParams();
 
-  let formatPrice = useRef();
-
+  //fetch the product from the passed id
   const productDetails = productList.find((prd) => {
     return prd.id === parseInt(params.id);
   });
 
+  //Assign the found product object to productInfos
+  useEffect(() => {
+    const getProductInfos = () => {
+      setProductInfos(productDetails);
+    };
+    getProductInfos();
+  }, [productDetails]);
+
+  //Destructuring the different prices
   const {
     price: { small, medium, large },
   } = productDetails;
 
-  useEffect(() => {
-    const getProductInfos = () => {
-    setProductInfos(productDetails);
-  };
-    getProductInfos();
-  }, [productDetails]);
-  
+  //Create a ref to change the price according to the user's choice
+  let formatPrice = useRef(small);
+
   const handleChange = (event) => {
-    // const newFormat = formatPrice.current;
-    // formatPrice = event.target.value;
-    console.log(formatPrice);
+    return (formatPrice.current.value = parseFloat(event.target.value));
+  };
+
+  const displayCreateCommentArea = () => {
+    setDisplay(true);
+  };
+
+  let comments = [];
+  if (comments.length === 0) {
+    comments = getRandomComments();
   }
 
-   return (
+  return (
     <div className="productDetailsContent">
       <div className="detailsArea">
         <img src={productInfos.img} alt={productInfos.name} />
         <div className="textInfosArea">
           <h1>{productInfos.name}</h1>
           <div className="formatAndPrice">
-            <select name="paintingFormat" id="formats" onChange={(e) => {handleChange(e)}}>
+            <select
+              name="paintingFormat"
+              id="formats"
+              onChange={(e) => {
+                handleChange(e);
+              }}
+            >
               <option disabled defaultValue hidden>
                 Format
               </option>
@@ -53,13 +74,49 @@ function ProductDetails() {
               </option>
             </select>
             <ArrowForward />
-            <input type="text" name="price" id="price" ref={formatPrice} value = {formatPrice.toString()} /> €
+            <input
+              type="text"
+              name="price"
+              id="price"
+              defaultValue={small}
+              ref={formatPrice}
+            />
+            €
           </div>
-          <button type="submit">Add to Cart</button>
+          <Button type="submit">Add to Cart</Button>
         </div>
       </div>
       <p className="productDescription">{productInfos.description}</p>
-      <div className="commentsArea">Try putting comments in here</div>
+
+      <div className="commentsArea">
+        <h2>Comments</h2>
+        {comments.map((comment) => {
+          return (
+            <div className="commentContainer" key={comment.id}>
+              <h4>{comment.commenter}</h4>
+              <p>{comment.comment}</p>
+            </div>
+          );
+        })}
+        <Button onClick={displayCreateCommentArea}>Add a comment</Button>
+        {display && (
+          <form className="addCommentForm">
+            <section>
+              <div>
+                <label htmlFor="name">Name</label>
+                <input type="text" name="commenterName" id="name" />
+              </div>
+              <div>
+                <label htmlFor="mail">Mail</label>
+                <input type="text" name="commenterMail" id="mail" />
+              </div>
+            </section>
+            <label htmlFor="comment">Comment</label>
+            <textarea name="comment" id="" cols="30" rows="10"></textarea>
+            <Button>Add</Button>
+          </form>
+        )}
+      </div>
     </div>
   );
 }

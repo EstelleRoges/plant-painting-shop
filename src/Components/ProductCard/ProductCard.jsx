@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Card, CardContent, CardMedia } from "@mui/material";
+import { Card, CardContent } from "@mui/material";
 import { AddShoppingCart, ArrowForward } from "@mui/icons-material";
 import { styled } from "@mui/material";
 
@@ -16,20 +16,21 @@ const ProductCard = (product) => {
         }}
       >
         <CardContent>
-          <CardMedia>
-            <ImgContent>
-              <Link to={"/productDetails/" + product.id}>
-                <img src={product.img} alt={product.name} />
-              </Link>
-            </ImgContent>
-          </CardMedia>
-          <CardInfos>
-          <CardText>
-            <Link to={"/productDetails/" + product.id} style={linkStyle}>
-              {product.name}
+          <ImgContent>
+            <Link to={"/productDetails/" + product.id}>
+              <img src={product.img} alt={product.name} />
             </Link>
-            <p><ArrowForward />From {product.price.small}€</p>
-          </CardText>
+          </ImgContent>
+          <CardInfos>
+            <CardText>
+              <Link to={"/productDetails/" + product.id} style={linkStyle}>
+                {product.name}
+              </Link>
+              <p>
+                <ArrowForward />
+                From {product.price.small}€
+              </p>
+            </CardText>
             <button>
               <AddShoppingCart />
             </button>
@@ -53,6 +54,7 @@ const CardInfos = styled("div")`
 const CardText = styled("div")`
   p {
     margin: 0.2em 0;
+    text-decoration: none;
 
     svg {
       margin-right: 0.3em;

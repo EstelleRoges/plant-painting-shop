@@ -34,7 +34,7 @@ textarea {
   box-sizing: border-box;
   border: none;
   border-radius: 1em;
-  box-shadow: 1px 1px 5px #ccc;
+  box-shadow: 4px 4px 10px #ccc;
   resize: none;
   outline: none;
 }
@@ -49,4 +49,8 @@ button {
   border: none;
   border-radius: 0.5em;
   outline: none;
+}
+
+button:hover {
+  background-color: lightgreen;
 }
