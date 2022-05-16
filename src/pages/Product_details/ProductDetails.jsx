@@ -78,7 +78,7 @@ const ProductDetails = (props) => {
             />
             €
           </div>
-          <Button onClick={() => onAdd(product)}>Add to Cart</Button>
+          <Button onClick={() => onAdd(product, parseFloat(formatPrice.current.value))}>Add to Cart</Button>
         </div>
       </div>
       <p className="productDescription">{productInfos.description}</p>

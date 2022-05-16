@@ -49,6 +49,7 @@ button {
   border: none;
   border-radius: 0.5em;
   outline: none;
+  text-transform: none;
 }
 
 button:hover {
