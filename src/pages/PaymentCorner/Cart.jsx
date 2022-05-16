@@ -1,5 +1,5 @@
 import React from "react";
-import { CartTable } from "../paymentCornerStyle";
+import { CartTable } from "./paymentCornerStyle";
 import { Button } from "@mui/material";
 import { Add, Remove, Delete } from "@mui/icons-material";
 import { Link } from "react-router-dom";
@@ -34,7 +34,7 @@ const Cart = (items) => {
                     <td>
                       <Button
                         onClick={() => {
-                          items.onDelete(item.id);
+                          onDelete(item.id);
                         }}
                       >
                         <Delete />
@@ -47,11 +47,11 @@ const Cart = (items) => {
                     <td>{parseFloat(item.formatPrice)}€</td>
                     <td>
                     <div>
-                      <Button variant="text" onClick={() => onRemove}>
+                      <Button variant="text" onClick={() => onRemove(item)}>
                         <Remove />
                       </Button>
                       <span>{item.quantity}</span>
-                      <Button variant="text" onClick={() => onAdd}>
+                      <Button variant="text" onClick={() => onAdd(item)}>
                         <Add />
                       </Button>
                     </div>

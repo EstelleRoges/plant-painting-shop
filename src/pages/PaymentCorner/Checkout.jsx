@@ -1,9 +1,14 @@
-import { CartTable } from "../paymentCornerStyle";
+import { useState } from "react";
+import { CartTable } from "./paymentCornerStyle";
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
 
 const Checkout = (props) => {
-  const checkout = props.cartItems;
+  const [checkout, setCheckout] = useState(props.cartItems) ;
+
+  function emptyCart() {
+    setCheckout([]);
+  }
   return (
       <div>
         <h1>Your cart</h1>
@@ -40,7 +45,7 @@ const Checkout = (props) => {
             </tr>
           </tbody>
         </CartTable>
-        <Button variant="contained"><Link to="/PaymentAccepted">Purchase</Link></Button>
+        <Button onClick={emptyCart} variant="contained"><Link to="/PaymentAccepted">Purchase</Link></Button>
       </div>
   );
 };
