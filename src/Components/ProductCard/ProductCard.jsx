@@ -25,7 +25,7 @@ const ProductCard = (product) => {
               <Link to={"/productDetails/" + product.id} style={linkStyle}>
                 {product.name}
               </Link>
-              <p>From {product.price.small}€</p>
+              <p>A partir de {product.price.small}€</p>
             </CardText>
           </CardInfos>
         </CardContent>

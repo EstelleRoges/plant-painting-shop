@@ -4,7 +4,7 @@ import { LocalShipping, Palette, Drafts } from "@mui/icons-material";
 const Features = () => {
   return (
     <FeatureList>
-      <h1>Why shop to the Succi Place?</h1>
+      <h1>Pourquoi shopper chez Succi Place?</h1>
       <Grid
         container
         direction="row"
@@ -19,7 +19,7 @@ const Features = () => {
             <span>
               <Palette />
             </span>
-            <h3>Premium quality paintings</h3>
+            <h3>Peinture haute qualité</h3>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint
               recusandae perspiciatis saepe tempore repellat provident?
@@ -31,7 +31,7 @@ const Features = () => {
             <span>
               <LocalShipping />
             </span>
-            <h3>Fast and safe delivery</h3>
+            <h3>Livraison rapide</h3>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur,
               nam.
@@ -43,7 +43,7 @@ const Features = () => {
             <span>
               <Drafts />
             </span>
-            <h3>Tailored Paintings</h3>
+            <h3>Peintures personnalisées</h3>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque
               laboriosam porro veritatis.

@@ -12,6 +12,7 @@ import About from "./pages/About/About";
 import Error404 from "./pages/Other/error404";
 import Checkout from "./pages/PaymentCorner/Checkout";
 import PaymentAccepted from "./pages/PaymentCorner/PaymentAccepted";
+import UserDashboard from "./pages/UserCorner/UserDashboard/UserDashboard";
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
@@ -34,9 +35,6 @@ function App() {
         ...cartItems,
         { ...product, quantity: 1, formatPrice: formatPrice },
       ]);
-      console.log(
-        "Items in cart:" + cartItems.length + "\nItems: " + cartItems
-      );
     }
   };
 
@@ -92,6 +90,7 @@ function App() {
             element={<Cart cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} onDelete={onDelete} />}
           />
           <Route path="/signInUp" element={<SignInUp />} />
+          <Route path="/userDashboard" element={<UserDashboard />} />
           <Route path="/error404" element={<Error404 />} />
           <Route
             path="/checkout"

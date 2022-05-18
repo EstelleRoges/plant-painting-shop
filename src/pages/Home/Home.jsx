@@ -13,7 +13,7 @@ const Home = () => {
       <WelcomeContent />
       <Features />
       <PopularProducts/>
-      <p>Latest news</p>
+      <p>Les dernières news!</p>
       <ContactContent />
     </>
   );

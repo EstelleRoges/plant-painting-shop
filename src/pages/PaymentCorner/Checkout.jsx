@@ -11,13 +11,13 @@ const Checkout = (props) => {
   }
   return (
       <div>
-        <h1>Your cart</h1>
+        <h1>Récapitulatif de la commande</h1>
         <CartTable>
           <thead>
             <tr>
               <td></td>
-              <td>Product</td>
-              <td width="70px">Price</td>
+              <td>Produit</td>
+              <td width="70px">Prix</td>
             </tr>
           </thead>
           <tbody>
@@ -45,7 +45,7 @@ const Checkout = (props) => {
             </tr>
           </tbody>
         </CartTable>
-        <Button onClick={emptyCart} variant="contained"><Link to="/PaymentAccepted">Purchase</Link></Button>
+        <Button onClick={emptyCart} variant="contained"><Link to="/PaymentAccepted">Commander!</Link></Button>
       </div>
   );
 };

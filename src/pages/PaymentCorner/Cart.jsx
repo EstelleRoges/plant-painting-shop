@@ -11,19 +11,19 @@ const Cart = (items) => {
     <>
       {cartItems.length === 0 ? (
         <div>
-          <p>Your cart is empty...</p>
-          Go <Link to="/products"> shopping</Link>!
+          <p>Votre panier est vide...</p>
+          Allons <Link to="/products"> le remplir</Link>!
         </div>
       ) : (
         <div>
-        <h1>Your cart</h1>
+        <h1>Le panier</h1>
           <CartTable>
             <thead>
               <tr>
                 <td width="40px"></td>
-                <td colSpan="2">Product</td>
-                <td width="70px">Price</td>
-                <td width="70px">Quantity</td>
+                <td colSpan="2">Produit</td>
+                <td width="70px">Prix</td>
+                <td width="70px">Quantité</td>
                 <td width="70px">Total</td>
               </tr>
             </thead>
@@ -80,7 +80,7 @@ const Cart = (items) => {
                     color="success"
                     sx={{ margin: "1em 0"}}
                   >
-                    <Link to="/checkout">Proceed to checkout</Link>
+                    <Link to="/checkout">Passer à la commande</Link>
                   </Button>
                 </td>
               </tr>

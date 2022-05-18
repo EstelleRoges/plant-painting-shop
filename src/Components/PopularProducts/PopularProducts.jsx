@@ -13,7 +13,7 @@ const PopularProducts = () => {
 
   return (
     <PopsDiv>
-      <h1>Top 5 products of the month</h1>
+      <h1>Top 5 des tableaux à succès</h1>
       <Splide
         options={{
           perPage: 3,

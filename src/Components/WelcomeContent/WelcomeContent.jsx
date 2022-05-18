@@ -4,7 +4,7 @@ import React from "react";
 const WelcomeContent = () => {
   return (
     <WelcomeDiv>
-      <h1>Welcome to the Succi Place!</h1>
+      <h1>Bienvenue à Succi Place!</h1>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid nemo
         cumque iusto ducimus nulla ab vitae ullam dolorum veniam maxime, in
