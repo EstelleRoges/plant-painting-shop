@@ -3,6 +3,7 @@ import React from "react";
 import productList from "../../Other/Lists/ProductList";
 import ProductCard from "../ProductCard/ProductCard";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
+import "@splidejs/react-splide/css";
 
 const PopularProducts = () => {  
   productList.sort(function (articleA, articleB) {

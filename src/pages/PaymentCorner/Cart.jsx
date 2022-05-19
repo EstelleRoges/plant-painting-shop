@@ -1,22 +1,23 @@
 import React from "react";
-import { CartTable } from "./paymentCornerStyle";
+import { EmptyCart, CartContent, CartTable } from "./paymentCornerStyle";
 import { Button } from "@mui/material";
 import { Add, Remove, Delete } from "@mui/icons-material";
-import { Link } from "react-router-dom";
+import { Link} from "react-router-dom";
 
 const Cart = (items) => {
   const { cartItems, onAdd, onRemove, onDelete } = items;
-  console.log(cartItems);
   return (
     <>
       {cartItems.length === 0 ? (
-        <div>
-          <p>Votre panier est vide...</p>
-          Allons <Link to="/products"> le remplir</Link>!
-        </div>
+        <EmptyCart>
+          <h2>Ah...votre panier est vide.</h2>
+          <p>
+            Allons <Link to="/products"> shopper</Link> !
+          </p>
+        </EmptyCart>
       ) : (
-        <div>
-        <h1>Le panier</h1>
+        <CartContent>
+          <h1>Panier</h1>
           <CartTable>
             <thead>
               <tr>
@@ -41,20 +42,20 @@ const Cart = (items) => {
                       </Button>
                     </td>
                     <td width="100px">
-                      <img src={item.img} alt={item.name} />
+                      <Link to={"/productDetails/" + item.id}><img src={item.img} alt={item.name} /></Link>
                     </td>
-                    <td>{item.name}</td>
+                    <td><Link to={"/productDetails/" + item.id}>{item.name}</Link></td>
                     <td>{parseFloat(item.formatPrice)}€</td>
                     <td>
-                    <div>
-                      <Button variant="text" onClick={() => onRemove(item)}>
-                        <Remove />
-                      </Button>
-                      <span>{item.quantity}</span>
-                      <Button variant="text" onClick={() => onAdd(item)}>
-                        <Add />
-                      </Button>
-                    </div>
+                      <div>
+                        <Button variant="text" onClick={() => onRemove(item)}>
+                          <Remove />
+                        </Button>
+                        <span>{item.quantity}</span>
+                        <Button variant="text" onClick={() => onAdd(item)}>
+                          <Add />
+                        </Button>
+                      </div>
                     </td>
                     <td>{parseFloat(item.formatPrice) * item.quantity}€</td>
                   </tr>
@@ -78,7 +79,7 @@ const Cart = (items) => {
                   <Button
                     variant="contained"
                     color="success"
-                    sx={{ margin: "1em 0"}}
+                    sx={{ margin: "1em 0" }}
                   >
                     <Link to="/checkout">Passer à la commande</Link>
                   </Button>
@@ -86,9 +87,10 @@ const Cart = (items) => {
               </tr>
             </tfoot>
           </CartTable>
-        </div>
+        </CartContent>
       )}
     </>
   );
 };
+
 export default Cart;

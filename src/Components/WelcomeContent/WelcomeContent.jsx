@@ -18,17 +18,18 @@ const WelcomeContent = () => {
 };
 
 const WelcomeDiv = styled("div")`
-  margin: 10em auto;
+  margin: 5em auto;
   width: 90%;
   text-align: center;
 
   h1 {
-      font-size: 50px;
+    font-size: 60px;
   }
 
   p {
-      font-size: 22px;
-      text-align: justify;
+    margin: 5em 0;
+    font-size: 22px;
+    text-align: justify;
   }
 `;
 

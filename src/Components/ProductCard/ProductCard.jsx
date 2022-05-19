@@ -3,6 +3,11 @@ import { Card, CardContent } from "@mui/material";
 import { styled } from "@mui/material";
 
 const ProductCard = (product) => {
+  let name = product.name;
+  if (name.length > 12) {
+    name = name.substring(0, 11) + "...";
+  }
+
   return (
     <>
       <Card
@@ -23,7 +28,7 @@ const ProductCard = (product) => {
           <CardInfos>
             <CardText>
               <Link to={"/productDetails/" + product.id} style={linkStyle}>
-                {product.name}
+                {name}
               </Link>
               <p>A partir de {product.price.small}€</p>
             </CardText>
@@ -37,7 +42,7 @@ const ProductCard = (product) => {
 const linkStyle = {
   textDecoration: "none",
   fontSize: "22px",
-  fontStyle: "italic"
+  fontStyle: "italic",
 };
 
 const CardInfos = styled("div")`
@@ -54,7 +59,7 @@ const CardText = styled("div")`
   align-items: baseline;
 
   p {
-    font-size: 18px;
+    font-size: 16px;
     margin-bottom: 0;
     text-decoration: none;
   }

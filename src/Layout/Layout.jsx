@@ -1,14 +1,29 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "../Components/Navbar/Navbar";
-import "./Layout.scss";
+import { styled } from "@mui/material";
 
 function Layout(props) {
   return (
     <>
-      <Navbar count = {props.count}/>
-      <div className="container"><Outlet /></div>
+      <Container>
+        <Navbar count={props.count} />
+        <Content>
+          <Outlet />
+        </Content>
+      </Container>
     </>
   );
 }
+
+const Container = styled("div")`
+margin: auto;
+ width: 80%; 
+`;
+
+const Content = styled("div")`
+  margin: 2em auto;
+  max-width: 1500px;
+  border-radius: 2em;
+`;
 
 export default Layout;

@@ -10,10 +10,24 @@ const signInUp = () => {
         <div className="form">
           <form>
             <label htmlFor="signInMail">Mail</label>
-            <input type="email" name="signInMail" id="signInMail" />
+            <input
+            readOnly
+              type="email"
+              name="signInMail"
+              id="signInMail"
+              value="cliquez.sur.connexion@mail.com"
+            />
             <label htmlFor="signInPassword">Mot de passe</label>
-            <input type="password" name="signInPassword" id="signInPassword" />
-            <button type="submit"> <Link to="/userDashboard">Connexion</Link></button>
+            <input
+            readOnly
+              type="password"
+              name="signInPassword"
+              id="signInPassword"
+              value="testAndEnjoy"
+            />
+              <button type="submit">
+                <Link to="/userDashboard">Connexion</Link>
+              </button>
           </form>
         </div>
       </div>
@@ -23,11 +37,14 @@ const signInUp = () => {
         <div className="form">
           <form>
             <label htmlFor="signUpMail">Mail</label>
-            <input type="email" name="signUpMail" id="signUpMail" />
+            <input readOnly type="email" name="signUpMail" id="signUpMail" />
             <label htmlFor="signUpPassword">Mot de passe</label>
-            <input type="password" name="signInPassword" id="signUpPassword" />
-            <label htmlFor="signUpPasswordConfirmation">Confirmation du mot de passe</label>
+            <input readOnly type="password" name="signInPassword" id="signUpPassword" />
+            <label htmlFor="signUpPasswordConfirmation">
+              Confirmation du mot de passe
+            </label>
             <input
+            readOnly
               type="password"
               name="signUpPasswordConfirmation"
               id="signUpPasswordConfirmation"

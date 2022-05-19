@@ -4,9 +4,10 @@ import { Button } from "@mui/material";
 import { ArrowForward } from "@mui/icons-material";
 import { useParams } from "react-router-dom";
 import productList from "../../Other/Lists/ProductList";
+// import ProductDetailsLogic, {productInfos, productDetails, product, handleChange, displayCreateCommentArea, display, small, medium, large, formatPrice, onAdd} from "./ProductDetailsLogic";
 
 const ProductDetails = (props) => {
-  const [productInfos, setProductInfos] = useState({});
+    const [productInfos, setProductInfos] = useState({});
   const [display, setDisplay] = useState(false);
   let params = useParams();
 
@@ -40,7 +41,6 @@ const ProductDetails = (props) => {
   const displayCreateCommentArea = () => {
     setDisplay(true);
   };
-
   return (
     <div className="productDetailsContent">
       <div className="detailsArea">

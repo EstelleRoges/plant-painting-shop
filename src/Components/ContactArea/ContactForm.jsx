@@ -34,8 +34,6 @@ const Form = styled("div")`
     margin: auto;
     padding: 2em 3em;
     max-width: 60%;
-    border: 2px dashed black;
-    border-radius: 2em 1em;
 
     label {
       margin-bottom: 1em;

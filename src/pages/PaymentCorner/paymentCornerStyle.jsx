@@ -21,16 +21,13 @@ thead tr, tbody tr {
       display: flex;
       justify-content: center;
       align-items: stretch;
-
-      button {
-        padding: 0;
-      }
     }
   }
 
 tr:last-child + td {
     text-align: start;
 }
+
   svg {
     color: black;
   }
@@ -39,5 +36,36 @@ tr:last-child + td {
     width: 100px;
     height: 100px;
     border-radius: 1em;
+  }
+
+  button a {
+        color: white;
+      }
+`;
+
+
+export const EmptyCart = styled("div")`
+  margin: 6em 3em;
+  text-align: center;
+
+  h2 {
+    font-size: 40px;
+  }
+
+  p {
+    font-size: 18px;
+  }
+
+  a {
+    color: green;
+    font-style: italic;
+    text-decoration: none;
+  }
+`;
+
+export const CartContent = styled("div")`
+  a {
+    color: white;
+    text-decoration: none;
   }
 `;

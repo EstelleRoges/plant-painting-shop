@@ -1,17 +1,23 @@
 import React from "react";
-import "./Banner.scss";
+import { styled } from "@mui/material";
 
 const Banner = () => {
   return (
-    <div className="banner">
+    <BannerArea>
       Banner
       <p>Slide with 2 elements:</p>
       <ol>
         <li>New painting(s)</li>
         <li>Art gallery in Paris</li>
       </ol>
-    </div>
+    </BannerArea>
   );
 };
+
+const BannerArea = styled("div")`
+  margin-top: 2em;
+  background-color: wheat;
+  height: 500px;
+`;
 
 export default Banner;
