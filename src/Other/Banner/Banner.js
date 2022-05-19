@@ -16,7 +16,7 @@ const Banner = () => {
 
 const BannerArea = styled("div")`
   margin-top: 2em;
-  background-color: wheat;
+  background-color: beige;
   height: 500px;
 `;
 

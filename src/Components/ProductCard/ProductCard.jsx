@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
-import { Card, CardContent } from "@mui/material";
-import { styled } from "@mui/material";
+import { styled, Card, CardContent } from "@mui/material";
 
 const ProductCard = (product) => {
   let name = product.name;

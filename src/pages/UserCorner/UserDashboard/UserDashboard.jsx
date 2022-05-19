@@ -1,6 +1,16 @@
-import "./UserDashboard.scss";
+import {
+  TabList,
+  TabGroup,
+  UserTab,
+  RowDiv,
+  InfoDiv,
+  SubInfoDiv,
+  SubInfo,
+  CardInfos,
+} from "./UserDashboardStyle.jsx";
 import { useState } from "react";
-import { Box, Tab, Tabs, styled } from "@mui/material";
+import { Avatar, Box } from "@mui/material";
+import { Construction } from "@mui/icons-material";
 import PropTypes from "prop-types";
 
 const UserDashboard = () => {
@@ -39,127 +49,195 @@ const UserDashboard = () => {
   return (
     <>
       <h1>Mon compte</h1>
-      <div>
-        <Box sx={{ display: "flex" }}>
-          <Tabs orientation="vertical" onChange={handleChange} value={value}>
-            <Tab label="Informations" />
-            <Tab label="Payments" />
-            <Tab label="Orders history" disabled />
-          </Tabs>
+      <Box sx={{ width: "100%", display: "flex" }}>
+        <TabList
+          className="tabStyle"
+          orientation="vertical"
+          onChange={handleChange}
+          value={value}
+          aria-label={"userDashboardMenu"}
+        >
+          <UserTab label="Informations" />
+          <UserTab label="Commandes" />
+        </TabList>
 
+        <TabGroup>
           <TabPanel value={value} index={0}>
-            <RowDiv>
-              <div>
-                <label htmlFor="userName">Pseudo</label>
-                <input type="text" name="userName" id="userName" />
-              </div>
-              <div>
-                <label htmlFor="userName">Mot de passe</label>
-                <input type="password" name="password" id="password" />
-              </div>
-            </RowDiv>
-            <div>
+            <InfoDiv>
               <RowDiv>
-                <div>
-                  <label htmlFor="lastName">Nom</label>
-                  <input type="text" name="lastName" id="lastName" />
-                </div>
-                <div>
-                  <label htmlFor="firstName">Prénom</label>
-                  <input type="text" name="firstName" id="firstName" />
+                <Avatar alt="userAvatar" sx={{ width: 50, height: 50 }} />
+                <div style={{ marginLeft: "3em" }}>
+                  <h2>Le Testeur</h2>
+                  <p>a.k.a: Le Testeur</p>
                 </div>
               </RowDiv>
-              <RowDiv>
-                <div style={{ width: "75px" }}>
-                  <label htmlFor="streetNumber">N°</label>
-                  <input type="text" name="streetNumber" id="streetNumber" />
-                </div>
-                <div>
-                  <label htmlFor="streetType">Type de voie</label>
-                  <select name="streetType" id="streetType">
-                    <option value="streetType">Rue</option>
-                    <option value="streetType">Avenue</option>
-                    <option value="streetType">Allée</option>
-                    <option value="streetType">Ruelle</option>
-                    <option value="streetType">Boulevard</option>
-                    <option value="streetType">Chemin</option>
-                    <option value="streetType">Route</option>
-                  </select>
-                </div>
-                <div>
-                  <label htmlFor="userName">Ville</label>
-                  <input type="text" name="city" id="city" />
-                </div>
-              </RowDiv>
-            </div>
+            </InfoDiv>
+
+            <InfoDiv>
+              <SubInfoDiv>
+                <h2>Informations</h2>
+                <SubInfo>
+                  <div>
+                    <label htmlFor="pseudo">Pseudo</label>
+                    <input
+                      readOnly
+                      type="text"
+                      name="pseudo"
+                      id="pseudo"
+                      value={"Le Testeur"}
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="lastName">Nom</label>
+                    <input
+                      readOnly
+                      type="text"
+                      name="lastName"
+                      id="lastName"
+                      value={"Le"}
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="firstName">Prénom</label>
+                    <input
+                      readOnly
+                      type="text"
+                      name="firstName"
+                      id="firstName"
+                      value={"Testeur"}
+                    />
+                  </div>
+                </SubInfo>
+                 
+              </SubInfoDiv>
+
+              <SubInfoDiv>
+              <h2>Adresse</h2>
+              <SubInfo>
+                <RowDiv>
+                  <div style={{ width: "25%" }}>
+                    <label htmlFor="streetNumber">N°</label>
+                    <input
+                      readOnly
+                      type="text"
+                      name="streetNumber"
+                      id="streetNumber"
+                      value={"12"}
+                    />
+                  </div>
+                  <div style={{ width: "75%" }}>
+                    <label htmlFor="streetType">Type de voie</label>
+                    <select name="streetType" id="streetType">
+                      <option value="streetType">Rue</option>
+                      <option value="streetType">Avenue</option>
+                      <option value="streetType">Allée</option>
+                      <option value="streetType">Ruelle</option>
+                      <option value="streetType">Boulevard</option>
+                      <option value="streetType">Chemin</option>
+                      <option value="streetType">Route</option>
+                    </select>
+                  </div>
+                </RowDiv>
+                <RowDiv>
+                  <div style={{ width: "100%" }}>
+                    <label htmlFor="userName">Nom de voie</label>
+                    <input
+                      readOnly
+                      type="text"
+                      name="city"
+                      id="city"
+                      value={"du Frontend"}
+                    />
+                  </div>
+                </RowDiv>
+                <RowDiv>
+                  <div>
+                    <label htmlFor="postalCode">Code postal</label>
+                    <input
+                      readOnly
+                      type="text"
+                      name="postalCode"
+                      id="postalCode"
+                      value={"99999"}
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="city">Ville</label>
+                    <input
+                      readOnly
+                      type="text"
+                      name="city"
+                      id="city"
+                      value={"LaVille"}
+                    />
+                  </div>
+                </RowDiv>
+              </SubInfo>
+                
+              </SubInfoDiv>
+            </InfoDiv>
+
+            <InfoDiv>
+              <SubInfoDiv>
+                <h2>Carte Bleue</h2>
+                <SubInfo>
+                  <div>
+                    <label htmlFor="cardNumber">Numéro de carte</label>
+                    <input
+                      readOnly
+                      type="text"
+                      name="cardNumber"
+                      id="cardNumber"
+                      value={"0000 0000 0000 0000"}
+                    />
+                  </div>
+                  <CardInfos>
+                    <div>
+                      <label htmlFor="cardExpiration">Date d'expiration</label>
+                      <input
+                        type="date"
+                        name="cardExpiration"
+                        id="cardExpiration"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="cryptogram">Cryptogramme</label>
+                      <input
+                        readOnly
+                        type="text"
+                        name="cryptogram"
+                        id="cryptogram"
+                        value={"000"}
+                      />
+                    </div>
+                  </CardInfos>
+                </SubInfo>
+              </SubInfoDiv>
+              <SubInfoDiv>
+                <h2>Paypal</h2>
+                <SubInfo>
+                  <label htmlFor="paypalAccount">N° de compte</label>
+                  <input
+                    readOnly
+                    type="text"
+                    name="paypalAccoount"
+                    id="paypalAccoount"
+                    value={"000000000000"}
+                  />
+                </SubInfo>
+              </SubInfoDiv>
+            </InfoDiv>
           </TabPanel>
 
           <TabPanel value={value} index={1}>
-            <h2>Credit Card</h2>
-            <CardArea>
-              <div>
-              <label htmlFor="cardNumber">Numéro de carte</label>
-              <input type="text" name="cardNumber" id="cardNumber" />
-            </div>
-            <CardInfos>
-              <div>
-                <label htmlFor="cardExpiration">Date d'expiration</label>
-                <input type="date" name="cardExpiration" id="cardExpiration" />
-              </div>
-              <div>
-                <label htmlFor="cryptogram">Cryptogramme</label>
-                <input type="text" name="cryptogram" id="cryptogram" />
-              </div>
-            </CardInfos>
-            <div>
-              <h2>Paypal</h2>
-              <input type="text" name="paypalAccoount" id="paypalAccoount" />
-            </div>
-            </CardArea>
-            
+            <InfoDiv>
+              En construction <Construction />
+            </InfoDiv>
           </TabPanel>
-
-          <TabPanel value={value} index={2}>
-            Orders history
-          </TabPanel>
-        </Box>
-      </div>
+        </TabGroup>
+      </Box>
     </>
   );
 };
-
-const RowDiv = styled("div")`
-  margin-left: 3em;
-  box-sizing: border-box;
-  display: flex;
-  justify-items: center;
-  align-items: baseline;
-
-  div {
-    margin: 0 1em;
-  }
-
-  label {
-    display: block;
-  }
-
-  select {
-    width: 120px;
-  }
-`;
-
-const CardArea = styled("div")`
-  margin-left: 3em;
-  width: 350px;
-`;
-
-const CardInfos = styled("div")`
-  display: flex;
-  justify-content: space-between;
-
-  div:first-of-type {
-    margin-right: 1em;
-  }
-`;
 
 export default UserDashboard;
