@@ -60,6 +60,10 @@ function App() {
     setCartItems(cartItems.filter((item) => item.id !== productId));
   }
 
+  const emptyCart = () => {
+    setCartItems([]);
+  }
+
   return (
     <BrowserRouter>
       <Routes>
@@ -94,7 +98,7 @@ function App() {
           <Route path="/error404" element={<Error404 />} />
           <Route
             path="/checkout"
-            element={<Checkout cartItems={cartItems} />}
+            element={<Checkout checkout={cartItems} emptyCart={emptyCart}/>}
           />
           <Route path="/paymentAccepted" element={<PaymentAccepted />} />
         </Route>

@@ -1,5 +1,4 @@
 import { styled } from "@mui/material";
-import React from "react";
 import productList from "../../Other/Lists/ProductList";
 import ProductCard from "../ProductCard/ProductCard";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
@@ -18,10 +17,16 @@ const PopularProducts = () => {
       <Splide
         options={{
           perPage: 3,
+          breakpoints: {
+            768: {
+              perPage: 1,
+            }
+          },
           perMove: 1,
           pagination: false,
+          fixedWidth: "320px",
           drag: "free",
-          gap: "5em",
+          gap: "1em",
           padding: {left: "5em", right: "5em"},
           wheel: true,
           releaseWheel: false

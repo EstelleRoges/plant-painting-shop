@@ -16,7 +16,7 @@ const Cart = (items) => {
           </p>
         </EmptyCart>
       ) : (
-        <CartContent>
+        <CartContent style = {{margin: "auto"}}>
           <h1>Panier</h1>
           <CartTable>
             <thead>

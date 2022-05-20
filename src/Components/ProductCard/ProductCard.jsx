@@ -42,6 +42,7 @@ const linkStyle = {
   textDecoration: "none",
   fontSize: "22px",
   fontStyle: "italic",
+  color: "green"
 };
 
 const CardInfos = styled("div")`
