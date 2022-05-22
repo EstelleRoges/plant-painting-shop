@@ -1,11 +1,11 @@
-import "./Navbar.scss";
 import { Link } from "react-router-dom";
 import { Badge } from "@mui/material";
+import { Header }from "./NavbarStyle";
 import { Person, ShoppingBasket, MoreVert } from "@mui/icons-material";
 
 const Navbar = (props) => {
   return (
-    <header>
+    <Header>
       <nav>
         <ul>
           <li>
@@ -34,7 +34,7 @@ const Navbar = (props) => {
         </li>
         <li><MoreVert /></li>
       </ul>
-    </header>
+    </Header>
   );
 };
 

@@ -12,27 +12,27 @@ import {
   MenuItem,
   Select,
   FormControl,
-  Input,
-  Checkbox,
-  FormControlLabel,
-  FormGroup,
+  Input
 } from "@mui/material";
 import { Search } from "@mui/icons-material";
 
 const Products = () => {
   const [filter, setFilter] = useState("new");
-  const [checkedColors, setCheckedColors] = useState([]);
+  // const [checkedColors, setCheckedColors] = useState([]);
 
   const handleChange = (event) => {
     setFilter(event.target.value);
   };
 
-  const addToColorFilter = () => {
-    setCheckedColors(...checkedColors, checkedColors);
-  };
-  const displayColors = () => {
-    return;
-  };
+  // const addToColorFilter = () => {
+  //   setCheckedColors(...checkedColors, checkedColors);
+  // };
+  // const displayColors = () => {
+  //   return;
+  // };
+
+// some code for the future color filters:
+// return product.colors.includes("blue")
 
   return (
     <ProductsArea>

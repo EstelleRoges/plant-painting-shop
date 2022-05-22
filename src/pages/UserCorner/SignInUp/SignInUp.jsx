@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./SignInUp.scss";
+import { SignInUpContent} from "./SignInUpStyle";
 
 const signInUp = () => {
   return (
-    <div className="signInUpContent">
+    <SignInUpContent>
       <div className="signInArea">
         <h2>Connexion</h2>
         <div className="form">
@@ -53,7 +53,7 @@ const signInUp = () => {
           </form>
         </div>
       </div>
-    </div>
+    </SignInUpContent>
   );
 };
 

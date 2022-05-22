@@ -1,4 +1,6 @@
-.signInUpContent {
+import { styled } from "@mui/material";
+
+export const SignInUpContent = styled("div")`
   padding: 2em;
   display: flex;
   justify-content: space-evenly;
@@ -9,7 +11,6 @@
     margin-left: 0;
     margin-bottom: 1em;
   }
-}
 
 .signInArea,
 .signUpArea {
@@ -43,3 +44,5 @@ button {
     color: white;
   }
 }
+
+`;

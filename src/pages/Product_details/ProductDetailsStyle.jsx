@@ -1,5 +1,7 @@
-.productDetailsContent {
-  .detailsArea {
+import { styled } from "@mui/material";
+
+export const ProductDetailsContent = styled("div")`
+.detailsArea {
     padding-top: 2em;
     display: flex;
     justify-content: space-evenly;
@@ -102,11 +104,11 @@
       div {
         width: 50%;
 
-        &:first-child {
+        &:first-of-type {
           margin-right: 20px;
         }
 
-        &:last-child {
+        &:last-of-type {
           margin-left: 20px;
         }
       }
@@ -139,4 +141,4 @@
       text-indent: 2em;
     }
   }
-}
+`;

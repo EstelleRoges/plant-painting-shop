@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import "./ProductDetails.scss";
+import { ProductDetailsContent } from "./ProductDetailsStyle";
 import { Button } from "@mui/material";
 import { ArrowForward } from "@mui/icons-material";
 import { useParams } from "react-router-dom";
@@ -41,8 +41,9 @@ const ProductDetails = (props) => {
   const displayCreateCommentArea = () => {
     setDisplay(true);
   };
+
   return (
-    <div className="productDetailsContent">
+    <ProductDetailsContent>
       <div className="detailsArea">
         <img src={productInfos.img} alt={productInfos.name} />
         <div className="textInfosArea">
@@ -114,7 +115,7 @@ const ProductDetails = (props) => {
           </form>
         )}
       </div>
-    </div>
+    </ProductDetailsContent>
   );
 };
 

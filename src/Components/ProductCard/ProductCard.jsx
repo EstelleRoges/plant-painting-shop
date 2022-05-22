@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { styled, Card, CardContent } from "@mui/material";
+import { Card, CardContent } from "@mui/material";
+import { linkStyle, CardInfos, CardText,ImgContent } from "./ProductCardStyle";
 
 const ProductCard = (product) => {
   let name = product.name;
@@ -37,40 +38,5 @@ const ProductCard = (product) => {
     </>
   );
 };
-
-const linkStyle = {
-  textDecoration: "none",
-  fontSize: "22px",
-  fontStyle: "italic",
-  color: "green"
-};
-
-const CardInfos = styled("div")`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`;
-
-const CardText = styled("div")`
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  align-items: baseline;
-
-  p {
-    font-size: 16px;
-    margin-bottom: 0;
-    text-decoration: none;
-  }
-`;
-
-const ImgContent = styled("div")`
-  img {
-    width: 100%;
-    height: 300px;
-    object-fit: contain;
-  }
-`;
 
 export default ProductCard;
