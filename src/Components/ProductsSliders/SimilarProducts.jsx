@@ -9,7 +9,7 @@ const SimilarProducts = () => {
     return articleB.sold - articleA.sold;
   });
 
-  const topFive = productList.slice(0, 5);
+  const topFive = productList.slice(0, 3);
 
   return (
     <SimilarDiv>

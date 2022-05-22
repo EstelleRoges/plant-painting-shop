@@ -1,12 +1,74 @@
-import React from 'react';
+import { styled } from "@mui/material";
+import React from "react";
 
 const About = () => {
   return (
-    <div>
-    <h1>Qui suis-je?</h1> 
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio deserunt, ea, impedit eveniet minima consequatur culpa, amet nobis rerum dicta quis quos delectus sint exercitationem ex vitae error recusandae rem?</p>
-    </div>
-  )
-}
+    <>
+      <h1>Qui suis-je?</h1>
+      <AboutSection>
+        <img
+          src="./pexels-pixabay-531844.jpg"
+          alt="aboutImage_1"
+          width="500px"
+        />
+        <div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio
+            deserunt, ea, impedit eveniet minima consequatur culpa, amet nobis
+            rerum dicta quis quos delectus sint exercitationem ex vitae error
+            recusandae rem?
+          </p>
+
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            Perspiciatis veniam vitae, odit quo error rem soluta magnam nostrum
+            incidunt natus pariatur! Dolorum id optio sed perferendis amet
+            aperiam hic magnam sint ipsa facere. Recusandae, doloribus ea.
+          </p>
+        </div>
+      </AboutSection>
+      <AboutSection>
+        <div>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate
+            explicabo iste aspernatur amet et eligendi similique voluptatibus
+            maiores ipsum.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui cum
+            deleniti expedita eos laudantium quia ipsa enim vero. Culpa
+            laboriosam necessitatibus debitis dolorem nesciunt deserunt, minus,
+            cupiditate alias, facere nulla hic voluptatibus delectus itaque?
+            Nulla eum ab magnam pariatur, aliquam esse dolore dolorem vel animi
+            ex!
+          </p>
+        </div>
+        <img
+          src="./pexels-pixabay-442404.jpg"
+          alt="aboutImage_2"
+          width="500px"
+        />
+      </AboutSection>
+    </>
+  );
+};
+const AboutSection = styled("div")`
+  margin: 5em 0.5em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  justify-items: center;
+
+  img {
+    border-radius: 35%;
+  }
+
+  p {
+    width: 80%;
+    margin: auto;
+    padding: 1.5em;
+    text-align: justify;
+  }
+`;
 
 export default About;
