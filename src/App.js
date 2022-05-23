@@ -16,6 +16,7 @@ import UserDashboard from "./pages/UserCorner/UserDashboard/UserDashboard";
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
+  const [isConnected, setIsConnected] = useState(false);
 
   const onAdd = (product, formatPrice) => {
     const exists = cartItems.find((item) => item.id === product.id);
@@ -74,6 +75,7 @@ function App() {
               onAdd={onAdd}
               count={cartItems.length}
               cartItems={cartItems}
+              isConnected = {isConnected}
             />
           }
         >
@@ -93,8 +95,8 @@ function App() {
             path="/cart"
             element={<Cart cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} onDelete={onDelete} />}
           />
-          <Route path="/signInUp" element={<SignInUp />} />
-          <Route path="/userDashboard" element={<UserDashboard />} />
+          <Route path="/signInUp" element={<SignInUp isConnected = {isConnected} setIsConnected={setIsConnected}/>} />
+          <Route path="/userDashboard" element={<UserDashboard isConnected = {isConnected} setIsConnected={setIsConnected}/>} />
           <Route path="/error404" element={<Error404 />} />
           <Route
             path="/checkout"

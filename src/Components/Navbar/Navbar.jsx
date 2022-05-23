@@ -1,7 +1,12 @@
 import { Link } from "react-router-dom";
 import { Badge } from "@mui/material";
-import { Header }from "./NavbarStyle";
-import { Person, ShoppingBasket, MoreVert } from "@mui/icons-material";
+import { Header } from "./NavbarStyle";
+import {
+  Person,
+  ShoppingBasket,
+  MoreVert,
+  AccountCircle,
+} from "@mui/icons-material";
 
 const Navbar = (props) => {
   return (
@@ -28,11 +33,19 @@ const Navbar = (props) => {
           </Link>
         </li>
         <li>
-          <Link to="/signInUp">
-            <Person />
-          </Link>
+          {props.isConnected ? (
+            <Link to="/userDashboard">
+              <AccountCircle />
+            </Link>
+          ) : (
+            <Link to="/signInUp">
+              <Person />
+            </Link>
+          )}
         </li>
-        <li><MoreVert /></li>
+        <li>
+          <MoreVert />
+        </li>
       </ul>
     </Header>
   );

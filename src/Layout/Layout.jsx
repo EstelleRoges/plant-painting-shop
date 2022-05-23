@@ -6,7 +6,7 @@ function Layout(props) {
   return (
     <>
       <Container>
-        <Navbar count={props.count} />
+        <Navbar count={props.count} isConnected = {props.isConnected}/>
         <Content>
           <Outlet />
         </Content>

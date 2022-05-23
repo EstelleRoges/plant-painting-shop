@@ -2,7 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { SignInUpContent} from "./SignInUpStyle";
 
-const signInUp = () => {
+const signInUp = (props) => {
+console.log("Before log: " + props.isConnected);
+
+  const userSignsIn = () => {
+    props.setIsConnected(!props.isConnected);
+  }
+
   return (
     <SignInUpContent>
       <div className="signInArea">
@@ -25,7 +31,7 @@ const signInUp = () => {
               id="signInPassword"
               value="testAndEnjoy"
             />
-              <button type="submit">
+              <button type="submit" onClick={userSignsIn}>
                 <Link to="/userDashboard">Connexion</Link>
               </button>
           </form>

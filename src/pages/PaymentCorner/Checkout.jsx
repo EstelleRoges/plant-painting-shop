@@ -14,7 +14,7 @@ const Checkout = (props) => {
           <tr>
             <td colSpan={2}>Produit</td>
             <td width="70px">Quantité</td>
-            <td width="70px">Prix</td>
+            <td width="70px">Prix unitaire</td>
           </tr>
         </thead>
         <tbody>

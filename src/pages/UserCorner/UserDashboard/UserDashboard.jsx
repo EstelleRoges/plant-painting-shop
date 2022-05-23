@@ -9,11 +9,19 @@ import {
   CardInfos,
 } from "./UserDashboardStyle.jsx";
 import { useState } from "react";
-import { Avatar, Box } from "@mui/material";
-import { Construction } from "@mui/icons-material";
+import { Avatar, Box, Button } from "@mui/material";
+import { Construction, Edit, Logout } from "@mui/icons-material";
 import PropTypes from "prop-types";
+import { useNavigate } from "react-router-dom";
 
-const UserDashboard = () => {
+const UserDashboard = (props) => {
+  const navigate = useNavigate();
+
+  const userLogsOut = () => {
+    props.setIsConnected(!props.isConnected);
+    navigate(-1);
+  }
+
   const TabPanel = (props) => {
     const { children, value, index, ...other } = props;
 
@@ -108,72 +116,70 @@ const UserDashboard = () => {
                     />
                   </div>
                 </SubInfo>
-                 
               </SubInfoDiv>
 
               <SubInfoDiv>
-              <h2>Adresse</h2>
-              <SubInfo>
-                <RowDiv>
-                  <div style={{ width: "25%" }}>
-                    <label htmlFor="streetNumber">N°</label>
-                    <input
-                      readOnly
-                      type="text"
-                      name="streetNumber"
-                      id="streetNumber"
-                      value={"12"}
-                    />
-                  </div>
-                  <div style={{ width: "75%" }}>
-                    <label htmlFor="streetType">Type de voie</label>
-                    <select name="streetType" id="streetType">
-                      <option value="streetType">Rue</option>
-                      <option value="streetType">Avenue</option>
-                      <option value="streetType">Allée</option>
-                      <option value="streetType">Ruelle</option>
-                      <option value="streetType">Boulevard</option>
-                      <option value="streetType">Chemin</option>
-                      <option value="streetType">Route</option>
-                    </select>
-                  </div>
-                </RowDiv>
-                <RowDiv>
-                  <div style={{ width: "100%" }}>
-                    <label htmlFor="userName">Nom de voie</label>
-                    <input
-                      readOnly
-                      type="text"
-                      name="city"
-                      id="city"
-                      value={"du Frontend"}
-                    />
-                  </div>
-                </RowDiv>
-                <RowDiv>
-                  <div>
-                    <label htmlFor="postalCode">Code postal</label>
-                    <input
-                      readOnly
-                      type="text"
-                      name="postalCode"
-                      id="postalCode"
-                      value={"99999"}
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="city">Ville</label>
-                    <input
-                      readOnly
-                      type="text"
-                      name="city"
-                      id="city"
-                      value={"LaVille"}
-                    />
-                  </div>
-                </RowDiv>
-              </SubInfo>
-                
+                <h2>Adresse</h2>
+                <SubInfo>
+                  <RowDiv>
+                    <div style={{ width: "25%" }}>
+                      <label htmlFor="streetNumber">N°</label>
+                      <input
+                        readOnly
+                        type="text"
+                        name="streetNumber"
+                        id="streetNumber"
+                        value={"12"}
+                      />
+                    </div>
+                    <div style={{ width: "75%" }}>
+                      <label htmlFor="streetType">Type de voie</label>
+                      <select name="streetType" id="streetType">
+                        <option value="streetType">Rue</option>
+                        <option value="streetType">Avenue</option>
+                        <option value="streetType">Allée</option>
+                        <option value="streetType">Ruelle</option>
+                        <option value="streetType">Boulevard</option>
+                        <option value="streetType">Chemin</option>
+                        <option value="streetType">Route</option>
+                      </select>
+                    </div>
+                  </RowDiv>
+                  <RowDiv>
+                    <div style={{ width: "100%" }}>
+                      <label htmlFor="userName">Nom de voie</label>
+                      <input
+                        readOnly
+                        type="text"
+                        name="city"
+                        id="city"
+                        value={"du Frontend"}
+                      />
+                    </div>
+                  </RowDiv>
+                  <RowDiv>
+                    <div>
+                      <label htmlFor="postalCode">Code postal</label>
+                      <input
+                        readOnly
+                        type="text"
+                        name="postalCode"
+                        id="postalCode"
+                        value={"99999"}
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="city">Ville</label>
+                      <input
+                        readOnly
+                        type="text"
+                        name="city"
+                        id="city"
+                        value={"LaVille"}
+                      />
+                    </div>
+                  </RowDiv>
+                </SubInfo>
               </SubInfoDiv>
             </InfoDiv>
 
@@ -226,6 +232,18 @@ const UserDashboard = () => {
                   />
                 </SubInfo>
               </SubInfoDiv>
+            </InfoDiv>
+
+            <InfoDiv>
+              <RowDiv
+                sx={{ justifyContent: "space-between", alignItems: "center" }}
+              >
+                <h2>Options</h2>
+                <div>
+                  <Button color="error" variant="contained" endIcon={<Logout />} onClick={userLogsOut}>Déconnexion</Button>
+                  <Button color="warning" sx={{margin: "0 1em"}} variant="contained" endIcon={<Edit />}>Modifier</Button>
+                </div>
+              </RowDiv>
             </InfoDiv>
           </TabPanel>
 
