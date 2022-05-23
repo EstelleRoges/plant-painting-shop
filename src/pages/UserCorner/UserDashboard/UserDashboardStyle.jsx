@@ -75,3 +75,12 @@ export const CardInfos = styled("div")`
     margin-right: 1em;
   }
 `;
+
+export const DecoImg = styled("img")`
+  position: absolute;
+  top: -1.7em;
+  right: -1em;
+  width: 130px;
+  height: 130px;
+  z-index: -1;
+`;

@@ -7,6 +7,7 @@ import {
   SubInfoDiv,
   SubInfo,
   CardInfos,
+  DecoImg
 } from "./UserDashboardStyle.jsx";
 import { useState } from "react";
 import { Avatar, Box, Button } from "@mui/material";
@@ -19,7 +20,7 @@ const UserDashboard = (props) => {
 
   const userLogsOut = () => {
     props.setIsConnected(!props.isConnected);
-    navigate(-1);
+    navigate("/signInUp");
   }
 
   const TabPanel = (props) => {
@@ -72,11 +73,12 @@ const UserDashboard = (props) => {
         <TabGroup>
           <TabPanel value={value} index={0}>
             <InfoDiv>
-              <RowDiv>
+              <RowDiv sx={{position: "relative"}}>
                 <Avatar alt="userAvatar" sx={{ width: 50, height: 50 }} />
-                <div style={{ marginLeft: "3em" }}>
+                <div style={{ marginLeft: "3em"}}>
                   <h2>Le Testeur</h2>
                   <p>a.k.a: Le Testeur</p>
+                  <DecoImg src="imgs/succulents-top-view-hand-drawn-style-vector.jpg" alt="userMainInfoDeco" />
                 </div>
               </RowDiv>
             </InfoDiv>

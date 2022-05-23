@@ -1,5 +1,6 @@
 import React from "react";
-import { Button, ImageList, ImageListItem, styled } from "@mui/material";
+import { Button, ImageList, ImageListItem} from "@mui/material";
+import { BannerArea, FirstSlide, SecondSlide, Image } from "./BannerStyle";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import imageList from "../Lists/imageList";
 import "@splidejs/react-splide/css";
@@ -10,11 +11,11 @@ const Banner = () => {
     <BannerArea>
       <Splide
         options={{
-          // type: "loop",
+          type: "loop",
           height: "500px",
           arrows: false,
-          // autoplay: true,
-          // interval: "6000",
+          autoplay: true,
+          interval: "6000",
         }}
       >
         <SplideSlide>
@@ -59,68 +60,4 @@ const Banner = () => {
   );
 };
 
-const BannerArea = styled("div")`
-  background-color: forestgreen;
-  height: 500px;
-`;
-
-const FirstSlide = styled("div")`
-  display: flex;
-  z-index: 1;
-
-  div {
-    position: relative;
-    width: 50%;
-    z-index: 1;
-
-    h2 {
-      font-family: "Whisper", cursive, serif;
-      font-weight: bold;
-      margin: 2em 0 0.5em 1em;
-      font-size: 55px;
-    }
-
-    Button {
-      float: left;
-      margin-left: 3em;
-      font-size: 18px;
-    }
-  }
-`;
-
-const Image = styled("img")`
-  width: 200px;
-  height: 200px;
-  border: 2px solid green;
-  border-radius: 1em;
-`;
-
-const SecondSlide = styled("div")`
-  height: 500px;
-  background-image: url("./paintingShop_bannerSlide2.jpg");
-  background-position: center;
-  background-size: cover;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  p {
-    margin: 0;
-    padding-top: 3em;
-    font-size: 40px;
-    text-align: center;
-  }
-
-  span {
-    font-family: "Whisper", cursive, serif;
-    font-weight: bold;
-    font-size: 65px;
-  }
-
-  Button {
-    margin-top: 1em;
-    width: fit-content;
-  }
-`;
 export default Banner;
