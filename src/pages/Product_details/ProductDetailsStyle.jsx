@@ -1,23 +1,21 @@
 import { styled } from "@mui/material";
 
-export const ProductDetailsContent = styled("div")`
-.detailsArea {
-    padding-top: 2em;
-    display: flex;
-    justify-content: space-evenly;
+export const DetailsArea = styled("div")`
+  padding-top: 2em;
+  display: flex;
+  justify-content: space-evenly;
 
-    img {
-      margin-left: 2em;
-      margin-right: 3em;
-      width: 400px;
-      border: 6px ridge #ccc;
-      border-radius: 1em;
-    }
+  img {
+    margin-left: 2em;
+    margin-right: 3em;
+    width: 400px;
+    border: 6px ridge #ccc;
+    border-radius: 1em;
+  }
 
-    h1 {
-      font-size: 44px;
-      margin: 0.5em 0;
-    }
+  h1 {
+    font-size: 44px;
+    margin: 0.5em 0;
   }
 
   .textInfosArea {
@@ -62,72 +60,52 @@ export const ProductDetailsContent = styled("div")`
       background-color: lightgreen;
     }
   }
+`;
 
-  .productDescription {
+export const DescriptionSection = styled("div")`
+  margin: 3em 0;
+  p {
     clear: both;
-    margin-top: 3em;
-    padding: 1em;
+    padding: 2em 1em;
     border-top: 1px dashed #ccc;
+    border-bottom: 1px dashed #ccc;
+  }
+`;
+
+export const CommentsArea = styled("div")`
+  h2 {
+    margin: 0;
+    font-size: 36px;
   }
 
-  .commentsArea {
-    margin-top: 3em;
-
-    h2 {
-      margin: 0;
-      padding: 1em 0 0.5em 1em;
-      border-top: 1px dashed #ccc;
-      font-size: 36px;
-    }
-
-    button {
-      margin: 3em 0 1em 2em;
-      padding: 1em;
-      float: none;
-      color: white;
-      line-height: 15px;
-    }
-
-    svg {
-      margin: 0 1px;
-      font-size: 18px;
-    }
+  Button {
+    margin: 1em 2em 0 2em;
+    padding: 1em;
+    float: none;
+    color: white;
+    line-height: 15px;
   }
 
-  .addCommentForm {
-    margin: 2em;
-    max-width: 60%;
-
-    section {
-      display: flex;
-
-      div {
-        width: 50%;
-
-        &:first-of-type {
-          margin-right: 20px;
-        }
-
-        &:last-of-type {
-          margin-left: 20px;
-        }
-      }
-      input {
-        width: 100%;
-      }
-    }
-
-    button {
-      margin: 1em;
-      margin-left: 0;
-      float: none;
-    }
+  svg {
+    margin: 0 1px;
+    font-size: 18px;
   }
+`;
 
-  .commentContainer {
+export const SubArea = styled("div")`
+  margin-top: 3em;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+`;
+
+export const Comments = styled("div")`
+  width: 60%;
+  border-right: 1px dashed #ccc;
+
+  div {
     margin: 2em;
     padding: 1em;
-    max-width: 60%;
     background-color: white;
     border-radius: 2em;
     box-shadow: 4px 4px 10px #ccc;
@@ -140,5 +118,55 @@ export const ProductDetailsContent = styled("div")`
       margin-top: 0.5em;
       text-indent: 2em;
     }
+  }
+`;
+
+export const NewComment = styled("div")`
+  margin: 0 2em;
+  width: 40%;
+
+  div {
+    margin-top: 0.5em;
+
+    &:first-of-type {
+      margin-right: 1em;
+    }
+  }
+
+  input {
+    width: 100%;
+  }
+
+  Button {
+    margin: 1em ;
+    margin-left: 0;
+    float: none;
+  }
+
+  h4 {
+    font-size: 22px;
+  }
+
+  p {
+    margin-top: 0.5em;
+    text-indent: 2em;
+  }
+
+  Button {
+    margin: 1em 0;
+    padding: 1em;
+    float: none;
+    color: white;
+    line-height: 15px;
+  }
+`;
+
+export const SimilarArea = styled("div")`
+  margin-top: 3em;
+  border-top: 1px dashed #ccc;
+  h2 {
+    margin: 0;
+    padding: 0.5em;
+    font-size: 36px;
   }
 `;

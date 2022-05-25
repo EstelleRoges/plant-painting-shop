@@ -4,7 +4,6 @@ import { Header } from "./NavbarStyle";
 import {
   Person,
   ShoppingBasket,
-  MoreVert,
   AccountCircle,
 } from "@mui/icons-material";
 
@@ -42,9 +41,6 @@ const Navbar = (props) => {
               <Person />
             </Link>
           )}
-        </li>
-        <li>
-          <MoreVert />
         </li>
       </ul>
     </Header>

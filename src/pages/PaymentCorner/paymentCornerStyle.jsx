@@ -3,6 +3,10 @@ import { styled } from "@mui/material";
 export const CheckoutArea = styled("div")`
 display: flex;
 align-items: flex-start;
+
+a {
+  color: white;
+}
 `;
 
 export const EmptyCart = styled("div")`

@@ -80,6 +80,7 @@ function App() {
           }
         >
           <Route index element={<Home />} />
+          <Route path="/about" element={<About />} />
           <Route path="/products" element={<Products />} />
           <Route
             path="/productDetails/:id"
@@ -90,19 +91,18 @@ function App() {
               />
             }
           />
-          <Route path="/about" element={<About />} />
+          <Route path="/signInUp" element={<SignInUp isConnected = {isConnected} setIsConnected={setIsConnected}/>} />
+          <Route path="/userDashboard" element={<UserDashboard isConnected = {isConnected} setIsConnected={setIsConnected}/>} />
           <Route
             path="/cart"
             element={<Cart cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} onDelete={onDelete} />}
           />
-          <Route path="/signInUp" element={<SignInUp isConnected = {isConnected} setIsConnected={setIsConnected}/>} />
-          <Route path="/userDashboard" element={<UserDashboard isConnected = {isConnected} setIsConnected={setIsConnected}/>} />
-          <Route path="/error404" element={<Error404 />} />
           <Route
             path="/checkout"
             element={<Checkout checkout={cartItems} emptyCart={emptyCart}/>}
           />
           <Route path="/paymentAccepted" element={<PaymentAccepted />} />
+          <Route path="/error404" element={<Error404 />} />
         </Route>
       </Routes>
     </BrowserRouter>

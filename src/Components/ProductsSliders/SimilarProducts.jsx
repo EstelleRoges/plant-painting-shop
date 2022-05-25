@@ -6,37 +6,30 @@ import "@splidejs/react-splide/css";
 
 const SimilarProducts = () => {
   productList.sort(function (articleA, articleB) {
-    return articleB.sold - articleA.sold;
+    return articleA.sold - articleB.sold;
   });
 
-  const topFive = productList.slice(0, 3);
+  const similars = productList.slice(0, 3);
 
   return (
     <SimilarDiv>
-      <h1>Produits similaires</h1>
       <Splide
         options={{
           perPage: 3,
-          breakpoints: {
-            768: {
-              perPage: 1,
-            },
-          },
-          perMove: 1,
           pagination: false,
           fixedWidth: "320px",
           drag: "free",
           gap: "1em",
-          padding: { left: "5em", right: "5em" },
           wheel: true,
           releaseWheel: false,
+          arrows: false
         }}
       >
-        {topFive.map((product) => {
+        {similars.map((product) => {
           return (
             <SplideSlide
               key={product.id}
-              style={{ width: "300px", paddingBottom: "0" }}
+              style={{ margin: "1em", width: "150px", height: "150px" }}
             >
               <ProductCard
                 id={product.id}
@@ -53,15 +46,11 @@ const SimilarProducts = () => {
 };
 
 const SimilarDiv = styled("div")`
-  margin: 5em 2em;
+  margin: 0 auto;
   box-sizing: border-box;
 
-  h1 {
-    margin: 0;
-    margin-bottom: 0.5em;
-    padding-bottom: 0.2em;
-    font-size: 44px;
-    border-bottom: 1px dashed #ccc;
+  ul {
+    justify-content: center;
   }
 `;
 export default SimilarProducts;

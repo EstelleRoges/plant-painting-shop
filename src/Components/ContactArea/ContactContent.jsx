@@ -18,7 +18,7 @@ const ContactContent = () => {
 };
 
 const ContactArea = styled("div")`
-  margin-top: 5em;
+  margin: 5em 0;
 
   h2 {
     margin:0;

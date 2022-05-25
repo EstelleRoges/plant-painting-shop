@@ -4,11 +4,11 @@ import ProductCard from "../ProductCard/ProductCard";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 
-const PopularProducts = () => {  
+const PopularProducts = () => {
   productList.sort(function (articleA, articleB) {
     return articleB.sold - articleA.sold;
   });
-  
+
   const topFive = productList.slice(0, 5);
 
   return (
@@ -20,22 +20,30 @@ const PopularProducts = () => {
           breakpoints: {
             768: {
               perPage: 1,
-            }
+            },
           },
           perMove: 1,
           pagination: false,
           fixedWidth: "320px",
           drag: "free",
           gap: "1em",
-          padding: {left: "5em", right: "5em"},
+          padding: { left: "5em", right: "5em" },
           wheel: true,
-          releaseWheel: false
+          releaseWheel: false,
         }}
       >
         {topFive.map((product) => {
           return (
-            <SplideSlide key={product.id} style={{width: "300px", paddingBottom: "0"}}>
-            <ProductCard id = {product.id} img={product.img} name={product.name} price={product.price}/>  
+            <SplideSlide
+              key={product.id}
+              style={{ width: "300px", paddingBottom: "0" }}
+            >
+              <ProductCard
+                id={product.id}
+                img={product.img}
+                name={product.name}
+                price={product.price}
+              />
             </SplideSlide>
           );
         })}

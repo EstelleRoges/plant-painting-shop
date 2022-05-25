@@ -1,13 +1,22 @@
 import React, { useState, useEffect, useRef } from "react";
-import { ProductDetailsContent } from "./ProductDetailsStyle";
 import { Button } from "@mui/material";
 import { ArrowForward } from "@mui/icons-material";
 import { useParams } from "react-router-dom";
 import productList from "../../Other/Lists/ProductList";
+import {
+  DetailsArea,
+  CommentsArea,
+  Comments,
+  NewComment,
+  SubArea,
+  SimilarArea,
+  DescriptionSection,
+} from "./ProductDetailsStyle";
+import SimilarProducts from "../../Components/ProductsSliders/SimilarProducts";
 // import ProductDetailsLogic, {productInfos, productDetails, product, handleChange, displayCreateCommentArea, display, small, medium, large, formatPrice, onAdd} from "./ProductDetailsLogic";
 
 const ProductDetails = (props) => {
-    const [productInfos, setProductInfos] = useState({});
+  const [productInfos, setProductInfos] = useState({});
   const [display, setDisplay] = useState(false);
   let params = useParams();
 
@@ -43,8 +52,8 @@ const ProductDetails = (props) => {
   };
 
   return (
-    <ProductDetailsContent>
-      <div className="detailsArea">
+    <>
+      <DetailsArea>
         <img src={productInfos.img} alt={productInfos.name} />
         <div className="textInfosArea">
           <h1>{productInfos.name}</h1>
@@ -79,27 +88,47 @@ const ProductDetails = (props) => {
             />
             €
           </div>
-          <Button onClick={() => onAdd(product, parseFloat(formatPrice.current.value))}>Add to Cart</Button>
+          <Button
+            onClick={() =>
+              onAdd(product, parseFloat(formatPrice.current.value))
+            }
+          >
+            Add to Cart
+          </Button>
         </div>
-      </div>
-      <p className="productDescription">{productInfos.description}</p>
-      <div className="commentsArea">
-        <h2>Comments</h2>
-        <div className="commentContainer">
-          <h4>Néroli</h4>
-          <p>Such a cute painting!</p>
-        </div>
-        <div className="commentContainer">
-          <h4>Vasco</h4>
-          <p>
-            My GF loves this stuff...your painting made her so happy. Thanks for
-            this.
-          </p>
-        </div>
-        <Button onClick={displayCreateCommentArea}>Add a comment</Button>
-        {display && (
-          <form className="addCommentForm">
-            <section>
+      </DetailsArea>
+      <DescriptionSection>
+        <p className="productDescription">{productInfos.description}</p>
+      </DescriptionSection>
+
+      <CommentsArea>
+        <SubArea>
+          <Comments>
+            <h2>Comments</h2>
+            <div>
+              <h4>Néroli</h4>
+              <p>Such a cute painting!</p>
+            </div>
+            <div>
+              <h4>Vasco</h4>
+              <p>
+                My GF loves this stuff...your painting made her so happy. Thanks
+                for this.
+              </p>
+            </div>
+            <Button
+              variant="contained"
+              color="success"
+              onClick={displayCreateCommentArea}
+            >
+              Ajouter un commentaire
+            </Button>
+          </Comments>
+
+          {display && (
+            <NewComment>
+            <h2>Nouveau commentaire</h2>
+            <SubArea>
               <div>
                 <label htmlFor="name">Name</label>
                 <input type="text" name="commenterName" id="name" />
@@ -108,14 +137,22 @@ const ProductDetails = (props) => {
                 <label htmlFor="mail">Mail</label>
                 <input type="text" name="commenterMail" id="mail" />
               </div>
-            </section>
-            <label htmlFor="comment">Comment</label>
-            <textarea name="comment" id="" cols="30" rows="10"></textarea>
-            <Button>Add</Button>
-          </form>
-        )}
-      </div>
-    </ProductDetailsContent>
+            </SubArea>
+              
+              <label htmlFor="comment">Comment</label>
+              <textarea name="comment" id="" cols="30" rows="5"></textarea>
+              <Button variant="contained" color="success">
+                Ajouter
+              </Button>
+            </NewComment>
+          )}
+        </SubArea>
+      </CommentsArea>
+      <SimilarArea>
+        <h2>Similar products</h2>
+        <SimilarProducts />
+      </SimilarArea>
+    </>
   );
 };
 

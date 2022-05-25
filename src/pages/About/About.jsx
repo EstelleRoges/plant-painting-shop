@@ -60,7 +60,7 @@ const AboutSection = styled("div")`
   justify-items: center;
 
   img {
-    border-radius: 35%;
+    border-radius: 50%;
   }
 
   p {

@@ -22,7 +22,7 @@ const productList = [
   },
   {
     id: 2,
-    img: "https://i.pinimg.com/564x/53/42/58/534258306f543b388dd62cb622903a07.jpg",
+    img: "https://i.pinimg.com/564x/51/48/b7/5148b7777bee5e35b313c8383f46c90f.jpg",
     name: "Green and feminine",
     price: {
       small: 10.0,
@@ -82,7 +82,7 @@ const productList = [
   },
   {
     id: 5,
-    img: "https://i.pinimg.com/564x/92/71/e7/9271e7c0d90a031b1dfc989439d9006c.jpg",
+    img: "https://i.pinimg.com/564x/43/45/ab/4345abe133ef0c599df03244d280852d.jpg",
     name: "Vivids",
     price: {
       small: 10.0,
@@ -96,13 +96,13 @@ const productList = [
       medium: 3,
       large: 0,
     },
-    colors: ["blue", "green", "red"],
+    colors: ["pink", "green", "red", "yellow"],
     sold: 5,
     new: false,
   },
   {
     id: 6,
-    img: "https://i.pinimg.com/564x/7f/92/e0/7f92e0e7a27934a254720ccb5d561f05.jpg",
+    img: "https://i.pinimg.com/564x/6a/c4/7a/6ac47ad2cbc77d5767c8c6cc8215ef7c.jpg",
     name: "Solita",
     price: {
       small: 8.0,
@@ -202,7 +202,7 @@ const productList = [
   },
   {
     id: 11,
-    img: "https://i.pinimg.com/564x/35/10/69/351069189b0a6f17379d0b46d76e7497.jpg",
+    img: "https://i.pinimg.com/564x/b2/21/ab/b221ab7c901927f1fec43ee57216508f.jpg",
     name: "Echeveria",
     price: {
       small: 10.0,

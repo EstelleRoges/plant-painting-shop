@@ -1,6 +1,7 @@
-import { Outlet } from "react-router-dom";
 import Navbar from "../Components/Navbar/Navbar";
+import Footer from "../Components/Footer/Footer";
 import { styled } from "@mui/material";
+import { Outlet } from "react-router-dom";
 
 function Layout(props) {
   return (
@@ -11,6 +12,7 @@ function Layout(props) {
           <Outlet />
         </Content>
       </Container>
+      <Footer />
     </>
   );
 }
