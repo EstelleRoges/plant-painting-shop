@@ -22,8 +22,8 @@ const Banner = () => {
           <FirstSlide>
             <div>
               <h2>Nouveaux tableaux!!</h2>
-              <Button variant="contained">
-                <Link to="/products">Allons voir!</Link>{" "}
+              <Button variant="contained" color="success">
+                <Link to="/products">Allons voir!</Link>
               </Button>
             </div>
             <ImageList

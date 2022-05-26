@@ -10,7 +10,7 @@ a {
 `;
 
 export const EmptyCart = styled("div")`
-  margin: 6em 3em;
+  margin: 10em 3em;
   text-align: center;
 
   h2 {

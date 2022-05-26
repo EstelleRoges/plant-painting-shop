@@ -11,26 +11,27 @@ export const CardInfos = styled("div")`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  text-align: center;
 `;
 
 export const CardText = styled("div")`
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  align-items: baseline;
 
   p {
     font-size: 16px;
-    margin-bottom: 0;
+    margin: 10px 0 0 0;
     text-decoration: none;
   }
 `;
 
 export const ImgContent = styled("div")`
   img {
+    margin-bottom: 0.5em;
     width: 100%;
-    height: 300px;
+    height: 250px;
     object-fit: contain;
   }
 `;

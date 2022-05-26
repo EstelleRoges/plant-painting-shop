@@ -9,7 +9,7 @@ export const DetailsArea = styled("div")`
     margin-left: 2em;
     margin-right: 3em;
     width: 400px;
-    border: 6px ridge #ccc;
+    border: 4px outset #D9EAD3;
     border-radius: 1em;
   }
 
@@ -37,7 +37,7 @@ export const DetailsArea = styled("div")`
     }
 
     select {
-      width: 180px;
+      width: 200px;
     }
 
     input {
@@ -73,13 +73,14 @@ export const DescriptionSection = styled("div")`
 `;
 
 export const CommentsArea = styled("div")`
+width: 60%;
   h2 {
     margin: 0;
     font-size: 36px;
   }
 
   Button {
-    margin: 1em 2em 0 2em;
+    margin: 1em 2em 3em 2em;
     padding: 1em;
     float: none;
     color: white;
@@ -92,16 +93,7 @@ export const CommentsArea = styled("div")`
   }
 `;
 
-export const SubArea = styled("div")`
-  margin-top: 3em;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-`;
-
 export const Comments = styled("div")`
-  width: 60%;
-  border-right: 1px dashed #ccc;
 
   div {
     margin: 2em;
@@ -121,17 +113,27 @@ export const Comments = styled("div")`
   }
 `;
 
-export const NewComment = styled("div")`
-  margin: 0 2em;
-  width: 40%;
+export const SubArea = styled("div")`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 
-  div {
-    margin-top: 0.5em;
-
-    &:first-of-type {
-      margin-right: 1em;
-    }
+  div:first-of-type {
+    margin-right: 1em;
   }
+`;
+
+
+export const NewComment = styled("div")`
+margin: 2em;
+h2 {
+  margin-bottom: 1em;
+}
+
+div {
+  margin: 0;
+  width: 100%;
+}
 
   input {
     width: 100%;

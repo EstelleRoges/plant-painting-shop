@@ -1,29 +1,25 @@
 import { Link } from "react-router-dom";
 import { Badge } from "@mui/material";
-import { Header } from "./NavbarStyle";
-import {
-  Person,
-  ShoppingBasket,
-  AccountCircle,
-} from "@mui/icons-material";
+import { Header, SiteLinks, UserCorner } from "./NavbarStyle";
+import { Person, ShoppingBasket, AccountCircle } from "@mui/icons-material";
 
 const Navbar = (props) => {
   return (
     <Header>
       <nav>
-        <ul>
+        <SiteLinks>
           <li>
             <Link to="/products">Tableaux</Link>
           </li>
           <li>
             <Link to="/about">A propos</Link>
           </li>
-        </ul>
+        </SiteLinks>
       </nav>
       <Link to="/">
         <h1>- The Succi Place -</h1>
       </Link>
-      <ul>
+      <UserCorner>
         <li>
           <Link to="/cart">
             <Badge badgeContent={props.count} color="success">
@@ -42,7 +38,7 @@ const Navbar = (props) => {
             </Link>
           )}
         </li>
-      </ul>
+      </UserCorner>
     </Header>
   );
 };

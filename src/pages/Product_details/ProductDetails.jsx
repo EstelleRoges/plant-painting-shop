@@ -102,31 +102,30 @@ const ProductDetails = (props) => {
       </DescriptionSection>
 
       <CommentsArea>
-        <SubArea>
-          <Comments>
-            <h2>Comments</h2>
-            <div>
-              <h4>Néroli</h4>
-              <p>Such a cute painting!</p>
-            </div>
-            <div>
-              <h4>Vasco</h4>
-              <p>
-                My GF loves this stuff...your painting made her so happy. Thanks
-                for this.
-              </p>
-            </div>
-            <Button
-              variant="contained"
-              color="success"
-              onClick={displayCreateCommentArea}
-            >
-              Ajouter un commentaire
-            </Button>
-          </Comments>
+        <Comments>
+          <h2>Comments</h2>
+          <div>
+            <h4>Néroli</h4>
+            <p>Such a cute painting!</p>
+          </div>
+          <div>
+            <h4>Vasco</h4>
+            <p>
+              My GF loves this stuff...your painting made her so happy. Thanks
+              for this.
+            </p>
+          </div>
+          <Button
+            variant="contained"
+            color="success"
+            onClick={displayCreateCommentArea}
+          >
+            Ajouter un commentaire
+          </Button>
+        </Comments>
 
-          {display && (
-            <NewComment>
+        {display && (
+          <NewComment>
             <h2>Nouveau commentaire</h2>
             <SubArea>
               <div>
@@ -138,15 +137,15 @@ const ProductDetails = (props) => {
                 <input type="text" name="commenterMail" id="mail" />
               </div>
             </SubArea>
-              
+            <div>
               <label htmlFor="comment">Comment</label>
               <textarea name="comment" id="" cols="30" rows="5"></textarea>
               <Button variant="contained" color="success">
                 Ajouter
               </Button>
-            </NewComment>
-          )}
-        </SubArea>
+            </div>
+          </NewComment>
+        )}
       </CommentsArea>
       <SimilarArea>
         <h2>Similar products</h2>

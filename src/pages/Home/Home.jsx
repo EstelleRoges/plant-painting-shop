@@ -7,11 +7,12 @@ import PopularProducts from "../../Components/ProductsSliders/PopularProducts";
 const Home = () => {
   return (
     <>
-    <Banner />
+      <Banner />
       <WelcomeContent />
       <Features />
-      <PopularProducts/>
-      <p>Les dernières news!</p>
+      <h1>Top 5 des tableaux à succès</h1>
+      <PopularProducts />
+      <h1>Les dernières news!</h1>
       <ContactContent />
     </>
   );

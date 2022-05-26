@@ -13,7 +13,6 @@ const PopularProducts = () => {
 
   return (
     <PopsDiv>
-      <h1>Top 5 des tableaux à succès</h1>
       <Splide
         options={{
           perPage: 3,
@@ -27,7 +26,6 @@ const PopularProducts = () => {
           fixedWidth: "320px",
           drag: "free",
           gap: "1em",
-          padding: { left: "5em", right: "5em" },
           wheel: true,
           releaseWheel: false,
         }}
@@ -36,7 +34,7 @@ const PopularProducts = () => {
           return (
             <SplideSlide
               key={product.id}
-              style={{ width: "300px", paddingBottom: "0" }}
+              style={{ width: "300px", paddingBottom: "0", marginRight: "0" }}
             >
               <ProductCard
                 id={product.id}
@@ -53,7 +51,7 @@ const PopularProducts = () => {
 };
 
 const PopsDiv = styled("div")`
-  margin: 5em 2em;
+  margin-bottom: 5em;
   box-sizing: border-box;
 
   h1 {
@@ -62,6 +60,14 @@ const PopsDiv = styled("div")`
     padding-bottom: 0.2em;
     font-size: 44px;
     border-bottom: 1px dashed #ccc;
+  }
+
+ul {
+  
+}
+  li {
+    margin: 0;
+    justify-content: center;
   }
 `;
 

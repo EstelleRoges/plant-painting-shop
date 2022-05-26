@@ -3,10 +3,6 @@ import { Card, CardContent } from "@mui/material";
 import { linkStyle, CardInfos, CardText,ImgContent } from "./ProductCardStyle";
 
 const ProductCard = (product) => {
-  let name = product.name;
-  if (name.length > 12) {
-    name = name.substring(0, 11) + "...";
-  }
 
   return (
     <>
@@ -28,7 +24,7 @@ const ProductCard = (product) => {
           <CardInfos>
             <CardText>
               <Link to={"/productDetails/" + product.id} style={linkStyle}>
-                {name}
+                {product.name}
               </Link>
               <p>A partir de {product.price.small}€</p>
             </CardText>

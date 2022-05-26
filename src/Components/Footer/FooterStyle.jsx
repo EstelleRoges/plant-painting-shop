@@ -1,7 +1,9 @@
 import { styled } from "@mui/material";
 
 export const FooterArea = styled("div")`
+  padding: 1.5em 0;
   width: 100%;
+  height: fit-content;
   background-color: beige;
   position: relative;
   bottom: 0;
@@ -24,13 +26,12 @@ export const Box = styled("div")`
     font-size: 30px;
     margin-bottom: 0;
   }
-    Button {
-      position: absolute;
-      top: 3em;
-      right: 3em;
-      border-radius: 10px;
-    }
-
+  Button {
+    position: absolute;
+    top: 3em;
+    right: 3em;
+    border-radius: 10px;
+  }
 `;
 
 export const Copyright = styled("div")`

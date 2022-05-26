@@ -18,18 +18,23 @@ const Footer = () => {
             <ListItem>
               <Link to="/error404">Page Error404</Link>
             </ListItem>
-            <ListItem>
-              <a href="https://www.vecteezy.com/vector-art/184643-succulents-top-view-hand-drawn-style">
-                Image User Dashboard
-              </a>
-            </ListItem>
-            <ListItem>
-              <a href="https://www.pexels.com/fr-fr/">Images A propos</a>
-            </ListItem>
-            <ListItem>
-              <a href="https://www.pinterest.fr/Teruu_E/projet-react-site-peintures-peintures/">
-                Peintures de plantes
-              </a>
+            <ListItem sx={{marginTop: "10px", display: "block"}}>
+              Crédits:
+              <List>
+                <ListItem>
+                  <a href="https://www.vecteezy.com/vector-art/184643-succulents-top-view-hand-drawn-style">
+                    Image User Dashboard
+                  </a>
+                </ListItem>
+                <ListItem>
+                  <a href="https://www.pexels.com/fr-fr/">Images A propos</a>
+                </ListItem>
+                <ListItem>
+                  <a href="https://www.pinterest.fr/Teruu_E/projet-react-site-peintures-peintures/">
+                    Peintures de plantes
+                  </a>
+                </ListItem>
+              </List>
             </ListItem>
           </List>
         </Box>

@@ -19,7 +19,7 @@ function Layout(props) {
 
 const Container = styled("div")`
 margin: auto;
- width: 80%; 
+ width: 80%;
 `;
 
 const Content = styled("div")`
