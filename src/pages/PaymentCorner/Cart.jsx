@@ -2,10 +2,31 @@ import React from "react";
 import { EmptyCart, CartContent, CartTable } from "./paymentCornerStyle";
 import { Button } from "@mui/material";
 import { Add, Remove, Delete } from "@mui/icons-material";
-import { Link} from "react-router-dom";
+import { Link } from "react-router-dom";
+// import productList from "../../Other/Lists/ProductList";
 
-const Cart = (items) => {
-  const { cartItems, onAdd, onRemove, onDelete } = items;
+const Cart = (props) => {
+  const { cartItems, onAdd, onRemove, onDelete } = props;
+
+  const getFormatType = (formatType, formatPrice) => {
+    const format =[formatType.small, formatType.medium, formatType.large];
+      switch (formatPrice) {
+        case format[0]:
+          formatType = "Petit";
+          break;
+        case format[1]:
+          formatType = "Moyen";
+          break;
+        case format[2]:
+          formatType = "Grand";
+          break;
+        default:
+          formatType = "Format inconnu";
+          break;
+      }
+        return formatType;
+    };
+
   return (
     <>
       {cartItems.length === 0 ? (
@@ -16,14 +37,15 @@ const Cart = (items) => {
           </p>
         </EmptyCart>
       ) : (
-        <CartContent style = {{margin: "auto"}}>
+        <CartContent style={{ margin: "auto" }}>
           <h1>Panier</h1>
           <CartTable>
             <thead>
               <tr>
                 <td width="40px"></td>
                 <td colSpan="2">Produit</td>
-                <td width="70px">Prix</td>
+                <td>Format</td>
+                <td width="70px">Prix unitaire</td>
                 <td width="70px">Quantité</td>
                 <td width="70px">Total</td>
               </tr>
@@ -31,20 +53,25 @@ const Cart = (items) => {
             <tbody>
               {cartItems.map((item) => {
                 return (
-                  <tr key={item.id}>
+                  <tr key={(item.id * parseFloat(item.formatPrice)).toString()}>
                     <td>
                       <Button
                         onClick={() => {
-                          onDelete(item.id);
+                          onDelete(item);
                         }}
                       >
                         <Delete />
                       </Button>
                     </td>
                     <td width="100px">
-                      <Link to={"/productDetails/" + item.id}><img src={item.img} alt={item.name} /></Link>
+                      <Link to={"/productDetails/" + item.id}>
+                        <img src={item.img} alt={item.name} />
+                      </Link>
                     </td>
-                    <td><Link to={"/productDetails/" + item.id}>{item.name}</Link></td>
+                    <td>
+                      <Link to={"/productDetails/" + item.id}>{item.name}</Link>
+                    </td>
+                    <td>{getFormatType(item.price, item.formatPrice)}</td>
                     <td>{parseFloat(item.formatPrice)}€</td>
                     <td>
                       <div>
@@ -62,7 +89,7 @@ const Cart = (items) => {
                 );
               })}
               <tr>
-                <td colSpan={5}>Total</td>
+                <td colSpan={6}>Total</td>
                 <td>
                   {cartItems.reduce(
                     (accumulator, product) =>
@@ -75,7 +102,7 @@ const Cart = (items) => {
             </tbody>
             <tfoot>
               <tr>
-                <td colSpan={6}>
+                <td colSpan={7}>
                   <Button
                     variant="contained"
                     color="success"

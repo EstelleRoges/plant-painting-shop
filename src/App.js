@@ -19,51 +19,58 @@ function App() {
   const [isConnected, setIsConnected] = useState(false);
 
   const onAdd = (product, formatPrice) => {
-    const exists = cartItems.find((item) => item.id === product.id);
-    if (exists) {
+    const exists = cartItems.find(
+      (item) => item === product
+    );
+
+    if(exists) {
       setCartItems(
         cartItems.map((item) =>
-          item.id === product.id
+          item === product
             ? {
                 ...exists,
-                quantity: exists.quantity + 1
+                quantity: exists.quantity + 1,
               }
             : item
         )
       );
     } else {
-      setCartItems([
-        ...cartItems,
-        { ...product, quantity: 1, formatPrice: formatPrice },
-      ]);
+      setCartItems((previousCartItems) => {
+        return [
+          ...previousCartItems,
+          { ...product, quantity: 1, formatPrice: formatPrice },
+        ];
+      });
     }
   };
 
   const onRemove = (product) => {
-    const exists = cartItems.find((item) => item.id === product.id);
+    const exists = cartItems.find((item) => item === product);
     if (exists.quantity === 1) {
-      onDelete(product.id);
+      onDelete(product);
     } else {
       setCartItems(
         cartItems.map((item) =>
-          item.id === product.id
+         item === product
             ? {
                 ...exists,
-                quantity: exists.quantity - 1
+                quantity: exists.quantity - 1,
               }
             : item
         )
       );
     }
-  }
+  };
 
-  const onDelete = (productId) => {
-    setCartItems(cartItems.filter((item) => item.id !== productId));
-  }
+  const onDelete = (product) => {
+    setCartItems((previousCartItems) => {
+      return previousCartItems.filter((item) => item !== product);
+    });
+  };
 
   const emptyCart = () => {
     setCartItems([]);
-  }
+  };
 
   return (
     <BrowserRouter>
@@ -74,8 +81,7 @@ function App() {
             <Layout
               onAdd={onAdd}
               count={cartItems.length}
-              cartItems={cartItems}
-              isConnected = {isConnected}
+              isConnected={isConnected}
             />
           }
         >
@@ -84,22 +90,40 @@ function App() {
           <Route path="/products" element={<Products />} />
           <Route
             path="/productDetails/:id"
+            element={<ProductDetails onAdd={onAdd} />}
+          />
+          <Route
+            path="/signInUp"
             element={
-              <ProductDetails
-                onAdd={onAdd}
-                cartItems={cartItems}
+              <SignInUp
+                isConnected={isConnected}
+                setIsConnected={setIsConnected}
               />
             }
           />
-          <Route path="/signInUp" element={<SignInUp isConnected = {isConnected} setIsConnected={setIsConnected}/>} />
-          <Route path="/userDashboard" element={<UserDashboard isConnected = {isConnected} setIsConnected={setIsConnected}/>} />
+          <Route
+            path="/userDashboard"
+            element={
+              <UserDashboard
+                isConnected={isConnected}
+                setIsConnected={setIsConnected}
+              />
+            }
+          />
           <Route
             path="/cart"
-            element={<Cart cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} onDelete={onDelete} />}
+            element={
+              <Cart
+                cartItems={cartItems}
+                onAdd={onAdd}
+                onRemove={onRemove}
+                onDelete={onDelete}
+              />
+            }
           />
           <Route
             path="/checkout"
-            element={<Checkout checkout={cartItems} emptyCart={emptyCart}/>}
+            element={<Checkout checkout={cartItems} emptyCart={emptyCart} />}
           />
           <Route path="/paymentAccepted" element={<PaymentAccepted />} />
           <Route path="/error404" element={<Error404 />} />

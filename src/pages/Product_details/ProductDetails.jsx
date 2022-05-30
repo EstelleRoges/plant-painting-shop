@@ -41,7 +41,7 @@ const ProductDetails = (props) => {
   //Create a ref to change the price according to the user's choice
   let formatPrice = useRef(small);
 
-  const { product = productInfos, onAdd } = props;
+  const { onAdd } = props;
 
   const handleChange = (event) => {
     return (formatPrice.current.value = parseFloat(event.target.value));
@@ -69,13 +69,13 @@ const ProductDetails = (props) => {
                 Format
               </option>
               <option value={small} id="small">
-                Small - 20 x 20 cm
+                Petit - 20 x 20 cm
               </option>
               <option value={medium} id="medium">
-                Medium - 35 x 35 cm
+                Moyen - 35 x 35 cm
               </option>
               <option value={large} id="large">
-                Large - 50 x 50 cm
+                Grand - 50 x 50 cm
               </option>
             </select>
             <ArrowForward />
@@ -90,10 +90,10 @@ const ProductDetails = (props) => {
           </div>
           <Button
             onClick={() =>
-              onAdd(product, parseFloat(formatPrice.current.value))
+              onAdd(productInfos, parseFloat(formatPrice.current.value))
             }
           >
-            Add to Cart
+            Ajouter au panier
           </Button>
         </div>
       </DetailsArea>

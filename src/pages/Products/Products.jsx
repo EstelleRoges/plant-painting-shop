@@ -58,7 +58,40 @@ const Products = () => {
             </Select>
           </FormControl>
         </Option>
-        {/* <Option>
+      </ProductsNavigation>
+      <Cards>
+        {filter === "new" && productList
+          .sort(function (articleA, articleB) {
+            return (articleA.new === articleB.new) ? 0 : articleA.new ? -1 : 1;
+          })
+          .map((product) => {
+            return (
+              <Card key={product.id}>
+                <ProductCard {...product} />
+              </Card>
+            );
+          })}
+
+          {filter === "price" && productList
+          .sort(function (articleA, articleB) {
+            return (articleA.price.small - articleB.price.small);
+          })
+          .map((product) => {
+            return (
+              <Card key={product.id}>
+                <ProductCard {...product} />
+              </Card>
+            );
+          })}
+      </Cards>
+    </ProductsArea>
+  );
+};
+
+
+export default Products;
+
+{/* <Option>
           <h2>Couleurs</h2>
           <FormGroup sx={{ margin: "1em 2em", verticalAlign: "middle" }}>
             <FormControlLabel
@@ -97,33 +130,3 @@ const Products = () => {
             />
           </FormGroup>
         </Option> */}
-      </ProductsNavigation>
-      <Cards>
-        {filter === "new" && productList
-          .sort(function (articleA, articleB) {
-            return (articleA.new === articleB.new) ? 0 : articleA.new ? -1 : 1;
-          })
-          .map((product) => {
-            return (
-              <Card key={product.id}>
-                <ProductCard {...product} />
-              </Card>
-            );
-          })}
-          {filter === "price" && productList
-          .sort(function (articleA, articleB) {
-            return (articleA.price.small - articleB.price.small);
-          })
-          .map((product) => {
-            return (
-              <Card key={product.id}>
-                <ProductCard {...product} />
-              </Card>
-            );
-          })}
-      </Cards>
-    </ProductsArea>
-  );
-};
-
-export default Products;
