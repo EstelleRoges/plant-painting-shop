@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 import { SignInUpContent} from "./SignInUpStyle";
 
 const signInUp = (props) => {
-console.log("Before log: " + props.isConnected);
-
   const userSignsIn = () => {
     props.setIsConnected(!props.isConnected);
   }

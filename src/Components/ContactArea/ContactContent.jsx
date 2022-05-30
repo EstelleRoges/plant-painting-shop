@@ -24,7 +24,7 @@ const ContactArea = styled("div")`
     margin:0;
     padding-top: 0.2em;
     font-size: 36px;
-    border-top: 1px dashed #ccc;
+    border-top: 1px dashed #ADD09F;
   }
 `;
 

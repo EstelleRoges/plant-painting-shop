@@ -9,7 +9,7 @@ export const DetailsArea = styled("div")`
     margin-left: 2em;
     margin-right: 3em;
     width: 400px;
-    border: 4px outset #D9EAD3;
+    border: 4px outset #ADD09F;
     border-radius: 1em;
   }
 
@@ -32,8 +32,8 @@ export const DetailsArea = styled("div")`
       margin: 1em;
       padding: 10px;
       outline: none;
-      border: 1px solid #ccc;
-      box-shadow: 1px 1px 5px #ccc;
+      border: 1px solid #ADD09F;
+      box-shadow: 1px 1px 5px #ADD09F;
     }
 
     select {
@@ -48,17 +48,12 @@ export const DetailsArea = styled("div")`
 
   button {
     float: right;
-    background-color: green;
     color: white;
     margin: 1.5em 1em 1em 0;
     padding: 0.5em 1em;
     border: none;
     border-radius: 0.5em;
     outline: none;
-
-    &:hover {
-      background-color: lightgreen;
-    }
   }
 `;
 
@@ -67,8 +62,8 @@ export const DescriptionSection = styled("div")`
   p {
     clear: both;
     padding: 2em 1em;
-    border-top: 1px dashed #ccc;
-    border-bottom: 1px dashed #ccc;
+    border-top: 1px dashed #ADD09F;
+    border-bottom: 1px dashed #ADD09F;
   }
 `;
 
@@ -100,7 +95,7 @@ export const Comments = styled("div")`
     padding: 1em;
     background-color: white;
     border-radius: 2em;
-    box-shadow: 4px 4px 10px #ccc;
+    box-shadow: 4px 4px 10px #ADD09F;
 
     h4 {
       font-size: 22px;
@@ -165,7 +160,7 @@ div {
 
 export const SimilarArea = styled("div")`
   margin-top: 3em;
-  border-top: 1px dashed #ccc;
+  border-top: 1px dashed #ADD09F;
   h2 {
     margin: 0;
     padding: 0.5em;

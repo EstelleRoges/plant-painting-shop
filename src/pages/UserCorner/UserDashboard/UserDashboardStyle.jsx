@@ -12,7 +12,7 @@ export const TabGroup = styled("div")`
 
 export const UserTab = styled(Tab)({
   "&.MuiButtonBase-root.MuiTab-root": {
-    color: "#c3e2a0",
+    color: "#578943",
   },
 });
 
@@ -22,7 +22,7 @@ export const InfoDiv = styled("div")`
   border: 1px solid transparent;
   display: flex;
   border-radius: 2em;
-  box-shadow: 4px 4px 15px #ccc;
+  box-shadow: 4px 4px 15px #ADD09F;
 `;
 
 export const SubInfoDiv = styled("div")`

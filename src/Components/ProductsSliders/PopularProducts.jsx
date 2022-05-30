@@ -59,7 +59,7 @@ const PopsDiv = styled("div")`
     margin-bottom: 0.5em;
     padding-bottom: 0.2em;
     font-size: 44px;
-    border-bottom: 1px dashed #ccc;
+    border-bottom: 1px dashed #ADD09F;
   }
 
 ul {

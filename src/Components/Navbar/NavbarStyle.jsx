@@ -1,7 +1,8 @@
 import { styled } from "@mui/material";
 
 export const Header = styled("header")`
-  margin-top: 1em;
+  background-color: #3C602E;
+  padding: 1em;
   display: flex;
   justify-content: space-between;
   align-items: center;

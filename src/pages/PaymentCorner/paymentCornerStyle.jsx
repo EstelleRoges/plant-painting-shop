@@ -1,12 +1,12 @@
 import { styled } from "@mui/material";
 
 export const CheckoutArea = styled("div")`
-display: flex;
-align-items: flex-start;
+  display: flex;
+  align-items: flex-start;
 
-a {
-  color: white;
-}
+  a {
+    color: white;
+  }
 `;
 
 export const EmptyCart = styled("div")`
@@ -38,6 +38,15 @@ export const CartTable = styled("table")`
   tbody tr {
     border-top: 1px solid black;
     border-bottom: 1px solid black;
+
+    Button {
+      background-color: transparent;
+      min-width: 35px;
+      
+      &:hover {
+        background-color: transparent;
+      }
+    }
   }
 
   td {
@@ -49,8 +58,10 @@ export const CartTable = styled("table")`
       display: flex;
       justify-content: center;
       align-items: center;
+      span {
+        padding: 0 0.5em;
+      }
     }
-
     a {
       color: black;
     }
@@ -74,7 +85,6 @@ export const CartTable = styled("table")`
     color: white;
   }
 `;
-
 
 export const CartContent = styled("div")`
   a {
@@ -109,16 +119,14 @@ export const RowDiv = styled("div")`
   }
 `;
 
-
 export const SubInfo = styled("div")`
   margin: auto;
-  
 `;
 
 export const ShippingAdressArea = styled("div")`
-margin: 1em;
+  margin: 1em;
   padding: 0.5em 0 1em 1em;
-  border-left: 1px dashed #ccc;
+  border-left: 1px dashed #add09f;
 
   h2 {
     margin: 0 0 1em 0;

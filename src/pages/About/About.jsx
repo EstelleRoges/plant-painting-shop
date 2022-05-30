@@ -9,7 +9,6 @@ const About = () => {
         <img
           src="imgs/pexels-pixabay-531844.jpg"
           alt="aboutImage_1"
-          width="500px"
         />
         <div>
           <p>
@@ -46,7 +45,6 @@ const About = () => {
         <img
           src="imgs/pexels-pixabay-442404.jpg"
           alt="aboutImage_2"
-          width="500px"
         />
       </AboutSection>
     </>
@@ -60,7 +58,10 @@ const AboutSection = styled("div")`
   justify-items: center;
 
   img {
+    width: 400px;
+    height: 400px;
     border-radius: 50%;
+    object-fit: cover;
   }
 
   p {

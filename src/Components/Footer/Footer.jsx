@@ -10,10 +10,10 @@ const Footer = () => {
         <Box>
           <List>
             <ListItem>
-              <Link to="/about">About me</Link>
+              <Link to="/about">A propos</Link>
             </ListItem>
             <ListItem>
-              <Link to="/products">Product</Link>
+              <Link to="/products">Produits</Link>
             </ListItem>
             <ListItem>
               <Link to="/error404">Page Error404</Link>

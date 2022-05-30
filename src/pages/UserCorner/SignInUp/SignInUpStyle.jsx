@@ -30,7 +30,7 @@ export const SignInUpContent = styled("div")`
 }
 
 hr {
-  border: 1px dashed #ccc;
+  border: 1px dashed #ADD09F;
   margin: 0;
 }
 

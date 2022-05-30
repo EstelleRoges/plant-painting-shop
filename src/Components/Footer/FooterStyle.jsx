@@ -4,8 +4,7 @@ export const FooterArea = styled("div")`
   padding: 1.5em 0;
   width: 100%;
   height: fit-content;
-  background-color: beige;
-  position: relative;
+  background-color: #3C602E;
   bottom: 0;
 `;
 
@@ -14,8 +13,24 @@ export const FooterBox = styled("div")`
   display: flex;
   justify-content: space-around;
 
+div {
+    position: relative;
+}
+
+  input {
+    min-width: 200px;
+    max-width: 450px;
+  }
+
   a {
     color: black;
+  }
+  
+  button {
+    position: absolute;
+    bottom: 41px;
+    right: 60px;
+    border-radius: 10px;
   }
 `;
 
@@ -26,12 +41,7 @@ export const Box = styled("div")`
     font-size: 30px;
     margin-bottom: 0;
   }
-  Button {
-    position: absolute;
-    top: 3em;
-    right: 3em;
-    border-radius: 10px;
-  }
+
 `;
 
 export const Copyright = styled("div")`

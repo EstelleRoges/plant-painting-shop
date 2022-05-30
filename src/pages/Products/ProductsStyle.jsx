@@ -25,13 +25,14 @@ export const ProductsArea = styled("div")`
 export const Option = styled("div")`
     padding: 1.5em 0;
 `;
+
 export const ProductsNavigation = styled("div")`
-  margin: 2em 1em;
-  padding: 2em 1em;
+  margin: 3em 1em;
+  padding: 1em;
   width: 350px;
   height: fit-content;
   border-radius: 2em;
-  box-shadow: 0px 4px 15px #ccc;
+  box-shadow: 0px 4px 15px #ADD09F;
 `;
 
 export const Cards = styled("div")`

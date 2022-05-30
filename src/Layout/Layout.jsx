@@ -5,17 +5,28 @@ import { Outlet } from "react-router-dom";
 
 function Layout(props) {
   return (
-    <>
+    <LayoutSpace>
+      <Navbar count={props.count} isConnected = {props.isConnected}/>
       <Container>
-        <Navbar count={props.count} isConnected = {props.isConnected}/>
         <Content>
           <Outlet />
         </Content>
       </Container>
       <Footer />
-    </>
+    </LayoutSpace>
   );
 }
+
+const LayoutSpace = styled("div")`
+  Button, button {
+  background-color: #73AE5B;
+  color: white;
+
+  &:hover {
+      background-color: #8ABC76;
+    }
+}
+`;
 
 const Container = styled("div")`
 margin: auto;
@@ -26,6 +37,7 @@ const Content = styled("div")`
   margin: 2em auto;
   max-width: 1500px;
   border-radius: 2em;
+
 `;
 
 export default Layout;

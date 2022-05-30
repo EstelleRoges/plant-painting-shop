@@ -12,7 +12,7 @@ const ProductCard = (product) => {
           margin: "2em 1em",
           border: "2px solid transparent",
           borderRadius: "1em",
-          boxShadow: "2px 2px 10px #ccc",
+          boxShadow: "2px 2px 10px #ADD09F",
         }}
       >
         <CardContent>

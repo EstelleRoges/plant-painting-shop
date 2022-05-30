@@ -50,6 +50,7 @@ const Products = () => {
             <Select
               labelId="filterSelect"
               id="filterSelect"
+              color="success"
               value={filter}
               onChange={handleChange}
             >
