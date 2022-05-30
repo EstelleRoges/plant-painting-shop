@@ -50,6 +50,10 @@ export const CartTable = styled("table")`
       justify-content: center;
       align-items: center;
     }
+
+    a {
+      color: black;
+    }
   }
 
   tr:last-child + td {
@@ -112,12 +116,16 @@ export const SubInfo = styled("div")`
 `;
 
 export const ShippingAdressArea = styled("div")`
-  margin: 2em;
-  margin-right: 0;
+margin: 1em;
+  padding: 0.5em 0 1em 1em;
+  border-left: 1px dashed #ccc;
 
   h2 {
     margin: 0 0 1em 0;
-
     font-size: 32px;
+  }
+
+  Button {
+    margin: 0 1em;
   }
 `;

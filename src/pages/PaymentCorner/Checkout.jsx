@@ -1,51 +1,16 @@
 import { CheckoutArea, CartTable, RowDiv, ShippingAdressArea } from "./paymentCornerStyle";
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
+import ArticlesTable from "../../Components/ArticlesTable/ArticlesTable";
 
 const Checkout = (props) => {
-  const {checkout, emptyCart} = props;
 
   return (
     <>
     <h1>Récapitulatif de la commande</h1>
       <CheckoutArea>
       <CartTable>
-        <thead>
-          <tr>
-            <td colSpan={2}>Produit</td>
-            <td width="70px">Quantité</td>
-            <td width="70px">Prix unitaire</td>
-          </tr>
-        </thead>
-        <tbody>
-          {checkout.map((item) => {
-            return (
-              <tr key={item.id}>
-                <td width="100px">
-                  <Link to={"/productDetails/" + item.id}>
-                    <img src={item.img} alt={item.name} />
-                  </Link>
-                </td>
-                <td>
-                  <Link to={"/productDetails/" + item.id}>{item.name}</Link>
-                </td>
-                <td>{item.quantity}</td>
-                <td>{parseFloat(item.formatPrice)}€</td>
-              </tr>
-            );
-          })}
-          <tr>
-            <td colSpan={3}>Total</td>
-            <td>
-              {checkout.reduce(
-                (accumulator, product) =>
-                  accumulator + product.quantity * product.formatPrice,
-                0
-              )}
-              €
-            </td>
-          </tr>
-        </tbody>
+        <ArticlesTable recap={props.recap} cartItems={props.checkout}/>
       </CartTable>
       <ShippingAdressArea>
       <h2>Livraison à l'adresse</h2>
@@ -108,7 +73,7 @@ const Checkout = (props) => {
             />
           </div>
         </RowDiv>
-        <Button onClick={emptyCart} variant="contained" color="success">
+        <Button onClick={props.emptyCart} variant="contained" color="success">
                 <Link to="/PaymentAccepted">Commander!</Link>
               </Button>
       </ShippingAdressArea>

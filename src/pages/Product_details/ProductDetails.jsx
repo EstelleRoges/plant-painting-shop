@@ -103,16 +103,15 @@ const ProductDetails = (props) => {
 
       <CommentsArea>
         <Comments>
-          <h2>Comments</h2>
+          <h2>Commentaires</h2>
           <div>
             <h4>Néroli</h4>
-            <p>Such a cute painting!</p>
+            <p>Ce taleau est vraiment trop mignon!</p>
           </div>
           <div>
             <h4>Vasco</h4>
             <p>
-              My GF loves this stuff...your painting made her so happy. Thanks
-              for this.
+             Ma copine aime ce genre de tableau...et elle a adoré celui-ci. Merci!
             </p>
           </div>
           <Button
@@ -129,7 +128,7 @@ const ProductDetails = (props) => {
             <h2>Nouveau commentaire</h2>
             <SubArea>
               <div>
-                <label htmlFor="name">Name</label>
+                <label htmlFor="name">Nom</label>
                 <input type="text" name="commenterName" id="name" />
               </div>
               <div>
@@ -138,7 +137,7 @@ const ProductDetails = (props) => {
               </div>
             </SubArea>
             <div>
-              <label htmlFor="comment">Comment</label>
+              <label htmlFor="comment">Commentaire</label>
               <textarea name="comment" id="" cols="30" rows="5"></textarea>
               <Button variant="contained" color="success">
                 Ajouter
@@ -148,7 +147,7 @@ const ProductDetails = (props) => {
         )}
       </CommentsArea>
       <SimilarArea>
-        <h2>Similar products</h2>
+        <h2>Produits similaires</h2>
         <SimilarProducts />
       </SimilarArea>
     </>

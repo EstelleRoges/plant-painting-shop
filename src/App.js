@@ -17,6 +17,7 @@ import UserDashboard from "./pages/UserCorner/UserDashboard/UserDashboard";
 function App() {
   const [cartItems, setCartItems] = useState([]);
   const [isConnected, setIsConnected] = useState(false);
+  let recap = true;
 
   const onAdd = (product, formatPrice) => {
     const exists = cartItems.find(
@@ -114,6 +115,7 @@ function App() {
             path="/cart"
             element={
               <Cart
+                recap={recap}
                 cartItems={cartItems}
                 onAdd={onAdd}
                 onRemove={onRemove}
@@ -123,7 +125,7 @@ function App() {
           />
           <Route
             path="/checkout"
-            element={<Checkout checkout={cartItems} emptyCart={emptyCart} />}
+            element={<Checkout recap={!recap} checkout={cartItems} emptyCart={emptyCart} />}
           />
           <Route path="/paymentAccepted" element={<PaymentAccepted />} />
           <Route path="/error404" element={<Error404 />} />
