@@ -6,7 +6,6 @@ export const FooterArea = styled("div")`
   height: fit-content;
   color: white;
   background-image: linear-gradient(to bottom, #578943, #3D602F);
-  bottom: 0;
 `;
 
 export const FooterBox = styled("div")`

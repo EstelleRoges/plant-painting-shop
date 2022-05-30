@@ -5,6 +5,7 @@ import { Outlet } from "react-router-dom";
 
 function Layout(props) {
   return (
+    <>
     <LayoutSpace>
       <Navbar count={props.count} isConnected = {props.isConnected}/>
         <Content>
@@ -12,10 +13,14 @@ function Layout(props) {
         </Content>
       <Footer />
     </LayoutSpace>
+    </>
   );
 }
 
 const LayoutSpace = styled("div")`
+display: flex;
+flex-direction: column;
+
   Button, button {
   background-color: #73AE5B;
   color: white;
@@ -29,9 +34,8 @@ const LayoutSpace = styled("div")`
 const Content = styled("div")`
   margin: 2em auto;
   max-width: 1500px;
+  height: 100%;
   width: 80%;
-  border-radius: 2em;
-
 `;
 
 export default Layout;

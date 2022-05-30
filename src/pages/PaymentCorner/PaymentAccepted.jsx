@@ -13,8 +13,9 @@ const PaymentAccepted = () => {
 }
 
 const PaymentOk = styled("div")`
-height: 100%;
- margin: 5em 0;
+ height: 100%;
+ margin: 5em;
+ margin-bottom: 15%;
 
  p {
    font-size: 20px;
