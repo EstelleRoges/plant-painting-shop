@@ -103,7 +103,7 @@ export const Comments = styled("div")`
 
     p {
       margin-top: 0.5em;
-      text-indent: 2em;
+      margin-left: 2em;
     }
   }
 `;

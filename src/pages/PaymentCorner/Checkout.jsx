@@ -1,4 +1,4 @@
-import { CheckoutArea, CartTable, ShippingAdressArea } from "./paymentCornerStyle";
+import { CheckoutArea,  ShippingAdressArea } from "./paymentCornerStyle";
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
 import ArticlesTable from "../../Components/ArticlesTable/ArticlesTable";
@@ -10,9 +10,7 @@ const Checkout = (props) => {
     <>
     <h1>Récapitulatif de la commande</h1>
       <CheckoutArea>
-      <CartTable>
         <ArticlesTable recap={props.recap} cartItems={props.checkout}/>
-      </CartTable>
       <ShippingAdressArea>
       <h2>Livraison à l'adresse</h2>
         <ShippingAdress />

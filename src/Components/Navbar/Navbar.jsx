@@ -12,7 +12,7 @@ const Navbar = (props) => {
             <Link to="/products">Tableaux</Link>
           </li>
           <li>
-            <Link to="/about">A propos</Link>
+            <Link to="/about">À propos</Link>
           </li>
         </SiteLinks>
       </nav>
@@ -23,7 +23,7 @@ const Navbar = (props) => {
         <li>
           <Link to="/cart">
             <Badge badgeContent={props.count} color="success">
-              <ShoppingBasket />
+              <ShoppingBasket id="cartIcon"/>
             </Badge>
           </Link>
         </li>

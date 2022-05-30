@@ -42,7 +42,7 @@ export const CartTable = styled("table")`
     Button {
       background-color: transparent;
       min-width: 35px;
-      
+
       &:hover {
         background-color: transparent;
       }
@@ -50,7 +50,6 @@ export const CartTable = styled("table")`
   }
 
   td {
-    padding: 0.5em 1em;
     text-align: center;
     vertical-align: middle;
 
@@ -58,17 +57,15 @@ export const CartTable = styled("table")`
       display: flex;
       justify-content: center;
       align-items: center;
+
       span {
         padding: 0 0.5em;
       }
     }
+
     a {
       color: black;
     }
-  }
-
-  tr:last-child + td {
-    text-align: start;
   }
 
   svg {
@@ -81,8 +78,29 @@ export const CartTable = styled("table")`
     border-radius: 1em;
   }
 
-  button a {
-    color: white;
+  button {
+    margin: 1em 0;
+    a {
+      color: white;
+    }
+  }
+`;
+
+export const Thead = styled("thead")`
+  td {
+    padding: 0.5em;
+  }
+`;
+
+export const TotalTr = styled("tr")`
+  td {
+    padding: 0.5em;
+    font-weight: bold;
+    font-size: 22px;
+  }
+
+  td:nth-of-type(2) {
+    text-align: start;
   }
 `;
 

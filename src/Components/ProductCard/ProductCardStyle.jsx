@@ -4,7 +4,7 @@ export const linkStyle = {
   textDecoration: "none",
   fontSize: "22px",
   fontStyle: "italic",
-  color: "green"
+  color: "#4E7B3D"
 };
 
 export const CardInfos = styled("div")`

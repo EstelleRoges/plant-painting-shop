@@ -4,7 +4,6 @@
 
 html {
   height: 100%;
-  background-image: linear-gradient(to right, #D9EAD3, white, white, #D9EAD3);
 }
 
 body {
@@ -43,7 +42,7 @@ textarea {
   font-size: 16px;
   border: none;
   border-radius: 1em;
-  box-shadow: 4px 4px 10px #ADD09F;
+  box-shadow: 2px 2px 10px #ADD09F;
   resize: none;
   outline: none;
 }
@@ -51,7 +50,6 @@ textarea {
 Button, button {
   float: right;
   font-size: 16px;
-  background-color: #73AE5B;
   color: white;
   margin: 1em 0;
   padding: 0.5em 1em;

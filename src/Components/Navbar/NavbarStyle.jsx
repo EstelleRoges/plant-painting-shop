@@ -1,7 +1,7 @@
 import { styled } from "@mui/material";
 
 export const Header = styled("header")`
-  background-color: #3C602E;
+  background-color: #578943;
   padding: 1em;
   display: flex;
   justify-content: space-between;
@@ -10,16 +10,20 @@ export const Header = styled("header")`
 
   a {
     text-decoration: none;
+    font-weight: bold;
+    font-style: italic;
     font-size: 18px;
-    color: black;
+    color: #335228;
   }
 
   h1 {
-    width: 500px;
+    width: 100%;
     margin: 0;
     padding: 0;
     font-size: 60px;
-    color: green;
+    font-style: normal;
+    color: #7DB569;
+    text-shadow: 0 0 10px #335228;
     border: none;
     text-align: center;
   }
@@ -34,6 +38,8 @@ export const Header = styled("header")`
       padding: 0 1.5em;
     }
   }
+
+  
 `;
 
 export const SiteLinks = styled("ul")`
@@ -43,4 +49,8 @@ justify-content: flex-start;
 
 export const UserCorner = styled("ul")`
 justify-content: flex-end;
+
+   #cartIcon {
+      padding-bottom: 10px;
+    }
 `;

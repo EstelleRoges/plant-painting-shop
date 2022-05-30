@@ -1,6 +1,7 @@
 import { Button } from "@mui/material";
 import { Add, Remove, Delete } from "@mui/icons-material";
 import { Link } from "react-router-dom";
+import { CartTable, Thead, TotalTr } from "../../pages/PaymentCorner/paymentCornerStyle";
 
 const ArticlesTable = (props) => {
   const { recap, cartItems, onAdd, onRemove, onDelete } = props;
@@ -25,8 +26,8 @@ const ArticlesTable = (props) => {
   };
 
   return (
-    <>
-      <thead>
+    <CartTable>
+      <Thead>
         <tr>
           <td width="30px"></td>
           <td width="100px">Image</td>
@@ -34,9 +35,9 @@ const ArticlesTable = (props) => {
           <td>Format</td>
           <td width="100px">Prix unitaire</td>
           <td width="70px">Quantité</td>
-          <td width="60px">Total</td>
+          <td width="70px">Total</td>
         </tr>
-      </thead>
+      </Thead>
       <tbody>
         {cartItems.map((item) => {
           return (
@@ -79,8 +80,9 @@ const ArticlesTable = (props) => {
             </tr>
           );
         })}
-        <tr>
-          <td colSpan={6}>Total</td>
+        <TotalTr>
+          <td></td>
+          <td colSpan={5}>Total</td>
           <td>
             {cartItems.reduce(
               (accumulator, product) =>
@@ -89,7 +91,7 @@ const ArticlesTable = (props) => {
             )}
             €
           </td>
-        </tr>
+        </TotalTr>
       </tbody>
       {recap && (
         <tfoot>
@@ -98,7 +100,6 @@ const ArticlesTable = (props) => {
               <Button
                 variant="contained"
                 color="success"
-                sx={{ margin: "1em 0" }}
               >
                 <Link to="/checkout">Passer à la commande</Link>
               </Button>
@@ -106,7 +107,7 @@ const ArticlesTable = (props) => {
           </tr>
         </tfoot>
       )}
-    </>
+    </CartTable>
   );
 };
 

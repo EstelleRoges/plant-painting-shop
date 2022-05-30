@@ -10,7 +10,7 @@ const Footer = () => {
         <Box>
           <List>
             <ListItem>
-              <Link to="/about">A propos</Link>
+              <Link to="/about">À propos</Link>
             </ListItem>
             <ListItem>
               <Link to="/products">Produits</Link>
@@ -27,7 +27,7 @@ const Footer = () => {
                   </a>
                 </ListItem>
                 <ListItem>
-                  <a href="https://www.pexels.com/fr-fr/">Images A propos</a>
+                  <a href="https://www.pexels.com/fr-fr/">Images À propos</a>
                 </ListItem>
                 <ListItem>
                   <a href="https://www.pinterest.fr/Teruu_E/projet-react-site-peintures-peintures/">
@@ -85,9 +85,9 @@ const Footer = () => {
             rel="noreferrer"
           >
             LinkedIn
-          </a>
+          </a> 
           |
-          <a
+           <a
             target="_blank"
             href="https://github.com/EstelleRoges/plant-painting-shop"
             rel="noreferrer"

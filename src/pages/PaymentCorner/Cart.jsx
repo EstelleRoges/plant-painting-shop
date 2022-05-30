@@ -1,5 +1,5 @@
 import React from "react";
-import { EmptyCart, CartContent, CartTable } from "./paymentCornerStyle";
+import { EmptyCart, CartContent } from "./paymentCornerStyle";
 import { Link } from "react-router-dom";
 import ArticlesTable from "../../Components/ArticlesTable/ArticlesTable";
 
@@ -16,9 +16,13 @@ const Cart = (props) => {
       ) : (
         <CartContent style={{ margin: "auto" }}>
           <h1>Panier</h1>
-          <CartTable>
-          <ArticlesTable recap={props.recap} cartItems={props.cartItems} onAdd={props.onAdd} onRemove={props.onRemove} onDelete={props.onDelete}/>
-          </CartTable>
+          <ArticlesTable
+            recap={props.recap}
+            cartItems={props.cartItems}
+            onAdd={props.onAdd}
+            onRemove={props.onRemove}
+            onDelete={props.onDelete}
+          />
         </CartContent>
       )}
     </>

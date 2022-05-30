@@ -7,11 +7,9 @@ function Layout(props) {
   return (
     <LayoutSpace>
       <Navbar count={props.count} isConnected = {props.isConnected}/>
-      <Container>
         <Content>
           <Outlet />
         </Content>
-      </Container>
       <Footer />
     </LayoutSpace>
   );
@@ -28,14 +26,10 @@ const LayoutSpace = styled("div")`
 }
 `;
 
-const Container = styled("div")`
-margin: auto;
- width: 80%;
-`;
-
 const Content = styled("div")`
   margin: 2em auto;
   max-width: 1500px;
+  width: 80%;
   border-radius: 2em;
 
 `;

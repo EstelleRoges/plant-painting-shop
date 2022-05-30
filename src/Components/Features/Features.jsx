@@ -67,7 +67,7 @@ const Feature = styled("div")`
   }
 
   svg {
-    color: green;
+    color: #335228;
     font-size: 48px;
   }
 
