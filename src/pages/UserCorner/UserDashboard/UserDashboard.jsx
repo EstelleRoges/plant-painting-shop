@@ -7,7 +7,8 @@ import {
   SubInfoDiv,
   SubInfo,
   CardInfos,
-  DecoImg
+  DecoImg,
+  OptionBtns
 } from "./UserDashboardStyle.jsx";
 import { useState } from "react";
 import { Avatar, Box, Button } from "@mui/material";
@@ -185,10 +186,10 @@ const UserDashboard = (props) => {
                 sx={{ justifyContent: "space-between", alignItems: "center" }}
               >
                 <h2>Options</h2>
-                <div>
-                  <Button color="error" variant="contained" endIcon={<Logout />} onClick={userLogsOut}>Déconnexion</Button>
-                  <Button color="warning" sx={{margin: "0 1em"}} variant="contained" endIcon={<Edit />}>Modifier</Button>
-                </div>
+                <OptionBtns>
+                  <Button variant="contained" endIcon={<Logout />} onClick={userLogsOut}>Déconnexion</Button>
+                  <Button sx={{margin: "0 1em"}} variant="contained" endIcon={<Edit />}>Modifier</Button>
+                </OptionBtns>
               </RowDiv>
             </InfoDiv>
           </TabPanel>

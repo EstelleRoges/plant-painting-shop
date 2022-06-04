@@ -5,25 +5,12 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 
 const SimilarProducts = () => {
-  let randomPicks = [];
+  productList.sort(function (articleA, articleB) {
+    return articleA.sold - articleB.sold;
+  });
 
-  const randoms = (array) => {
-    for (var i = 0; i < 3; i++) {
-      let id = Math.floor(Math.random() * productList.length) + 1;
-      let product = productList[id];
-      array.push(product);
-    }
-  };
-
-  randoms(randomPicks);
-
-  console.log(randomPicks);
-  // productList.sort(function (articleA, articleB) {
-  //   return articleA.sold - articleB.sold;
-  // });
-
-  // const similars = productList.slice(0, 3);
-  // console.log(similars);
+  const similars = productList.slice(0, 3);
+  console.log(similars);
 
   return (
     <SimilarDiv>
@@ -39,7 +26,7 @@ const SimilarProducts = () => {
           arrows: false,
         }}
       >
-        {randomPicks.map((product) => {
+        {similars.map((product) => {
           return (
             <SplideSlide
               key={product.id}

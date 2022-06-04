@@ -1,7 +1,11 @@
 import { Button } from "@mui/material";
 import { Add, Remove, Delete } from "@mui/icons-material";
 import { Link } from "react-router-dom";
-import { CartTable, Thead, TotalTr } from "../../pages/PaymentCorner/paymentCornerStyle";
+import {
+  CartTable,
+  Thead,
+  TotalTr,
+} from "../../pages/PaymentCorner/paymentCornerStyle";
 
 const ArticlesTable = (props) => {
   const { recap, cartItems, onAdd, onRemove, onDelete } = props;
@@ -43,13 +47,15 @@ const ArticlesTable = (props) => {
           return (
             <tr key={(item.id * parseFloat(item.formatPrice)).toString()}>
               <td>
-                <Button
-                  onClick={() => {
-                    onDelete(item);
-                  }}
-                >
-                  <Delete />
-                </Button>
+                {recap && (
+                  <Button
+                    onClick={() => {
+                      onDelete(item);
+                    }}
+                  >
+                    <Delete />
+                  </Button>
+                )}
               </td>
               <td>
                 <Link to={"/productDetails/" + item.id}>
@@ -61,8 +67,8 @@ const ArticlesTable = (props) => {
               </td>
               <td>{getFormatType(item.price, item.formatPrice)}</td>
               <td>{parseFloat(item.formatPrice)}€</td>
-                <td>
-              {recap ? (
+              <td>
+                {recap ? (
                   <div>
                     <Button variant="text" onClick={() => onRemove(item)}>
                       <Remove />
@@ -72,10 +78,10 @@ const ArticlesTable = (props) => {
                       <Add />
                     </Button>
                   </div>
-              ) : (
-                <div>{item.quantity}</div>
-              )}
-                </td>
+                ) : (
+                  <div>{item.quantity}</div>
+                )}
+              </td>
               <td>{parseFloat(item.formatPrice) * item.quantity}€</td>
             </tr>
           );
@@ -97,10 +103,7 @@ const ArticlesTable = (props) => {
         <tfoot>
           <tr>
             <td colSpan={7}>
-              <Button
-                variant="contained"
-                color="success"
-              >
+              <Button variant="contained" color="success">
                 <Link to="/checkout">Passer à la commande</Link>
               </Button>
             </td>

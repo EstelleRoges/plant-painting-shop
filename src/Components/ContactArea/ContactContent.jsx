@@ -5,7 +5,7 @@ import ContactForm from "./ContactForm";
 const ContactContent = () => {
   return (
     <ContactArea>
-      <h2>Contact me!</h2>
+      <h2>Une question? Contactez-moi!</h2>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis odio
         natus soluta vero? Ut adipisci culpa aut corporis incidunt nobis

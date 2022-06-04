@@ -12,6 +12,7 @@ export const TabGroup = styled("div")`
 
 export const UserTab = styled(Tab)({
   "&.MuiButtonBase-root.MuiTab-root": {
+    backgroundColor: "transparent",
     color: "#578943",
   },
 });
@@ -83,4 +84,14 @@ export const DecoImg = styled("img")`
   width: 130px;
   height: 130px;
   z-index: -1;
+`;
+
+export const OptionBtns = styled("div")`
+  button:first-of-type {
+    background-color: #E94957;
+  }
+
+  button:last-of-type {
+    background-color: #FFA033;
+  }
 `;
