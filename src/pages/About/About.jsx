@@ -1,10 +1,16 @@
 import { styled } from "@mui/material";
-import React from "react";
+import { motion } from "framer-motion";
 
 const About = () => {
+
   return (
     <>
       <h1>Qui suis-je?</h1>
+    <motion.div
+      animate={{scaleX: 1}}
+       initial={{ scaleX: 0 }}
+      transition={{duration: 0.5}}
+      >
       <AboutSection>
         <img
           src="imgs/pexels-pixabay-531844.jpg"
@@ -26,6 +32,13 @@ const About = () => {
           </p>
         </div>
       </AboutSection>
+      </motion.div>
+      <motion.div
+      animate={{scaleX: 1}}
+       initial={{ scaleX: 0 }}
+      transition={{duration: 0.5}}
+      
+      >
       <AboutSection>
         <div>
           <p>
@@ -47,6 +60,7 @@ const About = () => {
           alt="aboutImage_2"
         />
       </AboutSection>
+      </motion.div>
     </>
   );
 };

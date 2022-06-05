@@ -2,7 +2,6 @@ import "./App.css";
 import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "../src/Layout/Layout";
-import {motion} from "framer-motion";
 
 import Home from "./pages/Home/Home";
 import Products from "./pages/Products/Products";

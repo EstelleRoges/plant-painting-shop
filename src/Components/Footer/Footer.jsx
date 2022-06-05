@@ -2,6 +2,7 @@ import { List, ListItem, Button, Box } from "@mui/material";
 import { FooterArea, FooterBox, Copyright } from "./FooterStyle";
 import { Pinterest, Facebook, Instagram } from "@mui/icons-material";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const Footer = () => {
   return (
@@ -18,7 +19,7 @@ const Footer = () => {
             <ListItem>
               <Link to="/error404">Page Error404</Link>
             </ListItem>
-            <ListItem sx={{marginTop: "10px", display: "block"}}>
+            <ListItem sx={{ marginTop: "10px", display: "block" }}>
               Crédits:
               <List>
                 <ListItem>
@@ -52,13 +53,19 @@ const Footer = () => {
           <h2>Mes réseaux</h2>
           <List sx={{ width: "4em", display: "flex" }}>
             <ListItem>
-              <Instagram />
+              <motion.div whileHover={{ scale: 1.1 }}>
+                <Instagram />
+              </motion.div>
             </ListItem>
             <ListItem>
-              <Facebook />
+              <motion.div whileHover={{ scale: 1.1 }}>
+                <Facebook />
+              </motion.div>
             </ListItem>
             <ListItem>
-              <Pinterest />
+              <motion.div whileHover={{ scale: 1.1 }}>
+                <Pinterest />
+              </motion.div>
             </ListItem>
           </List>
           <h2>Newsletter</h2>
@@ -85,9 +92,9 @@ const Footer = () => {
             rel="noreferrer"
           >
             LinkedIn
-          </a> 
+          </a>
           |
-           <a
+          <a
             target="_blank"
             href="https://github.com/EstelleRoges/plant-painting-shop"
             rel="noreferrer"

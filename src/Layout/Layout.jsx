@@ -8,7 +8,7 @@ function Layout(props) {
     <>
     <LayoutSpace>
       <Navbar count={props.count} isConnected = {props.isConnected}/>
-        <Content>
+        <Content >
           <Outlet />
         </Content>
       <Footer />

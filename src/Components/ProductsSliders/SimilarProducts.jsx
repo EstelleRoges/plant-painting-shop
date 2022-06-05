@@ -10,8 +10,7 @@ const SimilarProducts = () => {
   });
 
   const similars = productList.slice(0, 3);
-  console.log(similars);
-
+  
   return (
     <SimilarDiv>
       <Splide

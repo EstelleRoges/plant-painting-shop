@@ -15,6 +15,7 @@ import {
   Input
 } from "@mui/material";
 import { Search } from "@mui/icons-material";
+import { motion } from "framer-motion";
 
 const Products = () => {
   const [filter, setFilter] = useState("new");
@@ -37,6 +38,11 @@ const Products = () => {
 
 
   return (
+    <motion.div
+      animate={{ opacity: 1 }}
+      initial={{ opacity:0 }}
+      transition={{ duration: 0.7 }}
+    >
     <ProductsArea>
       <ProductsNavigation>
         <Option>
@@ -127,6 +133,7 @@ const Products = () => {
           })}
       </Cards>
     </ProductsArea>
+    </motion.div>
   );
 };
 
