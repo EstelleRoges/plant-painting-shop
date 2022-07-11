@@ -36,6 +36,10 @@ const Content = styled("div")`
   max-width: 1500px;
   height: 100%;
   width: 80%;
+
+  @media screen and (max-width: 577px) {
+    text-align: justify;
+  }
 `;
 
 export default Layout;

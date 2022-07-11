@@ -38,7 +38,7 @@ const Form = styled("div")`
   form {
     margin: auto;
     padding: 2em 3em;
-    max-width: 60%;
+    max-width: 700px;
 
     label {
       margin-bottom: 1em;
@@ -66,6 +66,12 @@ const Form = styled("div")`
         right: 0.3em;
         bottom: 1em;
       }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    form {
+      padding: 2em 0;
     }
   }
 `;

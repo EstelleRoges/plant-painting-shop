@@ -42,16 +42,16 @@ const Footer = () => {
 
         <Box>
           <List>
-            <ListItem>Mentions légales</ListItem>
-            <ListItem>Conditions Générales de vente</ListItem>
             <ListItem>Plan du site</ListItem>
-            <ListItem>Service après-vente</ListItem>
+            <ListItem>Mentions légales</ListItem>
+            <ListItem>CGV</ListItem>
+            <ListItem>SAV</ListItem>
           </List>
         </Box>
 
-        <Box sx={{ width: "500px" }}>
+        <Box sx={{ maxWidth: "500px" }}>
           <h2>Mes réseaux</h2>
-          <List sx={{ width: "4em", display: "flex" }}>
+          <List sx={{ width: "4em", display: "flex"}}>
             <ListItem>
               <motion.div whileHover={{ scale: 1.1 }}>
                 <Instagram />
