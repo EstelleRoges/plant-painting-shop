@@ -1,11 +1,12 @@
 import { styled } from "@mui/material";
 
 export const FooterArea = styled("div")`
-  padding: 1.5em 0;
+  padding: 2em 0 1.5em 0;
+  
   width: 100%;
   height: fit-content;
-  color: white;
-  background-image: linear-gradient(to bottom, #578943, #3d602f);
+  color: #335228;
+  background-image: linear-gradient(to bottom, rgba(255,255,255,0) 3%, #ADD09F 6%, #7db569 100%);
 `;
 
 export const FooterBox = styled("div")`
@@ -20,7 +21,7 @@ export const FooterBox = styled("div")`
   }
 
   div {
-    width: 300px;
+    width: 350px;
     position: relative;
   }
 
@@ -30,13 +31,13 @@ export const FooterBox = styled("div")`
   }
 
   a {
-    color: white;
+    color: #335228;
   }
 
   button {
     position: absolute;
     bottom: 41px;
-    right: 60px;
+    right: 8px;
     border-radius: 10px;
   }
 
@@ -64,7 +65,7 @@ export const FooterBox = styled("div")`
         position: static;
 
         input {
-          max-width: 300px;
+          max-width: 500px;
           margin-bottom: 1em;
         }
         button {
@@ -98,7 +99,6 @@ export const FooterBox = styled("div")`
 
 export const Box = styled("div")`
   margin: 1.5em;
-  width: 300px;
 
 ul {
   width: fit-content;
