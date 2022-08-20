@@ -105,13 +105,18 @@ export const Header = styled("header")`
     }
 
     &.active {
+      nav {
+        height: 70px;
+      }
+
       div:first-of-type {
         margin: auto;
-        top: 2.5em;
+        top: 4em;
         right: 0;
-        width: fit-content;
-        justify-content: center;
-        background: linear-gradient(to bottom, transparent 25%, #7db569 50%);
+        width: 100%;
+        height: fit-content;
+        justify-content: flex-end;
+        background: linear-gradient(to bottom, transparent 0%, #7db569 30%);
         text-align: center;
         border-radius: 0 0 1em 1em;
         visibility: visible;
@@ -119,12 +124,10 @@ export const Header = styled("header")`
         transition: 0.3 ease-out;
 
         ul {
-          padding: 2em 0 0 0;
-          width: 100%;
-          justify-content: space-evenly;
+          padding: 0;
 
           li {
-            padding: 0.5em 20px;
+            padding: 0.5em 1.5em;
           }
         }
       }
@@ -154,7 +157,7 @@ export const Header = styled("header")`
 
       &.active {
         z-index: 1;
-        top: 6.3em;
+        top: 10vh;
 
         li {
           padding: 0 2vh;
@@ -165,13 +168,14 @@ export const Header = styled("header")`
     &.active {
       div:first-of-type {
         width: 100%;
+        top: 7vh;
         border-radius: 0 0 1em 1em;
         visibility: visible;
         z-index: 1;
         justify-content: flex-end;
 
         ul {
-        padding: 4vh 3vw 0 0;
+        padding: 0.5vh 2vw 0 0;
           width: fit-content;
 
           li {
