@@ -11,7 +11,8 @@ import {
 import { useState, useEffect } from "react";
 
 const Navbar = (props) => {
-  const [navMode, setNavMode] = useState(false);
+  // Mode 1: Desktop; Mode 2: Tablet; Mode 3: Mobile
+  const [navMode, setNavMode] = useState(1);
   const [icon, setIcon] = useState(false);
 
   const changeIcon = () => {
@@ -23,7 +24,13 @@ const Navbar = (props) => {
   };
 
   const changeMode = () => {
-    window.innerWidth >= 992 ? setNavMode(true) : setNavMode(false);
+    if (window.innerWidth <= 576) {
+      setNavMode(3);
+    } else if (window.innerWidth <= 992) {
+      setNavMode(2);
+    } else {
+      setNavMode(1);
+    }
   };
 
   useEffect(() => {
@@ -33,7 +40,11 @@ const Navbar = (props) => {
   window.addEventListener("resize", changeMode);
 
   return (
-    <Header className={!navMode ? (icon ? "mobileMenu active" : "mobileMenu") : null}>
+    <Header
+      className={
+        navMode !== 1 ? (icon ? "mobileMenu active" : "mobileMenu") : null
+      }
+    >
       <div>
         <nav>
           <ul>
@@ -57,25 +68,27 @@ const Navbar = (props) => {
       </div>
       <div>
         <ul>
-          <li>
-            <Link to="/cart">
-              <Badge badgeContent={props.count} color="success">
-                <ShoppingBasket id="cartIcon" />
-              </Badge>
-            </Link>
-          </li>
-          <li>
-            {props.isConnected ? (
-              <Link to="/userDashboard">
-                <AccountCircle />
-              </Link>
-            ) : (
-              <Link to="/signInUp">
-                <Person />
-              </Link>
-            )}
-          </li>
-          {!navMode ? (
+            <section className={icon ? "resIcons active" : "resIcons"}>
+              <li>
+                <Link to="/cart" onClick={closeMenu}>
+                  <Badge badgeContent={props.count} color="success">
+                    <ShoppingBasket id="cartIcon" />
+                  </Badge>
+                </Link>
+              </li>
+              <li>
+                {props.isConnected ? (
+                  <Link to="/userDashboard" onClick={closeMenu}>
+                    <AccountCircle />
+                  </Link>
+                ) : (
+                  <Link to="/signInUp" onClick={closeMenu}>
+                    <Person />
+                  </Link>
+                )}
+              </li>
+            </section>
+          {navMode !== 1 ? (
             <li onClick={changeIcon}>{icon ? <Close /> : <Menu />}</li>
           ) : null}
         </ul>

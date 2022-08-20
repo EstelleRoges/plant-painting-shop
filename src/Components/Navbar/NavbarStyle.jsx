@@ -33,6 +33,10 @@ export const Header = styled("header")`
     }
   }
 
+  .resIcons {
+    display: flex;
+  }
+
   svg {
     width: 26px;
     height: 26px;
@@ -72,6 +76,7 @@ export const Header = styled("header")`
 
   @media screen and (max-width: 992px) {
     position: relative;
+
     h1 {
       font-size: 46px;
     }
@@ -87,17 +92,11 @@ export const Header = styled("header")`
 
     div {
       &:first-of-type {
+        height: 100px;
         position: absolute;
         top: 0;
         right: 0;
-        transform: translateY(0);
         z-index: -1;
-        transition: 0.3 ease-out;
-        
-        ul {
-          margin-top: 2.5em;
-          display: block;
-        }
       }
 
       &:nth-of-type(2) {
@@ -108,18 +107,25 @@ export const Header = styled("header")`
     &.active {
       div:first-of-type {
         margin: auto;
-        width: 200px;
+        top: 2.5em;
+        right: 0;
+        width: fit-content;
         justify-content: center;
-        background: linear-gradient(to bottom, transparent 35%, #7db569 40%);
+        background: linear-gradient(to bottom, transparent 25%, #7db569 50%);
         text-align: center;
-        border-radius: 0 0 0 1em;
-        transform: translateY(50px);
+        border-radius: 0 0 1em 1em;
         visibility: visible;
         z-index: 1;
         transition: 0.3 ease-out;
 
         ul {
+          padding: 2em 0 0 0;
           width: 100%;
+          justify-content: space-evenly;
+
+          li {
+            padding: 0.5em 20px;
+          }
         }
       }
     }
@@ -127,15 +133,51 @@ export const Header = styled("header")`
 
   @media screen and (max-width: 576px) {
     h1 {
-      font-size: 36px;
+      font-size: 7vw;
     }
 
     div {
-       &:nth-of-type(2) {
-        flex: 6;
+      &:nth-of-type(2) {
+        flex: 8;
       }
-       &:nth-of-type(3) {
-        flex: 6;
+      &:nth-of-type(3) {
+        flex: 4;
+      }
+    }
+
+    .resIcons {
+      width: fit-content;
+      position: absolute;
+      top: 0;
+      left: 2vw;
+      z-index: -1;
+
+      &.active {
+        z-index: 1;
+        top: 6.3em;
+
+        li {
+          padding: 0 2vh;
+        }
+      }
+    }
+
+    &.active {
+      div:first-of-type {
+        width: 100%;
+        border-radius: 0 0 1em 1em;
+        visibility: visible;
+        z-index: 1;
+        justify-content: flex-end;
+
+        ul {
+        padding: 4vh 3vw 0 0;
+          width: fit-content;
+
+          li {
+            padding: 0.3em 1vh;
+          }
+        }
       }
     }
   }
