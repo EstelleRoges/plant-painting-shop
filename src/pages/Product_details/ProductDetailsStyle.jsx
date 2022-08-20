@@ -9,7 +9,7 @@ export const DetailsArea = styled("div")`
     margin-left: 2em;
     margin-right: 3em;
     width: 400px;
-    border: 4px outset #ADD09F;
+    border: 4px outset #add09f;
     border-radius: 1em;
   }
 
@@ -32,8 +32,8 @@ export const DetailsArea = styled("div")`
       margin: 1em;
       padding: 10px;
       outline: none;
-      border: 1px solid #ADD09F;
-      box-shadow: 1px 1px 5px #ADD09F;
+      border: 1px solid #add09f;
+      box-shadow: 1px 1px 5px #add09f;
     }
 
     select {
@@ -46,6 +46,11 @@ export const DetailsArea = styled("div")`
     }
   }
 
+  .priceSection {
+    display: flex;
+    align-items: center;
+  }
+
   button {
     float: right;
     color: white;
@@ -55,6 +60,72 @@ export const DetailsArea = styled("div")`
     border-radius: 0.5em;
     outline: none;
   }
+
+  @media screen and (max-width: 992px) {
+    img {
+      margin: 0 1em 0 0;
+      max-width: 300px;
+    }
+
+    h1 {
+      font-size: 40px;
+      margin: 0.5em 0;
+      text-align: left;
+    }
+
+    .textInfosArea {
+      margin: 0 0 0 1em;
+      padding-left: 0;
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    flex-direction: column;
+    justify-content: center;
+
+    img {
+      margin: auto;
+      width: 100%;
+    }
+
+    h1 {
+      margin: auto;
+      margin-top: 0.5em;
+      text-align: center;
+    }
+
+    .textInfosArea {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .formatAndPrice {
+      justify-content: center;
+    }
+
+    button {
+      float: none;
+      margin: auto;
+      margin-top: 1em;
+    }
+  }
+
+  @media screen and (max-width: 576px) {
+    .formatAndPrice {
+      flex-direction: column;
+      justify-content: center;
+
+      svg {
+        transform: rotate(90deg);
+      }
+
+      #price {
+        text-align: center;
+      }
+    }
+  }
 `;
 
 export const DescriptionSection = styled("div")`
@@ -62,13 +133,16 @@ export const DescriptionSection = styled("div")`
   p {
     clear: both;
     padding: 2em 1em;
-    border-top: 1px dashed #ADD09F;
-    border-bottom: 1px dashed #ADD09F;
+    border-top: 1px dashed #add09f;
+    border-bottom: 1px dashed #add09f;
+    text-align: left;
   }
 `;
 
 export const CommentsArea = styled("div")`
-width: 60%;
+  display: flex;
+  justify-content: space-evenly;
+
   h2 {
     margin: 0;
     font-size: 36px;
@@ -86,16 +160,20 @@ width: 60%;
     margin: 0 1px;
     font-size: 18px;
   }
+
+  @media screen and (max-width: 992px) {
+    flex-direction: column;
+  }
 `;
 
 export const Comments = styled("div")`
-
+  margin: 0 2em;
   div {
-    margin: 2em;
+    margin: 2em 0;
     padding: 1em;
     background-color: white;
     border-radius: 2em;
-    box-shadow: 4px 4px 10px #ADD09F;
+    box-shadow: 4px 4px 10px #add09f;
 
     h4 {
       font-size: 22px;
@@ -104,6 +182,12 @@ export const Comments = styled("div")`
     p {
       margin-top: 0.5em;
       margin-left: 2em;
+    }
+
+    @media screen and (max-width: 770px) {
+      p {
+        margin-left: 0 0.5em;
+      }
     }
   }
 `;
@@ -118,24 +202,23 @@ export const SubArea = styled("div")`
   }
 `;
 
-
 export const NewComment = styled("div")`
-margin: 2em;
-h2 {
-  margin-bottom: 1em;
-}
+  margin: 0 2em;
+  h2 {
+    margin-bottom: 1em;
+  }
 
-div {
-  margin: 0;
-  width: 100%;
-}
+  div {
+    margin: 0;
+    width: 100%;
+  }
 
   input {
     width: 100%;
   }
 
   Button {
-    margin: 1em ;
+    margin: 1em;
     margin-left: 0;
     float: none;
   }
@@ -160,7 +243,8 @@ div {
 
 export const SimilarArea = styled("div")`
   margin-top: 3em;
-  border-top: 1px dashed #ADD09F;
+  border-top: 1px dashed #add09f;
+
   h2 {
     margin: 0;
     padding: 0.5em;

@@ -85,14 +85,16 @@ const ProductDetails = (props) => {
                 </option>
               </select>
               <ArrowForward />
-              <input
-                type="text"
-                name="price"
-                id="price"
-                defaultValue={small}
-                ref={formatPrice}
-              />
-              €
+              <div className="priceSection">
+                <input
+                  type="text"
+                  name="price"
+                  id="price"
+                  defaultValue={small}
+                  ref={formatPrice}
+                />
+                €
+              </div>
             </div>
             <Button
               onClick={() =>
@@ -153,6 +155,7 @@ const ProductDetails = (props) => {
             </NewComment>
           )}
         </CommentsArea>
+
         <SimilarArea>
           <h2>Produits similaires</h2>
           <SimilarProducts />
