@@ -112,7 +112,7 @@ const ProductDetails = (props) => {
             <h2>Commentaires</h2>
             <div>
               <h4>Néroli</h4>
-              <p>Ce taleau est vraiment trop mignon!</p>
+              <p>Ce tableau est vraiment trop mignon!</p>
             </div>
             <div>
               <h4>Vasco</h4>

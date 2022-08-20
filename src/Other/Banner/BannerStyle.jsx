@@ -1,47 +1,51 @@
-import {styled} from "@mui/material";
+import { styled } from "@mui/material";
 
 export const BannerArea = styled("div")`
-  background-image: linear-gradient(to right, #D9EAD3, white);
+  margin-top: 3em;
   height: 500px;
 `;
 
 export const FirstSlide = styled("div")`
+  height: 500px;
+  background-image: url("imgs/paintingShop.bannerSlide1.jpg");
+  background-repeat: no-repeat;
+  background-position: right;
   display: flex;
-  z-index: 1;
+
 
   div {
+    margin-left: 1em;
     position: relative;
     width: 50%;
-    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
     h2 {
       font-family: "Whisper", cursive, serif;
       font-weight: bold;
-      margin: 2em 0 0.5em 1em;
+      margin: 1em 0 0.5em 0;
       font-size: 55px;
+      color: #335228;
+      text-shadow: 2px 2px 2px #7db569;
     }
 
     Button {
       float: left;
-      margin-left: 3em;
       font-size: 18px;
     }
 
     a {
       color: white;
     }
-    
   }
-`;
 
-export const Image = styled("img")`
-  width: 200px;
-  height: 200px;
-  background-color: white;
-  object-fit: contain;
-  border: 2px solid #C3D2BD;
-  border-radius: 1em;
-  z-index: -1;
+  @media screen and (max-width: 715px) {
+    div {
+      width: 100%;
+    }
+  }
 `;
 
 export const SecondSlide = styled("div")`

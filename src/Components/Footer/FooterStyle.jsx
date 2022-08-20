@@ -1,18 +1,27 @@
 import { styled } from "@mui/material";
 
 export const FooterArea = styled("div")`
-  padding: 2em 0 1.5em 0;
-  
+  margin: auto;
   width: 100%;
-  height: fit-content;
   color: #335228;
-  background-image: linear-gradient(to bottom, rgba(255,255,255,0) 3%, #ADD09F 6%, #7db569 100%);
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0) 3%,
+    #add09f 6%,
+    #7db569 100%
+  );
 `;
 
 export const FooterBox = styled("div")`
+  margin: auto;
+  margin-top: 3em;
+  padding: 2em;
+  max-width: 1400px;
   height: fit-content;
-  display: flex;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(33%, 1fr));
+  justify-items: center;
+  align-items: stretch;
 
   h2 {
     font-size: 30px;
@@ -46,6 +55,11 @@ export const FooterBox = styled("div")`
   }
 
   @media screen and (max-width: 1200px) {
+    div li {
+      justify-content: center;
+      text-align: center;
+    }
+
     div {
       display: flex;
       flex-direction: column;
@@ -53,59 +67,55 @@ export const FooterBox = styled("div")`
       align-items: center;
 
       ul {
-        width: 100%;
-
-        li div {
+        width: fit-content;
+        div {
+          width: 100%;
+        }
+        li {
           margin: auto;
           width: fit-content;
-        }
-      }
-
-      &:last-child {
-        position: static;
-
-        input {
-          max-width: 500px;
-          margin-bottom: 1em;
-        }
-        button {
-          position: static;
         }
       }
     }
   }
 
   @media screen and (max-width: 992px) {
+      grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
     div {
       display: flex;
       flex-direction: column;
       justify-content: start;
       align-items: center;
+    }
+    div:last-of-type {
+      box-sizing: border-box;
+      position: relative;
+      grid-column: 1 / span 2;
 
-      div:last-child {
-        position: static;
-        width: fit-content;
-
-        input {
-          margin-bottom: 1em;
-        }
-        button {
-          position: static;
-        }
+      input {
+        margin-bottom: 1em;
+      }
+      button {
+        position: absolute;
+        right: 0;
+        bottom: -2.5em;
       }
     }
   }
-`;
 
-export const Box = styled("div")`
-  margin: 1.5em;
-
-ul {
-  width: fit-content;
-}
+  @media screen and (max-width: 768px) {
+    div * {
+      justify-content: center;
+      text-align: center;
+    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export const Copyright = styled("div")`
+  margin-top: 3em;
   padding: 1em;
 
   p {

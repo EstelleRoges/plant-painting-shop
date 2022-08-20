@@ -1,19 +1,51 @@
 import { Link } from "react-router-dom";
 import { Badge } from "@mui/material";
 import { Header } from "./NavbarStyle";
-import { Person, ShoppingBasket, AccountCircle } from "@mui/icons-material";
+import {
+  Person,
+  ShoppingBasket,
+  AccountCircle,
+  Menu,
+  Close,
+} from "@mui/icons-material";
+import { useState, useEffect } from "react";
 
 const Navbar = (props) => {
+  const [navMode, setNavMode] = useState(false);
+  const [icon, setIcon] = useState(false);
+
+  const changeIcon = () => {
+    setIcon(!icon);
+  };
+
+  const closeMenu = () => {
+    setIcon(false);
+  };
+
+  const changeMode = () => {
+    window.innerWidth >= 992 ? setNavMode(true) : setNavMode(false);
+  };
+
+  useEffect(() => {
+    changeMode();
+  }, []);
+
+  window.addEventListener("resize", changeMode);
+
   return (
-    <Header>
+    <Header className={!navMode ? (icon ? "mobileMenu active" : "mobileMenu") : null}>
       <div>
         <nav>
           <ul>
             <li>
-              <Link to="/products">Tableaux</Link>
+              <Link to="/products" onClick={closeMenu}>
+                Tableaux
+              </Link>
             </li>
             <li>
-              <Link to="/about">À propos</Link>
+              <Link to="/about" onClick={closeMenu}>
+                À propos
+              </Link>
             </li>
           </ul>
         </nav>
@@ -43,6 +75,9 @@ const Navbar = (props) => {
               </Link>
             )}
           </li>
+          {!navMode ? (
+            <li onClick={changeIcon}>{icon ? <Close /> : <Menu />}</li>
+          ) : null}
         </ul>
       </div>
     </Header>

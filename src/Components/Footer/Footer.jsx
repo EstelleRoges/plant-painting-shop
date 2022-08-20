@@ -49,7 +49,7 @@ const Footer = () => {
           </List>
         </Box>
 
-        <Box sx={{ maxWidth: "500px" }}>
+        <Box>
           <h2>Mes réseaux</h2>
           <List sx={{ width: "4em", display: "flex"}}>
             <ListItem>
