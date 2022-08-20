@@ -1,9 +1,19 @@
-import { styled, Tabs, Tab } from "@mui/material";
+import { styled, Tabs, Tab, Box } from "@mui/material";
 
 export const TabList = styled(Tabs)({
+  "& .MuiTabs-flexContainer": {
+    justifyContent: "space-around",
+  },
   "& .MuiTabs-indicator": {
     backgroundColor: "green",
   },
+});
+
+export const UserBox = styled(Box)({
+  margin: "auto",
+  maxWidth: "1400px",
+  display: "flex",
+  paddingLeft: "0",
 });
 
 export const TabGroup = styled("div")`
@@ -22,18 +32,33 @@ export const InfoDiv = styled("div")`
   padding: 1.5em;
   border: 1px solid transparent;
   display: flex;
+  justify-content: space-between;
   border-radius: 2em;
-  box-shadow: 4px 4px 15px #ADD09F;
+  box-shadow: 4px 4px 15px #add09f;
+
+  @media screen and (max-width: 992px) {
+    flex-direction: column;
+    justify-content: center;
+    margin: 2em 0;
+  }
 `;
 
 export const SubInfoDiv = styled("div")`
-  margin: auto;
-  margin-top: 0;
+  margin: 0 3em;
+  width: 100%;
   justify-items: flex-start;
 
   h2 {
     margin-left: 0;
     font-size: 34px;
+  }
+
+  @media screen and (max-width: 1040px) {
+    font-size: 14px;
+  }
+  @media screen and (max-width: 992px) {
+    margin: 0;
+    width: auto;
   }
 `;
 
@@ -61,11 +86,16 @@ export const RowDiv = styled("div")`
   label {
     display: block;
   }
+  
+  @media screen and (max-width: 576px) {
+    flex-direction: column;
+  }
 `;
 
 export const SubInfo = styled("div")`
   margin: auto;
-  width: 350px;
+  width: 100%;
+  text-align: start;
 `;
 
 export const CardInfos = styled("div")`
@@ -74,6 +104,13 @@ export const CardInfos = styled("div")`
 
   div:first-of-type {
     margin-right: 1em;
+  }
+
+  @media screen and (max-width: 576px) {
+    flex-direction: column;
+    div:first-of-type {
+      margin-right: 0;
+    }
   }
 `;
 
@@ -84,14 +121,30 @@ export const DecoImg = styled("img")`
   width: 130px;
   height: 130px;
   z-index: -1;
+
+  @media screen and (max-width: 690px) {
+    display: none;
+  }
 `;
 
 export const OptionBtns = styled("div")`
+  display: flex;
+  flex-direction: row-reverse;
+
   button:first-of-type {
-    background-color: #E94957;
+    background-color: #e94957;
   }
 
   button:last-of-type {
-    background-color: #FFA033;
+    background-color: #ffa033;
+  }
+
+  @media screen and (max-width: 576px) {
+    flex-direction: column-reverse;
+    align-items: center;
+
+    button {
+      margin: 0.5em 0;
+    }
   }
 `;

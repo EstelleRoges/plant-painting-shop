@@ -32,10 +32,10 @@ flex-direction: column;
 `;
 
 const Content = styled("div")`
-  margin: 2em auto;
-  max-width: 1500px;
-  height: 100%;
+  margin: auto;
   width: 80%;
+  max-width: 1400px;
+  height: 100%;
 
   @media screen and (max-width: 577px) {
     text-align: justify;

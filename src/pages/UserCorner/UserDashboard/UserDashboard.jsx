@@ -1,4 +1,5 @@
 import {
+  UserBox,
   TabList,
   TabGroup,
   UserTab,
@@ -8,7 +9,7 @@ import {
   SubInfo,
   CardInfos,
   DecoImg,
-  OptionBtns
+  OptionBtns,
 } from "./UserDashboardStyle.jsx";
 import { useState } from "react";
 import { Avatar, Box, Button } from "@mui/material";
@@ -23,7 +24,7 @@ const UserDashboard = (props) => {
   const userLogsOut = () => {
     props.setIsConnected(!props.isConnected);
     navigate("/signInUp");
-  }
+  };
 
   const TabPanel = (props) => {
     const { children, value, index, ...other } = props;
@@ -32,12 +33,12 @@ const UserDashboard = (props) => {
       <div
         role="tabpanel"
         hidden={value !== index}
-        id={`vertical-tabpanel-${index}`}
-        aria-labelledby={`vertical-tab-${index}`}
+        id={`full-width-tabpanel-${index}`}
+        aria-labelledby={`full-width-tab-${index}`}
         {...other}
       >
         {value === index && (
-          <Box sx={{ width: "100%", pl: 2 }}>
+          <Box sx={{ width: "100%" }}>
             <div>{children}</div>
           </Box>
         )}
@@ -60,10 +61,9 @@ const UserDashboard = (props) => {
   return (
     <>
       <h1>Mon compte</h1>
-      <Box sx={{ width: "100%", display: "flex" }}>
-        <TabList
+        <TabList 
           className="tabStyle"
-          orientation="vertical"
+          orientation="horizontal"
           onChange={handleChange}
           value={value}
           aria-label={"userDashboardMenu"}
@@ -72,15 +72,19 @@ const UserDashboard = (props) => {
           <UserTab label="Commandes" />
         </TabList>
 
+      <UserBox>
         <TabGroup>
           <TabPanel value={value} index={0}>
             <InfoDiv>
-              <RowDiv sx={{position: "relative"}}>
+              <RowDiv sx={{ position: "relative" }}>
                 <Avatar alt="userAvatar" sx={{ width: 50, height: 50 }} />
-                <div style={{ marginLeft: "3em"}}>
+                <div>
                   <h2>Le Testeur</h2>
                   <p>a.k.a: Le Testeur</p>
-                  <DecoImg src="imgs/succulents-top-view-hand-drawn-style-vector.jpg" alt="userMainInfoDeco" />
+                  <DecoImg
+                    src="imgs/succulents-top-view-hand-drawn-style-vector.jpg"
+                    alt="userMainInfoDeco"
+                  />
                 </div>
               </RowDiv>
             </InfoDiv>
@@ -187,8 +191,20 @@ const UserDashboard = (props) => {
               >
                 <h2>Options</h2>
                 <OptionBtns>
-                  <Button variant="contained" endIcon={<Logout />} onClick={userLogsOut}>Déconnexion</Button>
-                  <Button sx={{margin: "0 1em"}} variant="contained" endIcon={<Edit />}>Modifier</Button>
+                  <Button
+                    variant="contained"
+                    endIcon={<Logout />}
+                    onClick={userLogsOut}
+                  >
+                    Déconnexion
+                  </Button>
+                  <Button
+                    sx={{ margin: "0 1em" }}
+                    variant="contained"
+                    endIcon={<Edit />}
+                  >
+                    Modifier
+                  </Button>
                 </OptionBtns>
               </RowDiv>
             </InfoDiv>
@@ -200,7 +216,7 @@ const UserDashboard = (props) => {
             </InfoDiv>
           </TabPanel>
         </TabGroup>
-      </Box>
+      </UserBox>
     </>
   );
 };

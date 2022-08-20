@@ -41,7 +41,7 @@ const ShippingAdress = () => {
         </div>
       </RowDiv>
       <RowDiv>
-        <div>
+        <div style={{ width: "50%" }}>
           <label htmlFor="postalCode">Code postal</label>
           <input
             readOnly
@@ -51,7 +51,7 @@ const ShippingAdress = () => {
             value={"99999"}
           />
         </div>
-        <div>
+        <div style={{ width: "50%" }}>
           <label htmlFor="city">Ville</label>
           <input readOnly type="text" name="city" id="city" value={"LaVille"} />
         </div>
