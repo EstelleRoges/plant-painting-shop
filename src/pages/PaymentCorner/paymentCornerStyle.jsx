@@ -7,6 +7,11 @@ export const CheckoutArea = styled("div")`
   a {
     color: white;
   }
+
+  @media screen and (max-width: 992px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export const EmptyCart = styled("div")`
@@ -145,6 +150,9 @@ export const ShippingAdressArea = styled("div")`
   margin: 1em;
   padding: 0.5em 0 1em 1em;
   border-left: 1px dashed #add09f;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   h2 {
     margin: 0 0 1em 0;
@@ -153,5 +161,15 @@ export const ShippingAdressArea = styled("div")`
 
   Button {
     margin: 0 1em;
+  }
+
+  @media screen and (max-width: 992px) {
+    border-top: 1px dashed #add09f;
+    border-left: none;
+
+    button {
+      width: 100%;
+      margin: auto;
+    }
   }
 `;
