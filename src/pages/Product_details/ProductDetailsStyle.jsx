@@ -186,7 +186,7 @@ export const Comments = styled("div")`
 
     @media screen and (max-width: 770px) {
       p {
-        margin-left: 0 0.5em;
+        margin: 0 0.5em;
       }
     }
   }

@@ -1,7 +1,9 @@
 import { styled } from "@mui/material";
 
 export const ProductsArea = styled("div")`
+margin: auto;
   display: flex;
+  justify-content: center;
   box-sizing: border-box;
 
   h2 {
@@ -73,20 +75,33 @@ export const Cards = styled("div")`
     width: auto;
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   }
-
-  @media screen and (max-width: 640px) {
+  @media screen and (max-width: 700px) {
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+
+  @media screen and (max-width: 665px) {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
+
+  @media screen and (max-width: 375px) {
+    padding: 0;
   }
 `;
 
 export const Card = styled("div")`
-  margin: 0%;
+  margin: 0;
   width: 300px;
 
   @media screen and (max-width: 1115px) {
     width: 280px;
   }
-  @media screen and (max-width: 640px) {
-    width: 300px;
+  @media screen and (max-width: 700px) {
+    width: 260px;
+  }
+  @media screen and (max-width: 665px) {
+    width: 240px;
+  }
+  @media screen and (max-width: 375px) {
+    width: 250px;
   }
 `;

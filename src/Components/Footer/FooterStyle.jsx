@@ -112,6 +112,23 @@ export const FooterBox = styled("div")`
     flex-direction: column;
     align-items: center;
   }
+
+  @media screen and (max-width: 375px) {
+    div {
+      width: auto;
+    }
+     div:last-of-type {
+      input {
+      width: auto;
+     }
+     button {
+      width: fit-content;
+        position: absolute;
+        right: 20%;
+        bottom: -2.5em;
+      }
+     }
+  }
 `;
 
 export const Copyright = styled("div")`
