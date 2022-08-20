@@ -101,7 +101,7 @@ export const Card = styled("div")`
   @media screen and (max-width: 665px) {
     width: 240px;
   }
-  @media screen and (max-width: 375px) {
-    width: 250px;
+  @media screen and (max-width: 589px) {
+    width: 300px;
   }
 `;
