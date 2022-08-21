@@ -20,7 +20,7 @@ const Cart = (props) => {
             </p>
           </EmptyCart>
         ) : (
-          <CartContent style={{ margin: "auto" }}>
+          <div style={{ margin: "auto" }}>
             <h1>Panier</h1>
             <ArticlesTable
               recap={props.recap}
@@ -29,7 +29,7 @@ const Cart = (props) => {
               onRemove={props.onRemove}
               onDelete={props.onDelete}
             />
-          </CartContent>
+          </div>
         )}
       </motion.div>
     </>

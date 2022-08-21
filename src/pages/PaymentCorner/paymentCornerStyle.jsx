@@ -1,10 +1,23 @@
 import { styled } from "@mui/material";
 
+export const CartContent = styled("div")`
+  a {
+    color: white;
+    text-decoration: none;
+  }
+`;
+
+export const CartArea = styled("div")`
+flex-direction: column;
+`;
+
 export const CheckoutArea = styled("div")`
+  margin: auto;
   display: flex;
+  justify-content: center;
   align-items: flex-start;
 
-  a {
+  Button a {
     color: white;
   }
 
@@ -31,50 +44,36 @@ export const EmptyCart = styled("div")`
     font-style: italic;
     text-decoration: none;
   }
+
+  @media screen and (max-width: 768px);
 `;
 
-export const CartTable = styled("table")`
-  margin: 2em auto;
-  width: 70%;
-  border-collapse: collapse;
-  font-size: 18px;
+export const Article = styled("section")`
+  margin: 1em auto;
+  padding: 1.5em;
+  max-width: 850px;
+  background-color: white;
+  border-radius: 1.5em;
+  box-shadow: 1px 1px 3px #7db569;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: 3vw auto auto auto auto 3vw;
 
-  thead tr,
-  tbody tr {
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-
-    Button {
-      background-color: transparent;
-      min-width: 35px;
-
-      &:hover {
-        background-color: transparent;
-      }
-    }
+  a {
+    text-align: center;
+    color: black;
+    font-family: "Whisper", cursive;
+    font-size: 34px;
+    font-weight: bold;
   }
 
-  td {
-    text-align: center;
-    vertical-align: middle;
-
-    div {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      span {
-        padding: 0 0.5em;
-      }
-    }
-
-    a {
-      color: black;
-    }
+  p {
+    color: #7db569;
   }
 
   svg {
-    color: black;
+    color: saddleBrown;
   }
 
   img {
@@ -83,36 +82,118 @@ export const CartTable = styled("table")`
     border-radius: 1em;
   }
 
-  button {
-    margin: 1em 0;
+  div {
+    padding: 0 0.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    span {
+      padding: 0 0.5em;
+    }
+  }
+
+  Button {
+    background-color: transparent;
+    min-width: 35px;
+
+    &:hover {
+      background-color: transparent;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    max-width: 450px;
+    grid-template-columns: auto auto;
+
     a {
-      color: white;
+      color: black;
+      font-family: "Whisper", cursive;
+      font-size: 26px;
+      font-weight: bold;
+    }
+
+    div {
+      padding: 0.25em 0;
+
+      &:first-of-type {
+        grid-column: 1 / span 3;
+      }
+
+      &:nth-of-type(2) {
+        grid-column: 1 / span 2;
+      }
+
+      &:last-of-type {
+        grid-column-start: 3;
+        grid-column-end: 4;
+      }
+    }
+  }
+
+  @media screen and (max-width: 576px) {
+    grid-template-columns: auto;
+
+    div {
+      padding: 0.25em 0;
+      &:nth-of-type(4) {
+        grid-column: 1 / span 2;
+      }
+      &:last-of-type {
+        grid-column: 1 / span 3;
+      }
+    }
+  }
+
+  @media screen and (max-width: 375px) {
+    justify-content: center;
+    img {
+      width: 70px;
+      height: 70px;
+    }
+
+    div {
+      grid-column: 1 / span 3;
     }
   }
 `;
 
-export const Thead = styled("thead")`
-  td {
-    padding: 0.5em;
-  }
+export const PriceSection = styled("div")`
+  font-size: 18px;
+  font-weight: bold;
 `;
 
-export const TotalTr = styled("tr")`
-  td {
-    padding: 0.5em;
+export const Total = styled("div")`
+  margin: 1.5em auto;
+  padding: 1em 1.5em;
+  max-width: 850px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border-radius: 1.5em;
+  box-shadow: 1px 1px 3px #7db569;
+
+  p {
+    margin: 0;
+    font-size: 26px;
+    font-style: italic;
     font-weight: bold;
-    font-size: 22px;
   }
 
-  td:nth-of-type(2) {
-    text-align: start;
+  @media screen and (max-width: 768px) {
+    max-width: 450px;
   }
 `;
 
-export const CartContent = styled("div")`
+export const CartFooter = styled("div")`
+  display: flex;
+  justify-content: center;
+  button {
+    padding: 0.5em 2em;
+    float: none;
+  }
   a {
     color: white;
-    text-decoration: none;
   }
 `;
 
