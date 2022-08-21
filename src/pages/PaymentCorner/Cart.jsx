@@ -1,5 +1,5 @@
 import React from "react";
-import { EmptyCart, CartContent } from "./paymentCornerStyle";
+import { EmptyCart} from "./paymentCornerStyle";
 import { Link } from "react-router-dom";
 import ArticlesTable from "../../Components/ArticlesTable/ArticlesTable";
 import { motion } from "framer-motion";
