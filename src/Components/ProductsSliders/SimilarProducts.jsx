@@ -15,14 +15,19 @@ const SimilarProducts = () => {
     <SimilarDiv>
       <Splide
         options={{
-          perPage: 3,
+          perPage: 2,
+          breakpoints: {
+            768: {
+              perPage: 1,
+            },
+          },
+          perMove: 1,
           pagination: false,
           fixedWidth: "320px",
           drag: "free",
           gap: "1em",
           wheel: true,
           releaseWheel: false,
-          arrows: false,
         }}
       >
         {similars.map((product) => {

@@ -132,7 +132,6 @@ export const FooterBox = styled("div")`
 `;
 
 export const Copyright = styled("div")`
-  margin-top: 3em;
   padding: 1em;
 
   p {

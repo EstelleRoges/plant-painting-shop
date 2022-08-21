@@ -97,6 +97,7 @@ export const Header = styled("header")`
         top: 0;
         right: 0;
         z-index: -1;
+        visibility: hidden;
       }
 
       &:nth-of-type(2) {
