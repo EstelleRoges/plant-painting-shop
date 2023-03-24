@@ -1,3 +1,4 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import { Card, CardContent } from "@mui/material";
 import { linkStyle, CardInfos, CardText,ImgContent } from "./ProductCardStyle";
@@ -12,7 +13,7 @@ const ProductCard = (product) => {
           margin: "2em 1em",
           border: "2px solid transparent",
           borderRadius: "1em",
-          boxShadow: "2px 2px 10px #ADD09F",
+          boxShadow: "1px 1px 7px var(--green-secondary)",
         }}
       >
         <CardContent>

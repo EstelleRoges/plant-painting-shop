@@ -1,14 +1,15 @@
+import React from "react";
 import Navbar from "../Components/Navbar/Navbar";
 import Footer from "../Components/Footer/Footer";
 import { styled } from "@mui/material";
 import { Outlet } from "react-router-dom";
 
-function Layout(props) {
+function Layout() {
   return (
     <>
     <LayoutSpace>
-      <Navbar count={props.count} isConnected = {props.isConnected}/>
-        <Content >
+      <Navbar />
+        <Content>
           <Outlet />
         </Content>
       <Footer />

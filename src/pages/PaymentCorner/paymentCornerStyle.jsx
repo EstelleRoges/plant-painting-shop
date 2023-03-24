@@ -31,10 +31,6 @@ export const EmptyCart = styled("div")`
   margin: 10em 3em;
   text-align: center;
 
-  h2 {
-    font-size: 40px;
-  }
-
   p {
     font-size: 18px;
   }
@@ -63,7 +59,7 @@ export const Article = styled("section")`
   a {
     text-align: center;
     color: black;
-    font-family: "Whisper", cursive;
+    font-family: "Kalam", cursive;
     font-size: 34px;
     font-weight: bold;
   }
@@ -108,7 +104,7 @@ export const Article = styled("section")`
 
     a {
       color: black;
-      font-family: "Whisper", cursive;
+      font-family: "Kalam", cursive;
       font-size: 26px;
       font-weight: bold;
     }
@@ -206,7 +202,6 @@ export const RowDiv = styled("div")`
 
   h2 {
     margin: 0;
-    font-size: 40px;
     letter-spacing: 1px;
   }
 
@@ -230,14 +225,13 @@ export const SubInfo = styled("div")`
 export const ShippingAdressArea = styled("div")`
   margin: 1em;
   padding: 0.5em 0 1em 1em;
-  border-left: 1px dashed #add09f;
+  border-left: 1px dashed var(--green-secondary);
   display: flex;
   flex-direction: column;
   align-items: center;
 
   h2 {
     margin: 0 0 1em 0;
-    font-size: 32px;
   }
 
   Button {
@@ -245,7 +239,7 @@ export const ShippingAdressArea = styled("div")`
   }
 
   @media screen and (max-width: 992px) {
-    border-top: 1px dashed #add09f;
+    border-top: 1px dashed var(--green-secondary);
     border-left: none;
 
     button {

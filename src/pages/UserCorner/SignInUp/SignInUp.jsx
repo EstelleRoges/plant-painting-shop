@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { SignInUpContent } from "./SignInUpStyle";
 import { motion } from "framer-motion";
+import { SucciContext } from "../../../Constants/SucciContext";
 
-const signInUp = (props) => {
+const SignInUp = () => {
+  const { isConnected, setIsConnected } = useContext(SucciContext);
   const userSignsIn = () => {
-    props.setIsConnected(!props.isConnected);
+    setIsConnected(!isConnected);
   };
+  console.log(isConnected);
 
   return (
     <motion.div
@@ -35,7 +38,7 @@ const signInUp = (props) => {
                 id="signInPassword"
                 value="testAndEnjoy"
               />
-              <button type="submit" onClick={userSignsIn}>
+              <button type="submit" onClick={() => userSignsIn()}>
                 <Link to="/userDashboard">Connexion</Link>
               </button>
             </form>
@@ -73,4 +76,4 @@ const signInUp = (props) => {
   );
 };
 
-export default signInUp;
+export default SignInUp;

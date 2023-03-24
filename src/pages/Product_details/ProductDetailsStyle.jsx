@@ -9,7 +9,7 @@ export const DetailsArea = styled("div")`
     margin-left: 2em;
     margin-right: 3em;
     width: 400px;
-    border: 4px outset #add09f;
+    border: 4px outset var(--green-secondary);
     border-radius: 1em;
   }
 
@@ -32,8 +32,8 @@ export const DetailsArea = styled("div")`
       margin: 1em;
       padding: 10px;
       outline: none;
-      border: 1px solid #add09f;
-      box-shadow: 1px 1px 5px #add09f;
+      border: 1px solid var(--green-secondary);
+      box-shadow: 1px 1px 5px var(--green-secondary);
     }
 
     select {
@@ -133,8 +133,8 @@ export const DescriptionSection = styled("div")`
   p {
     clear: both;
     padding: 2em 1em;
-    border-top: 1px dashed #add09f;
-    border-bottom: 1px dashed #add09f;
+    border-top: 1px dashed var(--green-secondary);
+    border-bottom: 1px dashed var(--green-secondary);
     text-align: left;
   }
 `;
@@ -145,7 +145,6 @@ export const CommentsArea = styled("div")`
 
   h2 {
     margin: 0;
-    font-size: 36px;
   }
 
   Button {
@@ -173,7 +172,7 @@ export const Comments = styled("div")`
     padding: 1em;
     background-color: white;
     border-radius: 2em;
-    box-shadow: 4px 4px 10px #add09f;
+    box-shadow: 4px 4px 10px var(--green-secondary);
 
     h4 {
       font-size: 22px;
@@ -243,11 +242,10 @@ export const NewComment = styled("div")`
 
 export const SimilarArea = styled("div")`
   margin-top: 3em;
-  border-top: 1px dashed #add09f;
+  border-top: 1px dashed var(--green-secondary);
 
   h2 {
     margin: 0;
     padding: 0.5em;
-    font-size: 36px;
   }
 `;

@@ -1,10 +1,12 @@
-import React from "react";
-import { EmptyCart} from "./paymentCornerStyle";
+import React, { useContext } from "react";
+import { EmptyCart } from "./paymentCornerStyle";
 import { Link } from "react-router-dom";
 import ArticlesTable from "../../Components/ArticlesTable/ArticlesTable";
 import { motion } from "framer-motion";
+import { SucciContext } from "../../Constants/SucciContext";
 
-const Cart = (props) => {
+const Cart = () => {
+  const { recap, cartItems } = useContext(SucciContext);
   return (
     <>
       <motion.div
@@ -12,7 +14,7 @@ const Cart = (props) => {
         initial={{ x: -50, opacity: 0 }}
         transition={{ duration: 0.3 }}
       >
-        {props.cartItems.length === 0 ? (
+        {cartItems.length === 0 ? (
           <EmptyCart>
             <h2>Ah...votre panier est vide.</h2>
             <p>
@@ -22,13 +24,7 @@ const Cart = (props) => {
         ) : (
           <div style={{ margin: "auto" }}>
             <h1>Panier</h1>
-            <ArticlesTable
-              recap={props.recap}
-              cartItems={props.cartItems}
-              onAdd={props.onAdd}
-              onRemove={props.onRemove}
-              onDelete={props.onDelete}
-            />
+            <ArticlesTable recap={recap} />
           </div>
         )}
       </motion.div>

@@ -3,9 +3,8 @@ import { styled } from "@mui/material";
 export const Header = styled("header")`
   background: linear-gradient(
     to bottom,
-    #add09f 28%,
-    #7db569 92%,
-    rgba(255, 255, 255, 0) 100%
+    var(--green-secondary) 5%,
+    rgba(255, 255, 255, 0) 30%
   );
   padding: 1em;
   display: flex;
@@ -44,21 +43,17 @@ export const Header = styled("header")`
   }
 
   a {
-    text-decoration: none;
-    font-weight: bold;
+    font-weight: 700;
     font-style: italic;
-    font-size: 16px;
-    color: #335228;
   }
 
   h1 {
     width: 100%;
     margin: 0;
     padding: 0;
-    font-size: 60px;
     font-style: normal;
-    color: #335228;
-    text-shadow: 0 0 1px #335228;
+
+    text-shadow: 0 0 1px var(--green-primary);
     border: none;
     text-align: center;
   }
@@ -76,10 +71,6 @@ export const Header = styled("header")`
 
   @media screen and (max-width: 992px) {
     position: relative;
-
-    h1 {
-      font-size: 46px;
-    }
 
     a {
       font-size: 15px;
@@ -116,9 +107,8 @@ export const Header = styled("header")`
         right: 0;
         width: 100%;
         height: fit-content;
-        justify-content: flex-end;
-        background: linear-gradient(to bottom, transparent 0%, #7db569 30%);
-        text-align: center;
+        justify-content: flex-start;
+        ${'' /* background: linear-gradient(to bottom, transparent 0%, var(--green-secondary) 30%); */}
         border-radius: 0 0 1em 1em;
         visibility: visible;
         z-index: 1;
@@ -136,10 +126,6 @@ export const Header = styled("header")`
   }
 
   @media screen and (max-width: 576px) {
-    h1 {
-      font-size: 7vw;
-    }
-
     div {
       &:nth-of-type(2) {
         flex: 8;
@@ -152,7 +138,7 @@ export const Header = styled("header")`
     .resIcons {
       width: fit-content;
       position: absolute;
-      top: 0;
+      top: 4em;
       left: 2vw;
       z-index: -1;
 
@@ -176,7 +162,7 @@ export const Header = styled("header")`
         justify-content: flex-end;
 
         ul {
-        padding: 0.5vh 2vw 0 0;
+          padding: 0.5vh 2vw 0 0;
           width: fit-content;
 
           li {

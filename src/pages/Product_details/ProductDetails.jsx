@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useContext } from "react";
 import { Button } from "@mui/material";
 import { ArrowForward } from "@mui/icons-material";
 import { useParams } from "react-router-dom";
@@ -15,8 +15,11 @@ import {
 } from "./ProductDetailsStyle";
 import SimilarProducts from "../../Components/ProductsSliders/SimilarProducts";
 // import ProductDetailsLogic, {productInfos, productDetails, product, handleChange, displayCreateCommentArea, display, small, medium, large, formatPrice, onAdd} from "./ProductDetailsLogic";
+import { SucciContext } from "../../Constants/SucciContext";
 
-const ProductDetails = (props) => {
+const ProductDetails = () => {
+  const { cartItems, setCartItems, onAdd } = useContext(SucciContext);
+
   const [productInfos, setProductInfos] = useState({});
   const [display, setDisplay] = useState(false);
   let params = useParams();
@@ -25,6 +28,11 @@ const ProductDetails = (props) => {
   const productDetails = productList.find((prd) => {
     return prd.id === parseInt(params.id);
   });
+
+// Makes the page scroll to top
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   //Assign the found product object to productInfos
   useEffect(() => {
@@ -41,8 +49,6 @@ const ProductDetails = (props) => {
 
   //Create a ref to change the price according to the user's choice
   let formatPrice = useRef(small);
-
-  const { onAdd } = props;
 
   const handleChange = (event) => {
     return (formatPrice.current.value = parseFloat(event.target.value));
@@ -98,7 +104,7 @@ const ProductDetails = (props) => {
             </div>
             <Button
               onClick={() =>
-                onAdd(productInfos, parseFloat(formatPrice.current.value))
+                onAdd(productInfos, parseFloat(formatPrice.current.value),cartItems, setCartItems)
               }
             >
               Ajouter au panier

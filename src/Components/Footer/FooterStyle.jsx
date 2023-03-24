@@ -3,16 +3,15 @@ import { styled } from "@mui/material";
 export const FooterArea = styled("div")`
   margin: auto;
   width: 100%;
-  color: #335228;
   background-image: linear-gradient(
     to bottom,
     rgba(255, 255, 255, 0) 3%,
-    #add09f 6%,
+    var(--green-secondary) 6%,
     #7db569 100%
   );
 `;
 
-export const FooterBox = styled("div")`
+export const FooterBox = styled("section")`
   margin: auto;
   margin-top: 3em;
   padding: 2em;
@@ -24,7 +23,7 @@ export const FooterBox = styled("div")`
   align-items: stretch;
 
   h2 {
-    font-size: 30px;
+    font-size: clamp(24px, 3vw, 34px);
     margin-bottom: 0;
     letter-spacing: 2px;
   }
@@ -37,10 +36,6 @@ export const FooterBox = styled("div")`
   input {
     min-width: 200px;
     max-width: 450px;
-  }
-
-  a {
-    color: #335228;
   }
 
   button {

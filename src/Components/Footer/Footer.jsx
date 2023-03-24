@@ -1,13 +1,23 @@
-import { List, ListItem, Button, Box } from "@mui/material";
+import React from "react";
+import { List, ListItem, Box } from "@mui/material";
 import { FooterArea, FooterBox, Copyright } from "./FooterStyle";
-import { Pinterest, Facebook, Instagram } from "@mui/icons-material";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
 
 const Footer = () => {
+  const scrollToTop = () => {
+    window.scroll(0, 0);
+  };
+
   return (
     <FooterArea>
       <FooterBox>
+        <Box>
+          <h2 onClick={scrollToTop}>
+            <Link to="/">The Succi Place</Link>
+          </h2>
+          <p>123 rue du Vert</p>
+          <p>75000 Paris</p>
+        </Box>
         <Box>
           <List>
             <ListItem>
@@ -47,39 +57,6 @@ const Footer = () => {
             <ListItem>CGV</ListItem>
             <ListItem>SAV</ListItem>
           </List>
-        </Box>
-
-        <Box>
-          <h2>Mes réseaux</h2>
-          <List sx={{ width: "4em", display: "flex"}}>
-            <ListItem>
-              <motion.div whileHover={{ scale: 1.1 }}>
-                <Instagram />
-              </motion.div>
-            </ListItem>
-            <ListItem>
-              <motion.div whileHover={{ scale: 1.1 }}>
-                <Facebook />
-              </motion.div>
-            </ListItem>
-            <ListItem>
-              <motion.div whileHover={{ scale: 1.1 }}>
-                <Pinterest />
-              </motion.div>
-            </ListItem>
-          </List>
-          <h2>Newsletter</h2>
-          <div>
-            <input
-              type="text"
-              name="enterMail"
-              id="enterMail"
-              placeholder="Entrez votre mail"
-            />
-            <Button variant="contained" color="success">
-              S'inscrire
-            </Button>
-          </div>
         </Box>
       </FooterBox>
       <Copyright>

@@ -11,18 +11,22 @@ import {
   DecoImg,
   OptionBtns,
 } from "./UserDashboardStyle.jsx";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Avatar, Box, Button } from "@mui/material";
 import { Construction, Edit, Logout } from "@mui/icons-material";
 import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
 import ShippingAdress from "../../../Components/ShippingAdress/ShippingAdress.jsx";
+import { SucciContext } from "../../../Constants/SucciContext.js";
 
-const UserDashboard = (props) => {
+
+const UserDashboard = () => {
   const navigate = useNavigate();
+    const { isConnected, setIsConnected } = useContext(SucciContext);
+
 
   const userLogsOut = () => {
-    props.setIsConnected(!props.isConnected);
+    setIsConnected(!isConnected);
     navigate("/signInUp");
   };
 

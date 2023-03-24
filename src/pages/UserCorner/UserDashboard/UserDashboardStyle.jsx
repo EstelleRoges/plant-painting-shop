@@ -34,7 +34,7 @@ export const InfoDiv = styled("div")`
   display: flex;
   justify-content: space-between;
   border-radius: 2em;
-  box-shadow: 4px 4px 15px #add09f;
+  box-shadow: 4px 4px 15px var(--green-secondary);
 
   @media screen and (max-width: 992px) {
     flex-direction: column;

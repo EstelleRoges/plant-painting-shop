@@ -31,7 +31,7 @@ export const SignInUpContent = styled("div")`
   }
 
   hr {
-    border: 1px dashed #add09f;
+    border: 1px dashed var(--green-secondary);
     margin: 0;
   }
 

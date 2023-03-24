@@ -4,7 +4,7 @@ import React from "react";
 const WelcomeContent = () => {
   return (
     <WelcomeDiv>
-      <h1>Bienvenue à Succi Place!</h1>
+      <h2>Bienvenue à Succi Place!</h2>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid nemo
         cumque iusto ducimus nulla ab vitae ullam dolorum veniam maxime, in
@@ -17,18 +17,18 @@ const WelcomeContent = () => {
   );
 };
 
-const WelcomeDiv = styled("div")`
+const WelcomeDiv = styled("section")`
   margin: 5em auto;
   width: 90%;
   text-align: center;
 
-  h1 {
-    font-size: 60px;
+  h2 {
+    font-size: clamp(28px, 2.75vw, 40px);
   }
 
   p {
-    margin: 5em 0;
-    font-size: 22px;
+    margin: 3em 0 5em 0;
+    font-size: 20px;
     text-align: justify;
   }
 `;

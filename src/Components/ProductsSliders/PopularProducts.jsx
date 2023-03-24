@@ -1,3 +1,4 @@
+import React from "react";
 import { styled } from "@mui/material";
 import productList from "../../Other/Lists/ProductList";
 import ProductCard from "../ProductCard/ProductCard";
@@ -9,10 +10,15 @@ const PopularProducts = () => {
     return articleB.sold - articleA.sold;
   });
 
-  const topFive = productList.slice(0, 5);
+  const topFive = productList
+    .sort(function (productA, productB) {
+      return productA.sold < productB.sold ? 0 : productA.sold ? -1 : 1;
+    })
+    .slice(0, 5);
 
   return (
     <PopsDiv>
+      <h2>Tableaux populaires</h2>
       <Splide
         options={{
           perPage: 3,
@@ -50,21 +56,18 @@ const PopularProducts = () => {
   );
 };
 
-const PopsDiv = styled("div")`
+const PopsDiv = styled("section")`
   margin-bottom: 5em;
   box-sizing: border-box;
 
-  h1 {
+  h2 {
     margin: 0;
     margin-bottom: 0.5em;
     padding-bottom: 0.2em;
-    font-size: 44px;
-    border-bottom: 1px dashed #ADD09F;
+    font-size: clamp(24px, 3vw, 34px);
+    border-bottom: 1px dashed var(--green-secondary);
   }
 
-ul {
-  
-}
   li {
     margin: 0;
     justify-content: center;

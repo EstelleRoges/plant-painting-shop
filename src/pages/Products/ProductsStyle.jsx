@@ -7,8 +7,8 @@ margin: auto;
   box-sizing: border-box;
 
   h2 {
-    font-size: 36px;
     margin: 0;
+    margin-bottom: 0.5em;
   }
 
   Input[type="text"] {
@@ -34,7 +34,7 @@ export const ProductsNavigation = styled("div")`
   width: 350px;
   height: fit-content;
   border-radius: 2em;
-  box-shadow: 0px 4px 15px #add09f;
+  box-shadow: 0px 4px 15px var(--green-secondary);
 
   @media screen and (max-width: 1115px) {
     margin: 3.5em 2em;

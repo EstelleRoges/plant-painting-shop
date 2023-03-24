@@ -1,6 +1,7 @@
 import "./App.css";
-import { useState } from "react";
+import React, { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { SucciContext } from "./Constants/SucciContext";
 import Layout from "../src/Layout/Layout";
 
 import Home from "./pages/Home/Home";
@@ -14,76 +15,21 @@ import Checkout from "./pages/PaymentCorner/Checkout";
 import PaymentAccepted from "./pages/PaymentCorner/PaymentAccepted";
 import UserDashboard from "./pages/UserCorner/UserDashboard/UserDashboard";
 
+import { onAdd, onRemove, onDelete, emptyCart } from "./Constants/AppFunctions";
+
 function App() {
-  const [cartItems, setCartItems] = useState([]);
+    const [cartItems, setCartItems] = useState([]);
+  const [recap, setRecap] = useState(true);
   const [isConnected, setIsConnected] = useState(false);
-  let recap = true;
-
-  const onAdd = (product, formatPrice) => {
-    const exists = cartItems.find(
-      (item) => item === product
-    );
-
-    if(exists) {
-      setCartItems(
-        cartItems.map((item) =>
-          item === product
-            ? {
-                ...exists,
-                quantity: exists.quantity + 1,
-              }
-            : item
-        )
-      );
-    } else {
-      setCartItems((previousCartItems) => {
-        return [
-          ...previousCartItems,
-          { ...product, quantity: 1, formatPrice: formatPrice },
-        ];
-      });
-    }
-  };
-
-  const onRemove = (product) => {
-    const exists = cartItems.find((item) => item === product);
-    if (exists.quantity === 1) {
-      onDelete(product);
-    } else {
-      setCartItems(
-        cartItems.map((item) =>
-         item === product
-            ? {
-                ...exists,
-                quantity: exists.quantity - 1,
-              }
-            : item
-        )
-      );
-    }
-  };
-
-  const onDelete = (product) => {
-    setCartItems((previousCartItems) => {
-      return previousCartItems.filter((item) => item !== product);
-    });
-  };
-
-  const emptyCart = () => {
-    setCartItems([]);
-  };
 
   return (
-    <BrowserRouter>
+    <SucciContext.Provider value={{cartItems, setCartItems, onAdd, onRemove, onDelete, emptyCart, recap, setRecap, isConnected, setIsConnected}}>
+      <BrowserRouter>
       <Routes>
         <Route
           path="/"
           element={
-            <Layout
-              onAdd={onAdd}
-              count={cartItems.length}
-              isConnected={isConnected}
-            />
+            <Layout />
           }
         >
           <Route index element={<Home />} />
@@ -91,47 +37,36 @@ function App() {
           <Route path="/products" element={<Products />} />
           <Route
             path="/productDetails/:id"
-            element={<ProductDetails onAdd={onAdd} />}
+            element={<ProductDetails />}
           />
           <Route
             path="/signInUp"
             element={
-              <SignInUp
-                isConnected={isConnected}
-                setIsConnected={setIsConnected}
-              />
+              <SignInUp />
             }
           />
           <Route
             path="/userDashboard"
             element={
-              <UserDashboard
-                isConnected={isConnected}
-                setIsConnected={setIsConnected}
-              />
+              <UserDashboard />
             }
           />
           <Route
             path="/cart"
             element={
-              <Cart
-                recap={recap}
-                cartItems={cartItems}
-                onAdd={onAdd}
-                onRemove={onRemove}
-                onDelete={onDelete}
-              />
+              <Cart />
             }
           />
           <Route
             path="/checkout"
-            element={<Checkout recap={!recap} checkout={cartItems} emptyCart={emptyCart} />}
+            element={<Checkout />}
           />
           <Route path="/paymentAccepted" element={<PaymentAccepted />} />
-          <Route path="/error404" element={<Error404 />} />
+          <Route from="*" path="/error404" element={<Error404 />} />
         </Route>
       </Routes>
     </BrowserRouter>
+    </SucciContext.Provider>
   );
 }
 

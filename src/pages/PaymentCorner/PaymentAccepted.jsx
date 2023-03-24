@@ -1,6 +1,6 @@
+import React from "react";
 import { Favorite } from "@mui/icons-material";
 import { styled } from "@mui/material";
-import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 

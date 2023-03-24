@@ -1,3 +1,4 @@
+import React,  { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { Badge } from "@mui/material";
 import { Header } from "./NavbarStyle";
@@ -8,10 +9,12 @@ import {
   Menu,
   Close,
 } from "@mui/icons-material";
-import { useState, useEffect } from "react";
+import { SucciContext } from "../../Constants/SucciContext";
 
-const Navbar = (props) => {
+const Navbar = () => {
   // Mode 1: Desktop; Mode 2: Tablet; Mode 3: Mobile
+  const { cartItems, isConnected } = useContext(SucciContext);
+
   const [navMode, setNavMode] = useState(1);
   const [icon, setIcon] = useState(false);
 
@@ -63,31 +66,29 @@ const Navbar = (props) => {
       </div>
       <div>
         <Link to="/">
-          <h1>- The Succi Place -</h1>
+          <h1>The Succi Place</h1>
         </Link>
       </div>
       <div>
-        <ul>
-            <section className={icon ? "resIcons active" : "resIcons"}>
-              <li>
-                <Link to="/cart" onClick={closeMenu}>
-                  <Badge badgeContent={props.count} color="success">
-                    <ShoppingBasket id="cartIcon" />
-                  </Badge>
+        <ul className={icon ? "resIcons active" : "resIcons"}>
+            <li>
+              <Link to="/cart" onClick={closeMenu}>
+                <Badge badgeContent={cartItems.length} color="success">
+                  <ShoppingBasket id="cartIcon" />
+                </Badge>
+              </Link>
+            </li>
+            <li>
+              {isConnected ? (
+                <Link to="/userDashboard" onClick={closeMenu}>
+                  <AccountCircle />
                 </Link>
-              </li>
-              <li>
-                {props.isConnected ? (
-                  <Link to="/userDashboard" onClick={closeMenu}>
-                    <AccountCircle />
-                  </Link>
-                ) : (
-                  <Link to="/signInUp" onClick={closeMenu}>
-                    <Person />
-                  </Link>
-                )}
-              </li>
-            </section>
+              ) : (
+                <Link to="/signInUp" onClick={closeMenu}>
+                  <Person />
+                </Link>
+              )}
+            </li>
           {navMode !== 1 ? (
             <li onClick={changeIcon}>{icon ? <Close /> : <Menu />}</li>
           ) : null}

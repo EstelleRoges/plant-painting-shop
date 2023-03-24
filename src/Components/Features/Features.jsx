@@ -1,15 +1,16 @@
+import React from "react";
 import { Grid, styled } from "@mui/material";
 import { LocalShipping, Palette, Drafts } from "@mui/icons-material";
 
 const Features = () => {
   return (
     <FeatureList>
-      <h1>Pourquoi shopper chez Succi Place?</h1>
+      <h2>Pourquoi shopper chez Succi Place?</h2>
       <Grid
         container
         direction="row"
-        spacing={12}
-        padding="0.5em"
+        spacing={6}
+        // padding="0.5em"
         textAlign="center"
         fontSize="28px"
         columns={{ xs: 2, sm: 2, md: 12 }}
@@ -55,19 +56,20 @@ const Features = () => {
   );
 };
 
-const FeatureList = styled("div")`
+const FeatureList = styled("section")`
   margin: 5em 2em;
 `;
 
 const Feature = styled("div")`
-  margin-top: 2em;
+  margin-top: 1em;
   text-align: center;
+
   h3 {
-    font-size: 34px;
+    font-size: clamp(22px, 2.5vw, 30px);
+    text-align: center;
   }
 
   svg {
-    color: #335228;
     font-size: 48px;
   }
 

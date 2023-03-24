@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import productList from "../../Other/Lists/ProductList";
 import ProductCard from "../../Components/ProductCard/ProductCard";
 import {
@@ -40,7 +40,7 @@ const Products = () => {
   return (
     <motion.div
       animate={{ opacity: 1 }}
-      initial={{ opacity:0 }}
+      initial={{ opacity: 0 }}
       transition={{ duration: 0.7 }}
     >
     <ProductsArea>
