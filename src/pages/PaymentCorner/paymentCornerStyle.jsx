@@ -41,7 +41,7 @@ export const EmptyCart = styled("div")`
     text-decoration: none;
   }
 
-  @media screen and (max-width: 768px);
+  ${'' /* @media screen and (max-width: 768px); */}
 `;
 
 export const Article = styled("section")`
@@ -50,7 +50,7 @@ export const Article = styled("section")`
   max-width: 850px;
   background-color: white;
   border-radius: 1.5em;
-  box-shadow: 1px 1px 3px #7db569;
+  box-shadow: 1px 1px 3px var(--green-secondary);
   display: grid;
   justify-items: center;
   align-items: center;
@@ -59,13 +59,9 @@ export const Article = styled("section")`
   a {
     text-align: center;
     color: black;
-    font-family: "Kalam", cursive;
+    font-family: "Whisper", cursive;
     font-size: 34px;
     font-weight: bold;
-  }
-
-  p {
-    color: #7db569;
   }
 
   svg {
@@ -104,7 +100,7 @@ export const Article = styled("section")`
 
     a {
       color: black;
-      font-family: "Kalam", cursive;
+      font-family: "Whisper", cursive;
       font-size: 26px;
       font-weight: bold;
     }
@@ -167,7 +163,7 @@ export const Total = styled("div")`
   justify-content: flex-end;
   align-items: center;
   border-radius: 1.5em;
-  box-shadow: 1px 1px 3px #7db569;
+  box-shadow: 1px 1px 3px var(--green-secondary);
 
   p {
     margin: 0;

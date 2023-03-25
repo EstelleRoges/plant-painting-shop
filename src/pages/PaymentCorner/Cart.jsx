@@ -24,7 +24,7 @@ const Cart = () => {
         ) : (
           <div style={{ margin: "auto" }}>
             <h1>Panier</h1>
-            <ArticlesTable recap={recap} />
+            <ArticlesTable recap={ recap } />
           </div>
         )}
       </motion.div>

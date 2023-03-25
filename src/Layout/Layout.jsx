@@ -7,29 +7,30 @@ import { Outlet } from "react-router-dom";
 function Layout() {
   return (
     <>
-    <LayoutSpace>
-      <Navbar />
+      <LayoutSpace>
+        <Navbar />
         <Content>
           <Outlet />
         </Content>
-      <Footer />
-    </LayoutSpace>
+        <Footer />
+      </LayoutSpace>
     </>
   );
 }
 
-const LayoutSpace = styled("div")`
-display: flex;
-flex-direction: column;
+const LayoutSpace = styled("main")`
+  display: flex;
+  flex-direction: column;
 
-  Button, button {
-  background-color: #73AE5B;
-  color: white;
+  Button,
+  button {
+    background-color: var(--brown-secondary);
+    color: white;
 
-  &:hover {
-      background-color: #8ABC76;
+    &:hover {
+      background-color: var(--brown-tertiary);
     }
-}
+  }
 `;
 
 const Content = styled("div")`
@@ -38,6 +39,9 @@ const Content = styled("div")`
   max-width: 1400px;
   height: 100%;
 
+  @media screen and (max-width: 768px) {
+    width: 90%;
+  }
   @media screen and (max-width: 577px) {
     text-align: justify;
   }

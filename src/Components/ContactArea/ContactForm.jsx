@@ -25,7 +25,7 @@ const ContactForm = () => {
               <option value="Other">Autre sujet</option>
             </select>
             <label htmlFor="message">Message</label>
-            <textarea name="message" id="" cols="30" rows="13"></textarea>
+            <textarea name="message" id="" cols="30" rows="8"></textarea>
             <button type="submit" onClick={sendMessage}>Envoyer</button>
         </form>
       </Form>
@@ -35,9 +35,9 @@ const ContactForm = () => {
 
 const Form = styled("div")`
   margin-top: 2em;
+  padding: 1em 3em;
   form {
     margin: auto;
-    padding: 2em 3em;
     max-width: 700px;
 
     label {

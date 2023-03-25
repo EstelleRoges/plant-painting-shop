@@ -18,54 +18,41 @@ import UserDashboard from "./pages/UserCorner/UserDashboard/UserDashboard";
 import { onAdd, onRemove, onDelete, emptyCart } from "./Constants/AppFunctions";
 
 function App() {
-    const [cartItems, setCartItems] = useState([]);
+  const [cartItems, setCartItems] = useState([]);
   const [recap, setRecap] = useState(true);
   const [isConnected, setIsConnected] = useState(false);
 
   return (
-    <SucciContext.Provider value={{cartItems, setCartItems, onAdd, onRemove, onDelete, emptyCart, recap, setRecap, isConnected, setIsConnected}}>
+    <SucciContext.Provider
+      value={{
+        cartItems,
+        setCartItems,
+        onAdd,
+        onRemove,
+        onDelete,
+        emptyCart,
+        recap,
+        setRecap,
+        isConnected,
+        setIsConnected,
+      }}
+    >
       <BrowserRouter>
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <Layout />
-          }
-        >
-          <Route index element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/products" element={<Products />} />
-          <Route
-            path="/productDetails/:id"
-            element={<ProductDetails />}
-          />
-          <Route
-            path="/signInUp"
-            element={
-              <SignInUp />
-            }
-          />
-          <Route
-            path="/userDashboard"
-            element={
-              <UserDashboard />
-            }
-          />
-          <Route
-            path="/cart"
-            element={
-              <Cart />
-            }
-          />
-          <Route
-            path="/checkout"
-            element={<Checkout />}
-          />
-          <Route path="/paymentAccepted" element={<PaymentAccepted />} />
-          <Route from="*" path="/error404" element={<Error404 />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/productDetails/:id" element={<ProductDetails />} />
+            <Route path="/signInUp" element={<SignInUp />} />
+            <Route path="/userDashboard" element={<UserDashboard />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/checkout" element={<Checkout />} />
+            <Route path="/paymentAccepted" element={<PaymentAccepted />} />
+            <Route from="*" path="/error404" element={<Error404 />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </SucciContext.Provider>
   );
 }

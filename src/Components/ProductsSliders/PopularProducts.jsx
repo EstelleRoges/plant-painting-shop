@@ -64,7 +64,6 @@ const PopsDiv = styled("section")`
     margin: 0;
     margin-bottom: 0.5em;
     padding-bottom: 0.2em;
-    font-size: clamp(24px, 3vw, 34px);
     border-bottom: 1px dashed var(--green-secondary);
   }
 

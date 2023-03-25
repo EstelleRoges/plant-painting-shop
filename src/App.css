@@ -1,13 +1,15 @@
 :root {
-  --blue-grey: #C5CFD3;
-  --cool-grey: #C2C2C2;
-  --green-primary: #7A8745;
-  --green-secondary: #ADBA78;
+  --green-primary: #83955F;
+  --green-secondary: #97A776;
   --green-tertiary: #363F13;
   --green-light: #C5CEA1;
-  --ecru: #BDAC6E;
-  --sage: #D2C79D;
-  --text-color: #383931;
+  --brown-primary: #BB875A;
+  --brown-secondary: #CA9668; 
+  --brown-tertiary: #D5AB86;
+  --citron: #CDCD7A;
+  --vanilla: #DDDDA6;
+  --ivory: #F6F6E7;
+  --text-color: #424B30;
 }
 
 * {
@@ -41,17 +43,20 @@ h1 {
   margin: 0;
   margin-bottom: 0.5em;
   padding-bottom: 0.2em;
-  font-size: clamp(27px, 4.5vw, 44px);
+  font-size: clamp(32px, 5vw, 50px);
   border-bottom: 1px dashed var(--green-secondary);
 }
 
 h2 {
-  font-size: clamp(24px, 3vw, 34px);
+  margin: 0.5em 0;
+  font-size: clamp(28px, 4vw, 40px);
   border-bottom: 1px dashed var(--green-secondary);
 }
 
-p, a, li {
-  color: var(--green-tertiary);
+p,
+a,
+li {
+  color: var(--text-color);
 }
 
 svg {
@@ -64,20 +69,21 @@ a {
 }
 
 section {
-  padding: 3em 0;
+  margin: 5em 0;
+  padding: 4em 0;
 }
 
 input,
 select,
 textarea {
   margin: 0.5em 0 2em 0;
-  padding: 1em;
+  padding: 0.75em;
   width: 100%;
   box-sizing: border-box;
   font-size: 16px;
   border: none;
   border-radius: 1em;
-  box-shadow: 2px 2px 5px var(--green-secondary);
+  box-shadow: 1px 1px 3px var(--brown-secondary);
   resize: none;
   outline: none;
 }
@@ -86,8 +92,8 @@ Button,
 button {
   float: right;
   font-size: 16px;
+  background-color: var(--brown-secondary);
   color: white;
-  margin: 1em 0;
   padding: 0.5em 1.25em;
   border: none;
   border-radius: 0.5em;

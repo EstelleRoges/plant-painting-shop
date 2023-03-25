@@ -71,7 +71,7 @@ const Navbar = () => {
       </div>
       <div>
         <ul className={icon ? "resIcons active" : "resIcons"}>
-            <li>
+            <li aria-label="cart">
               <Link to="/cart" onClick={closeMenu}>
                 <Badge badgeContent={cartItems.length} color="success">
                   <ShoppingBasket id="cartIcon" />

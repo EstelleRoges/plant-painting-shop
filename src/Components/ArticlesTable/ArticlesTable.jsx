@@ -11,9 +11,10 @@ import {
 } from "../../pages/PaymentCorner/paymentCornerStyle";
 import { SucciContext } from "../../Constants/SucciContext";
 
-const ArticlesTable = ({recap}) => {
+const ArticlesTable = ({ recap }) => {
   const { cartItems, setCartItems, onAdd, onRemove, onDelete } = useContext(SucciContext);
-  console.log(cartItems);
+
+  console.log(recap);
 
   const getFormatType = (formatType, formatPrice) => {
     const format = [formatType.small, formatType.medium, formatType.large];
@@ -85,7 +86,7 @@ const ArticlesTable = ({recap}) => {
       })}
       <Total>
         <p>
-          Total:{" "}
+          Total:
           {cartItems.reduce(
             (accumulator, product) =>
               accumulator + product.quantity * product.formatPrice,
@@ -96,9 +97,9 @@ const ArticlesTable = ({recap}) => {
       </Total>
       {recap && (
         <CartFooter>
-          <Button variant="contained" color="success">
+          <button>
             <Link to="/checkout">Passer à la commande</Link>
-          </Button>
+          </button>
         </CartFooter>
       )}
     </CartArea>

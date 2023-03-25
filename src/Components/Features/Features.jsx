@@ -4,7 +4,7 @@ import { LocalShipping, Palette, Drafts } from "@mui/icons-material";
 
 const Features = () => {
   return (
-    <FeatureList>
+    <section>
       <h2>Pourquoi shopper chez Succi Place?</h2>
       <Grid
         container
@@ -52,20 +52,17 @@ const Features = () => {
           </Feature>
         </Grid>
       </Grid>
-    </FeatureList>
+    </section>
   );
 };
 
-const FeatureList = styled("section")`
-  margin: 5em 2em;
-`;
 
 const Feature = styled("div")`
   margin-top: 1em;
   text-align: center;
 
   h3 {
-    font-size: clamp(22px, 2.5vw, 30px);
+    font-size: clamp(26px, 2.75vw, 30px);
     text-align: center;
   }
 

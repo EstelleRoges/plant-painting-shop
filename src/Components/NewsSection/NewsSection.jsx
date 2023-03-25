@@ -1,7 +1,8 @@
 import React from "react";
-import { List, ListItem, Button } from "@mui/material";
+import { List, ListItem } from "@mui/material";
 import { Pinterest, Facebook, Instagram } from "@mui/icons-material";
 import { motion } from "framer-motion";
+import MailIcon from "@mui/icons-material/Mail";
 import { NewsContainer, NewsBox, NewsLetterInput } from "./NewsSectionStyle";
 
 const NewsSection = () => {
@@ -11,17 +12,17 @@ const NewsSection = () => {
         <NewsBox>
           <h2>Mes réseaux</h2>
           <List sx={{ display: "flex" }}>
-            <ListItem>
+            <ListItem sx={{ justifyContent: "center" }}>
               <motion.div whileHover={{ scale: 1.1 }}>
                 <Instagram />
               </motion.div>
             </ListItem>
-            <ListItem>
+            <ListItem sx={{ justifyContent: "center" }}>
               <motion.div whileHover={{ scale: 1.1 }}>
                 <Facebook />
               </motion.div>
             </ListItem>
-            <ListItem>
+            <ListItem sx={{ justifyContent: "center" }}>
               <motion.div whileHover={{ scale: 1.1 }}>
                 <Pinterest />
               </motion.div>
@@ -37,9 +38,7 @@ const NewsSection = () => {
               id="enterMail"
               placeholder="Entrez votre mail"
             />
-            <Button variant="contained" color="success">
-              S'inscrire
-            </Button>
+            <button><MailIcon /></button>
           </NewsLetterInput>
         </NewsBox>
       </NewsContainer>

@@ -5,22 +5,29 @@ export const FooterArea = styled("div")`
   width: 100%;
   background-image: linear-gradient(
     to bottom,
-    rgba(255, 255, 255, 0) 3%,
-    var(--green-secondary) 6%,
-    #7db569 100%
+    rgba(255, 255, 255, 0) 0%,
+    var(--green-secondary) 10%
   );
+
+  h2 {
+    color: var(--text-color);
+  }
+  p {
+    margin: 0.3em 0;
+  }
 `;
 
 export const FooterBox = styled("section")`
   margin: auto;
   margin-top: 3em;
   padding: 2em;
+  padding-bottom: 0;
   max-width: 1400px;
   height: fit-content;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(33%, 1fr));
-  justify-items: center;
+  display: flex;
+  justify-content: space-evenly;
   align-items: stretch;
+  flex-wrap: wrap;
 
   h2 {
     font-size: clamp(24px, 3vw, 34px);
@@ -29,7 +36,7 @@ export const FooterBox = styled("section")`
   }
 
   div {
-    width: 350px;
+    width: fit-content;
     position: relative;
   }
 
@@ -75,7 +82,7 @@ export const FooterBox = styled("section")`
   }
 
   @media screen and (max-width: 992px) {
-      grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
     div {
       display: flex;
       flex-direction: column;
@@ -112,17 +119,17 @@ export const FooterBox = styled("section")`
     div {
       width: auto;
     }
-     div:last-of-type {
+    div:last-of-type {
       input {
-      width: auto;
-     }
-     button {
-      width: fit-content;
+        width: auto;
+      }
+      button {
+        width: fit-content;
         position: absolute;
         right: 20%;
         bottom: -2.5em;
       }
-     }
+    }
   }
 `;
 
@@ -136,5 +143,12 @@ export const Copyright = styled("div")`
   a {
     color: white;
     padding: 0 5px;
+  }
+
+  svg {
+    margin: 0.5em;
+    width: 26px;
+    height: 26px;
+    color: white;
   }
 `;

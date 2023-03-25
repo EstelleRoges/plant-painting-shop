@@ -18,12 +18,9 @@ const ContactContent = () => {
 };
 
 const ContactArea = styled("section")`
-  margin: 5em 0;
-
   h2 {
     margin:0;
     padding-top: 0.2em;
-    font-size: clamp(24px, 3vw, 34px);
     border-bottom: 1px dashed var(--green-secondary);
   }
 `;

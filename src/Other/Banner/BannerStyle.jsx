@@ -1,7 +1,7 @@
 import { styled } from "@mui/material";
 
 export const BannerArea = styled("div")`
-  margin-top: 3em;
+  margin: 3em 0 10em 0;
   height: 500px;
   background-color: white;
   background-image: url(https://i.pinimg.com/564x/1e/98/86/1e988620b6332bb0dbf5bc26e274024b.jpg);
