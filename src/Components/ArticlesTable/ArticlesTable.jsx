@@ -11,9 +11,9 @@ import {
 } from "../../pages/PaymentCorner/paymentCornerStyle";
 import { SucciContext } from "../../Constants/SucciContext";
 
-const ArticlesTable = ({ recap }) => {
-  const { cartItems, setCartItems, onAdd, onRemove, onDelete } = useContext(SucciContext);
-
+const ArticlesTable = () => {
+  const { cartItems, setCartItems, onAdd, onRemove, onDelete, recap } =
+    useContext(SucciContext);
   console.log(recap);
 
   const getFormatType = (formatType, formatPrice) => {
@@ -66,11 +66,24 @@ const ArticlesTable = ({ recap }) => {
             <div>
               {recap ? (
                 <div>
-                  <Button variant="text" onClick={() => onRemove(item, cartItems, setCartItems)}>
+                  <Button
+                    variant="text"
+                    onClick={() => onRemove(item, cartItems, setCartItems)}
+                  >
                     <Remove />
                   </Button>
                   <span>{item.quantity}</span>
-                  <Button variant="text" onClick={() => onAdd(item, parseFloat(item.formatPrice), cartItems, setCartItems)}>
+                  <Button
+                    variant="text"
+                    onClick={() =>
+                      onAdd(
+                        item,
+                        parseFloat(item.formatPrice),
+                        cartItems,
+                        setCartItems
+                      )
+                    }
+                  >
                     <Add />
                   </Button>
                 </div>
@@ -97,9 +110,9 @@ const ArticlesTable = ({ recap }) => {
       </Total>
       {recap && (
         <CartFooter>
-          <button>
-            <Link to="/checkout">Passer à la commande</Link>
-          </button>
+          <button><Link to="/checkout">
+            Passer à la commande
+          </Link></button>
         </CartFooter>
       )}
     </CartArea>

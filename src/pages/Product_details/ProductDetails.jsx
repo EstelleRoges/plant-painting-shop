@@ -68,7 +68,7 @@ const ProductDetails = () => {
         <DetailsArea>
           <img src={productInfos.img} alt={productInfos.name} />
           <div className="textInfosArea">
-            <h1>{productInfos.name}</h1>
+            <h2>{productInfos.name}</h2>
             <div className="formatAndPrice">
               <select
                 name="paintingFormat"

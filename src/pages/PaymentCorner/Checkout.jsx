@@ -1,25 +1,32 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { CheckoutArea, ShippingAdressArea } from "./paymentCornerStyle";
-import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
 import ArticlesTable from "../../Components/ArticlesTable/ArticlesTable";
 import ShippingAdress from "../../Components/ShippingAdress/ShippingAdress";
 import { SucciContext } from "../../Constants/SucciContext";
 
 const Checkout = () => {
-  const { setCartItems, recap, emptyCart } = useContext(SucciContext);
+  const { setCartItems, emptyCart, recap, setRecap } = useContext(SucciContext);
+
+  useEffect(() => {
+    setRecap(false);
+  }, []);
 
   return (
     <>
-      <h1>Récapitulatif de la commande</h1>
+      <h2>Récapitulatif de la commande</h2>
       <CheckoutArea>
-        <ArticlesTable recap={!recap} />
+        <ArticlesTable recap={recap} />
         <ShippingAdressArea>
           <h2>Livraison à l'adresse</h2>
           <ShippingAdress />
-          <Button onClick={emptyCart(setCartItems)} variant="contained" color="success">
-            <Link to="/PaymentAccepted">Commander!</Link>
-          </Button>
+          <Link to="/PaymentAccepted">
+            <button
+              onClick={() => emptyCart(setCartItems)}
+            >
+              Commander!
+            </button>
+          </Link>
         </ShippingAdressArea>
       </CheckoutArea>
     </>

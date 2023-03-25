@@ -227,6 +227,7 @@ export const ShippingAdressArea = styled("div")`
   align-items: center;
 
   h2 {
+    width: 100%;
     margin: 0 0 1em 0;
   }
 

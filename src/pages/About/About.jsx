@@ -1,11 +1,11 @@
 import React from "react";
-import { styled } from "@mui/material";
+import { AboutContainer, AboutSection } from "./AboutStyle";
 import { motion } from "framer-motion";
 
 const About = () => {
   return (
-    <div style={{marginTop: "4em"}}>
-      <h1>Qui suis-je?</h1>
+    <AboutContainer style={{ marginTop: "4em" }}>
+      <h2>Qui suis-je?</h2>
       <motion.div
         animate={{ scaleX: 1 }}
         initial={{ scaleX: 0 }}
@@ -59,75 +59,8 @@ const About = () => {
           </div>
         </AboutSection>
       </motion.div>
-    </div>
+    </AboutContainer>
   );
 };
-const AboutSection = styled("section")`
-  margin: 5em 0.5em;
-  display: flex;
-  justify-content: space-between;
-  justify-items: center;
-  box-sizing: border-box;
-
-  div {
-    width: 50%;
-  }
-
-  .aboutImg {
-    display: flex;
-    justify-content: center;
-
-    img {
-      margin: auto;
-      width: 400px;
-      height: 400px;
-      border-radius: 50%;
-      object-fit: cover;
-    }
-  }
-
-  p {
-    margin: auto;
-    padding: 1.5em;
-    text-align: justify;
-  }
-
-  @media screen and (max-width: 992px) {
-    .aboutText {
-      width: 55%;
-    }
-    .aboutImg {
-      width: 40%;
-
-      img {
-        padding: 1em;
-        width: 300px;
-        height: 300px;
-      }
-    }
-  }
-
-  @media screen and (max-width: 768px) {
-    flex-direction: column;
-    align-items: center;
-
-    .aboutText,
-    .aboutImg {
-      width: fit-content;
-    }
-  }
-
-  @media screen and (max-width: 576px) {
-    margin-top: 4em;
-    p {
-      padding: 1.5em 0;
-    }
-
-    .aboutImg img {
-      width: 250px;
-      height: 250px;
-    }
-  }
-`;
 
 export default About;

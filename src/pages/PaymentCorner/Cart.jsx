@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { EmptyCart } from "./paymentCornerStyle";
 import { Link } from "react-router-dom";
 import ArticlesTable from "../../Components/ArticlesTable/ArticlesTable";
@@ -6,7 +6,13 @@ import { motion } from "framer-motion";
 import { SucciContext } from "../../Constants/SucciContext";
 
 const Cart = () => {
-  const { recap, cartItems } = useContext(SucciContext);
+  const { cartItems, recap, setRecap  } = useContext(SucciContext);
+  console.log("Cart recap: ", recap);
+
+  useEffect(() => {
+    setRecap(true);
+  }, []);
+
   return (
     <>
       <motion.div
@@ -23,8 +29,8 @@ const Cart = () => {
           </EmptyCart>
         ) : (
           <div style={{ margin: "auto" }}>
-            <h1>Panier</h1>
-            <ArticlesTable recap={ recap } />
+            <h2>Panier</h2>
+            <ArticlesTable recap={recap} />
           </div>
         )}
       </motion.div>

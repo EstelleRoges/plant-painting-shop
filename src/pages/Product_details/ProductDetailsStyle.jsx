@@ -13,8 +13,8 @@ export const DetailsArea = styled("div")`
     border-radius: 1em;
   }
 
-  h1 {
-    font-size: 44px;
+  h2 {
+    font-size: clamp(40px, 4.5vh, 44px);
     margin: 0.5em 0;
   }
 
@@ -67,8 +67,7 @@ export const DetailsArea = styled("div")`
       max-width: 300px;
     }
 
-    h1 {
-      font-size: 40px;
+    h2 {
       margin: 0.5em 0;
       text-align: left;
     }
@@ -88,7 +87,7 @@ export const DetailsArea = styled("div")`
       width: 100%;
     }
 
-    h1 {
+    h2 {
       margin: auto;
       margin-top: 0.5em;
       text-align: center;

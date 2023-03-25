@@ -64,7 +64,7 @@ const UserDashboard = () => {
 
   return (
     <>
-      <h1>Mon compte</h1>
+      <h2>Mon compte</h2>
         <TabList 
           className="tabStyle"
           orientation="horizontal"

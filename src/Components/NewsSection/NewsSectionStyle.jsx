@@ -14,7 +14,7 @@ export const NewsContainer = styled("section")`
     rgba(255, 255, 255, 0) 100%
   );
 
-    svg {
+  svg {
     color: white;
   }
 
@@ -64,8 +64,8 @@ export const NewsLetterInput = styled("div")`
   }
 
   button {
-    margin-right: 0.75em;
-    padding: 0.5em 0.75em;
+    margin-right: 0.5em;
+    padding: 0.25em 0.5em;
     border-radius: 0.75em;
   }
 

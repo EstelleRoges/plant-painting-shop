@@ -8,7 +8,7 @@ const PaymentAccepted = () => {
   return (
     <>
       <PaymentOk>
-        <h1>
+        <h2>
           Commande passée! Merci!{" "}
           <motion.div
             animate={{ scale: [1, 1.5, 1, 1.5, 1] }}
@@ -16,7 +16,7 @@ const PaymentAccepted = () => {
           >
             <Favorite />
           </motion.div>
-        </h1>
+        </h2>
         <p>
           Retourner à la <Link to="/">page d'accueil</Link>
         </p>
@@ -26,21 +26,26 @@ const PaymentAccepted = () => {
 };
 
 const PaymentOk = styled("div")`
-  height: 100%;
+  height: 25vh;
   margin: 5em;
   margin-bottom: 15%;
 
+  h2 {
+    font-size: clamp(40px, 4.5vh, 44px);
+  }
+  
   p {
     font-size: 20px;
   }
 
   a {
-    color: green;
+    font-size: 20px;
+    color: var(--brown-primary);
   }
 
-div {
-  display: inline-block;
-}
+  div {
+    display: inline-block;
+  }
 
   svg {
     margin-left: 0.5em;

@@ -31,7 +31,7 @@ function App() {
         onRemove,
         onDelete,
         emptyCart,
-        recap,
+        recap, 
         setRecap,
         isConnected,
         setIsConnected,

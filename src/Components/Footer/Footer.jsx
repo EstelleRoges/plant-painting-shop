@@ -2,9 +2,9 @@ import React from "react";
 import { List, ListItem, Box } from "@mui/material";
 import { FooterArea, FooterBox, Copyright } from "./FooterStyle";
 import { Link } from "react-router-dom";
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import WebIcon from '@mui/icons-material/Web';
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LanguageIcon from "@mui/icons-material/Language";
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -50,26 +50,24 @@ const Footer = () => {
           <br />
           <a
             target="_blank"
+            href="https://estelleroges.github.io/"
+            rel="noreferrer"
+          >
+            <LanguageIcon />
+          </a>
+          <a
+            target="_blank"
             href="https://www.linkedin.com/in/estelle-roges-dev/"
             rel="noreferrer"
           >
-           <LinkedInIcon />
+            <LinkedInIcon />
           </a>
-
           <a
             target="_blank"
             href="https://github.com/EstelleRoges/plant-painting-shop"
             rel="noreferrer"
           >
             <GitHubIcon />
-          </a>
-          
-          <a
-            target="_blank"
-            href="https://estelleroges.github.io/"
-            rel="noreferrer"
-          >
-            <WebIcon />
           </a>
         </p>
       </Copyright>

@@ -21,8 +21,9 @@ export const BannerArea = styled("div")`
 export const TextSection = styled("article")`
   padding-top: 3em;
   width: 60%;
+
   h2 {
-    font-size: clamp(27px, 4.5vw, 44px);
+    font-size: clamp(38px, 4.5vw, 50px);
     border-bottom: none;
   }
 
@@ -39,6 +40,11 @@ export const TextSection = styled("article")`
     color: white;
   }
 
+   @media screen and (max-width: 768) {
+    h2 {
+      text-align: left;
+    }
+  }
    @media screen and (max-width: 578px) {
     padding-top: 1em;
     width: 100%;
