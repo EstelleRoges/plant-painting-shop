@@ -65,13 +65,10 @@ const LayoutSpace = styled("main")`
 
 const Content = styled("div")`
   margin: auto;
-  width: 80%;
+  width: 95%;
   max-width: 1400px;
   height: 100%;
 
-  @media screen and (max-width: 768px) {
-    width: 90%;
-  }
   @media screen and (max-width: 577px) {
     text-align: justify;
   }

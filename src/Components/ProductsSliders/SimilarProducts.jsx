@@ -1,8 +1,6 @@
 import { styled } from "@mui/material";
 import productList from "../../Other/Lists/ProductList";
 import ProductCard from "../ProductCard/ProductCard";
-import { Splide, SplideSlide } from "@splidejs/react-splide";
-import "@splidejs/react-splide/css";
 
 const SimilarProducts = () => {
   productList.sort(function (articleA, articleB) {
@@ -10,42 +8,20 @@ const SimilarProducts = () => {
   });
 
   const similars = productList.slice(0, 3);
-  
+
   return (
     <SimilarDiv>
-      <Splide
-        options={{
-          perPage: 2,
-          breakpoints: {
-            768: {
-              perPage: 1,
-            },
-          },
-          perMove: 1,
-          pagination: false,
-          fixedWidth: "320px",
-          drag: "free",
-          gap: "1em",
-          wheel: true,
-          releaseWheel: false,
-        }}
-      >
+      <h2>Produits similaires</h2>
+      <SimilarList>
         {similars.map((product) => {
           return (
-            <SplideSlide
+            <ProductCard
               key={product.id}
-              style={{ margin: "1em", width: "150px", height: "150px" }}
-            >
-              <ProductCard
-                id={product.id}
-                img={product.img}
-                name={product.name}
-                price={product.price}
-              />
-            </SplideSlide>
+              {...product}
+            />
           );
         })}
-      </Splide>
+      </SimilarList>
     </SimilarDiv>
   );
 };
@@ -58,4 +34,12 @@ const SimilarDiv = styled("div")`
     justify-content: center;
   }
 `;
+
+const SimilarList = styled("div")`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+`;
+
 export default SimilarProducts;

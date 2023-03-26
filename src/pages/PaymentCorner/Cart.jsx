@@ -7,7 +7,6 @@ import { SucciContext } from "../../Constants/SucciContext";
 
 const Cart = () => {
   const { cartItems, recap, setRecap  } = useContext(SucciContext);
-  console.log("Cart recap: ", recap);
 
   useEffect(() => {
     setRecap(true);

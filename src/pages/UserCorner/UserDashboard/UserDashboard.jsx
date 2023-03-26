@@ -81,14 +81,10 @@ const UserDashboard = () => {
           <TabPanel value={value} index={0}>
             <InfoDiv>
               <RowDiv sx={{ position: "relative" }}>
-                <Avatar alt="userAvatar" sx={{ width: 50, height: 50 }} />
+                <Avatar alt="userAvatar" sx={{ width: 60, height: 60 }} />
                 <div>
                   <h2>Le Testeur</h2>
                   <p>a.k.a: Le Testeur</p>
-                  <DecoImg
-                    src="imgs/succulents-top-view-hand-drawn-style-vector.jpg"
-                    alt="userMainInfoDeco"
-                  />
                 </div>
               </RowDiv>
             </InfoDiv>
@@ -206,6 +202,7 @@ const UserDashboard = () => {
                     sx={{ margin: "0 1em" }}
                     variant="contained"
                     endIcon={<Edit />}
+                    disabled={true}
                   >
                     Modifier
                   </Button>

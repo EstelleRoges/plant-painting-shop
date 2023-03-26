@@ -5,7 +5,7 @@ export const TabList = styled(Tabs)({
     justifyContent: "space-around",
   },
   "& .MuiTabs-indicator": {
-    backgroundColor: "green",
+    backgroundColor: "#CA9668",
   },
 });
 
@@ -14,6 +14,8 @@ export const UserBox = styled(Box)({
   maxWidth: "1400px",
   display: "flex",
   paddingLeft: "0",
+
+  
 });
 
 export const TabGroup = styled("div")`
@@ -23,7 +25,7 @@ export const TabGroup = styled("div")`
 export const UserTab = styled(Tab)({
   "&.MuiButtonBase-root.MuiTab-root": {
     backgroundColor: "transparent",
-    color: "#578943",
+    color: "#83955F",
   },
 });
 
@@ -34,7 +36,12 @@ export const InfoDiv = styled("div")`
   display: flex;
   justify-content: space-between;
   border-radius: 2em;
-  box-shadow: 4px 4px 15px var(--green-secondary);
+  box-shadow: 4px 3px 7px var(--brown-tertiary);
+
+  h2 {
+    color: var(--brown-secondary);
+    border-bottom: 1px dashed var(--brown-tertiary);
+  }
 
   @media screen and (max-width: 992px) {
     flex-direction: column;
@@ -86,7 +93,7 @@ export const RowDiv = styled("div")`
   label {
     display: block;
   }
-  
+
   @media screen and (max-width: 576px) {
     flex-direction: column;
   }
@@ -133,12 +140,20 @@ export const OptionBtns = styled("div")`
 
   button:first-of-type {
     background-color: #e94957;
+    box-shadow: 1px 1px 3px var(--brown-secondary);
   }
 
   button:last-of-type {
-    background-color: #ffa033;
+    ${'' /* background-color: #ffa033; */}
+    background-color: grey;
+    cursor: not-allowed;
+    box-shadow: 1px 1px 3px var(--brown-secondary);
   }
 
+  svg {
+    color: white;
+  }
+  
   @media screen and (max-width: 576px) {
     flex-direction: column-reverse;
     align-items: center;

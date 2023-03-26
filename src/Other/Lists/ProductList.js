@@ -23,7 +23,7 @@ const productList = [
   {
     id: 2,
     img: "https://i.pinimg.com/564x/51/48/b7/5148b7777bee5e35b313c8383f46c90f.jpg",
-    name: "Green and feminine",
+    name: "Green and Girly",
     price: {
       small: 10.0,
       medium: 13.5,

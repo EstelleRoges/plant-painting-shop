@@ -14,7 +14,6 @@ import { SucciContext } from "../../Constants/SucciContext";
 const ArticlesTable = () => {
   const { cartItems, setCartItems, onAdd, onRemove, onDelete, recap } =
     useContext(SucciContext);
-  console.log(recap);
 
   const getFormatType = (formatType, formatPrice) => {
     const format = [formatType.small, formatType.medium, formatType.large];

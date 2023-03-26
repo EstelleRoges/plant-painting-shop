@@ -111,6 +111,7 @@ const ProductDetails = () => {
             </Button>
           </div>
         </DetailsArea>
+
         <DescriptionSection>
           <p className="productDescription">{productInfos.description}</p>
         </DescriptionSection>
@@ -162,10 +163,9 @@ const ProductDetails = () => {
           )}
         </CommentsArea>
 
-        <SimilarArea>
-          <h2>Produits similaires</h2>
+        {/* <SimilarArea>
           <SimilarProducts />
-        </SimilarArea>
+        </SimilarArea> */}
       </motion.div>
     </>
   );

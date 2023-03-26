@@ -9,7 +9,6 @@ const SignInUp = () => {
   const userSignsIn = () => {
     setIsConnected(!isConnected);
   };
-  console.log(isConnected);
 
   return (
     <motion.div

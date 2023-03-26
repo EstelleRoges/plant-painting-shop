@@ -1,9 +1,7 @@
 import { styled } from "@mui/material";
 
 export const ProductsArea = styled("div")`
-margin: auto;
-  display: flex;
-  justify-content: center;
+  margin: auto;
   box-sizing: border-box;
 
   h2 {
@@ -25,23 +23,19 @@ margin: auto;
 
   @media screen and (max-width: 1115px) {
     flex-direction: column;
+    align-items: center;
   }
 `;
 
 export const ProductsNavigation = styled("div")`
-  margin: 3em 0.5em;
+  margin: 3.5em 2em;
   padding: 1em;
-  width: 350px;
+  width: 90%;
+  display: flex;
+  justify-content: space-around;
   height: fit-content;
   border-radius: 2em;
-  box-shadow: 0px 4px 15px var(--green-secondary);
-
-  @media screen and (max-width: 1115px) {
-    margin: 3.5em 2em;
-    width: auto;
-    display: flex;
-    justify-content: space-between;
-  }
+  box-shadow: 0px 2px 7px var(--green-secondary);
 
   @media screen and (max-width: 640px) {
     flex-direction: column;
@@ -50,7 +44,8 @@ export const ProductsNavigation = styled("div")`
 `;
 
 export const Option = styled("div")`
-  padding: 1.25em 0;
+flex: 1;
+  padding: 1.25em 2em;
 
   @media screen and (max-width: 1115px) {
     padding: 1.25em;
@@ -64,44 +59,10 @@ export const Option = styled("div")`
 `;
 
 export const Cards = styled("div")`
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
   padding: 1em;
-  justify-items: center;
+  justify-content: space-evenly;
   align-items: center;
-
-  @media screen and (max-width: 1115px) {
-    width: auto;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  }
-  @media screen and (max-width: 700px) {
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  }
-
-  @media screen and (max-width: 665px) {
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  }
-
-  @media screen and (max-width: 375px) {
-    padding: 0;
-  }
-`;
-
-export const Card = styled("div")`
-  margin: 0;
-  width: 300px;
-
-  @media screen and (max-width: 1115px) {
-    width: 280px;
-  }
-  @media screen and (max-width: 700px) {
-    width: 260px;
-  }
-  @media screen and (max-width: 665px) {
-    width: 240px;
-  }
-  @media screen and (max-width: 589px) {
-    width: 300px;
-  }
 `;

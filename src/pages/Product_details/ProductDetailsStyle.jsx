@@ -9,8 +9,8 @@ export const DetailsArea = styled("div")`
     margin-left: 2em;
     margin-right: 3em;
     width: 400px;
-    border: 4px outset var(--green-secondary);
-    border-radius: 1em;
+    border-radius: 3em;
+    box-shadow: 0 0 30px var(--green-secondary), 0 0 5px var(--green-primary);
   }
 
   h2 {
@@ -21,6 +21,7 @@ export const DetailsArea = styled("div")`
   .textInfosArea {
     margin: 1.5em;
     padding-left: 2em;
+    width: 50%;
   }
 
   .formatAndPrice {
@@ -81,6 +82,7 @@ export const DetailsArea = styled("div")`
   @media screen and (max-width: 700px) {
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 
     img {
       margin: auto;
@@ -95,6 +97,7 @@ export const DetailsArea = styled("div")`
 
     .textInfosArea {
       margin: 0;
+      margin-top: 2em;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -133,17 +136,19 @@ export const DescriptionSection = styled("div")`
     clear: both;
     padding: 2em 1em;
     border-top: 1px dashed var(--green-secondary);
-    border-bottom: 1px dashed var(--green-secondary);
+    border-bottom: 1px solid var(--green-secondary);
     text-align: left;
   }
 `;
 
 export const CommentsArea = styled("div")`
+  margin-top: 8em;
   display: flex;
-  justify-content: space-evenly;
 
   h2 {
     margin: 0;
+    margin-bottom: 1.5em;
+    font-size: clamp(40px, 4.5vh, 44px);
   }
 
   Button {
@@ -171,10 +176,11 @@ export const Comments = styled("div")`
     padding: 1em;
     background-color: white;
     border-radius: 2em;
-    box-shadow: 4px 4px 10px var(--green-secondary);
+    box-shadow: 1px 2px 4px var(--brown-secondary);
 
     h4 {
       font-size: 22px;
+      color: var(--brown-primary);
     }
 
     p {
@@ -203,7 +209,8 @@ export const SubArea = styled("div")`
 export const NewComment = styled("div")`
   margin: 0 2em;
   h2 {
-    margin-bottom: 1em;
+    margin-bottom: 1.5em;
+    font-size: clamp(40px, 4.5vh, 44px);
   }
 
   div {
@@ -246,5 +253,6 @@ export const SimilarArea = styled("div")`
   h2 {
     margin: 0;
     padding: 0.5em;
+    font-size: clamp(40px, 4.5vh, 44px);
   }
 `;
