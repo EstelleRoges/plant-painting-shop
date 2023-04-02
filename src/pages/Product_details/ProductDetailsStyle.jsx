@@ -144,6 +144,7 @@ export const DescriptionSection = styled("div")`
 export const CommentsArea = styled("div")`
   margin-top: 8em;
   display: flex;
+  justify-content: space-around;
 
   h2 {
     margin: 0;
