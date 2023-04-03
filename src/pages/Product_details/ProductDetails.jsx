@@ -163,9 +163,9 @@ const ProductDetails = () => {
           )}
         </CommentsArea>
 
-        {/* <SimilarArea>
-          <SimilarProducts />
-        </SimilarArea> */}
+        <SimilarArea>
+          <SimilarProducts onClick={window.scrollTo(0, 0)}/>
+        </SimilarArea>
       </motion.div>
     </>
   );
