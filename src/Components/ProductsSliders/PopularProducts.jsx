@@ -10,48 +10,47 @@ const PopularProducts = () => {
     return articleB.sold - articleA.sold;
   });
 
-  const topFive = productList
+  const topThree = productList
     .sort(function (productA, productB) {
       return productA.sold < productB.sold ? 0 : productA.sold ? -1 : 1;
     })
-    .slice(0, 5);
+    .slice(0, 3);
 
   return (
     <PopsDiv>
-      <h2>Tableaux populaires</h2>
-      <Splide
-        options={{
-          perPage: 3,
-          breakpoints: {
-            768: {
-              perPage: 1,
-            },
-          },
-          perMove: 1,
-          pagination: false,
-          fixedWidth: "320px",
-          drag: "free",
-          gap: "1em",
-          wheel: true,
-          releaseWheel: false,
-        }}
-      >
-        {topFive.map((product) => {
-          return (
-            <SplideSlide
-              key={product.id}
-              style={{ width: "300px", paddingBottom: "0", marginRight: "0" }}
-            >
-              <ProductCard
-                id={product.id}
-                img={product.img}
-                name={product.name}
-                price={product.price}
-              />
-            </SplideSlide>
-          );
-        })}
-      </Splide>
+      <h2>Top 3 des tableaux</h2>
+      <TrioGrid>
+        <div className="first">
+          {
+            <ProductCard
+              id={topThree[0].id}
+              img={topThree[0].img}
+              name={topThree[0].name}
+              price={topThree[0].price}
+            />
+          }
+        </div>
+        <div className="second">
+          {
+            <ProductCard
+              id={topThree[1].id}
+              img={topThree[1].img}
+              name={topThree[1].name}
+              price={topThree[1].price}
+            />
+          }
+        </div>
+        <div className="third">
+          {
+            <ProductCard
+              id={topThree[2].id}
+              img={topThree[2].img}
+              name={topThree[2].name}
+              price={topThree[2].price}
+            />
+          }
+        </div>
+      </TrioGrid>
     </PopsDiv>
   );
 };
@@ -70,6 +69,45 @@ const PopsDiv = styled("section")`
   li {
     margin: 0;
     justify-content: center;
+  }
+`;
+
+const TrioGrid = styled("div")`
+  margin-top: 2em;
+  height: fit-content;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: 1fr;
+  gap: 1em 1em;
+  grid-template-areas: "first second third";
+  justify-items: center;
+  align-items: center;
+
+  .first {
+    grid-area: first;
+  }
+  .second {
+    grid-area: second;
+  }
+  .third {
+    grid-area: third;
+  }
+
+  @media screen and (max-width: 1018px) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+      "first first"
+      "second third";
+  }
+
+  @media screen and (max-width: 600px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+      "first"
+      "second"
+      "third";
   }
 `;
 
