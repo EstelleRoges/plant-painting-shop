@@ -10,7 +10,7 @@ const Cart = () => {
 
   useEffect(() => {
     setRecap(true);
-  }, []);
+  }, [setRecap]);
 
   return (
     <>

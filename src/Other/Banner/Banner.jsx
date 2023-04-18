@@ -1,5 +1,4 @@
 import React from "react";
-import { Button } from "@mui/material";
 import { BannerArea, TextSection } from "./BannerStyle";
 import "@splidejs/react-splide/css";
 import { Link } from "react-router-dom";

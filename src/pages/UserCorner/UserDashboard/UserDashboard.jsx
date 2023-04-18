@@ -8,7 +8,6 @@ import {
   SubInfoDiv,
   SubInfo,
   CardInfos,
-  DecoImg,
   OptionBtns,
 } from "./UserDashboardStyle.jsx";
 import { useState, useContext } from "react";

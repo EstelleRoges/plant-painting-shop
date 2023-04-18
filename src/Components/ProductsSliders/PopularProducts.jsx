@@ -2,7 +2,6 @@ import React from "react";
 import { styled } from "@mui/material";
 import productList from "../../Other/Lists/ProductList";
 import ProductCard from "../ProductCard/ProductCard";
-import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 
 const PopularProducts = () => {

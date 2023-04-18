@@ -10,7 +10,7 @@ const Checkout = () => {
 
   useEffect(() => {
     setRecap(false);
-  }, []);
+  }, [setRecap]);
 
   return (
     <>
